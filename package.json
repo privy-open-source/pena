@@ -5,5 +5,8 @@
   "private": true,
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "dependencies": {
+    "defu": "^6.1.2"
+  }
 }
