@@ -36,6 +36,7 @@ export interface PenaOption {
    * Document URL
    */
   url: string,
+
   /**
    * Target container
    * @default '.pena''
@@ -108,8 +109,11 @@ export function docSign (optionOrURL: string | PenaOption, options: Omit<PenaOpt
         && Number.isFinite(config.signature?.x)
         && Number.isFinite(config.signature?.page)
 
-      url.searchParams.set('lang', config.lang)
-      url.searchParams.set('privyId', config.privyId)
+      if (config.lang)
+        url.searchParams.set('lang', config.lang)
+
+      if (config.privyId)
+        url.searchParams.set('privyId', config.privyId)
 
       if (hasSignature) {
         url.searchParams.set('x', config.signature.x.toString())
