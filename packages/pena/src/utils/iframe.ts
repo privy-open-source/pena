@@ -14,6 +14,7 @@ export function createIframe () {
 
   iframe.id             = randomID('pena_')
   iframe.dataset.testid = 'pena-iframe'
+  iframe.className      = 'pena__iframe'
 
   iframe.style.setProperty('display', 'block')
   iframe.style.setProperty('border', '0')

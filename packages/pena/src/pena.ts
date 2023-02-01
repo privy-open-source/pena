@@ -1,7 +1,7 @@
 import { createIframe } from './utils/iframe'
 import { useSticky } from './utils/sticky'
 
-interface Payload {
+export interface Payload {
   /**
    * Event type
    */
@@ -16,7 +16,7 @@ type HookFn = (payload: Payload) => unknown
 
 type CleanupFn = () => void
 
-interface PlacementV1 {
+export interface Placement {
   /**
    * X Position
    */
@@ -68,7 +68,7 @@ export interface PenaOption {
   /**
    * Signature placement position
    */
-  signature?: PlacementV1,
+  signature?: Placement,
 
   /**
    * After action (sign, review, etc) hook

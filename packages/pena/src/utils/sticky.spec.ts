@@ -1,3 +1,4 @@
+import { fireEvent } from '@testing-library/dom'
 import { vi } from 'vitest'
 import { useSticky } from './sticky'
 
@@ -15,6 +16,8 @@ it('should set element height to fit window height', () => {
   document.body.append(container)
 
   innerHeight.mockReturnValue(1000)
+
+  const unsticky = useSticky(target)
 
   vi.spyOn(target.parentElement as HTMLElement, 'getBoundingClientRect')
     .mockReturnValue({
@@ -42,7 +45,7 @@ it('should set element height to fit window height', () => {
       toJSON: vi.fn(),
     })
 
-  const unsticky = useSticky(target)
+  fireEvent.scroll(window)
 
   expect(target).toBeInTheDocument()
   expect(target).toHaveStyle({ height: '700px' })
@@ -57,6 +60,8 @@ it('should stick to viewport if window scrolled to element offset', () => {
 
   container.append(target)
   document.body.append(container)
+
+  const unsticky = useSticky(target)
 
   innerHeight.mockReturnValue(1000)
 
@@ -86,7 +91,7 @@ it('should stick to viewport if window scrolled to element offset', () => {
       toJSON: vi.fn(),
     })
 
-  const unsticky = useSticky(target)
+  fireEvent.scroll(window)
 
   expect(target).toBeInTheDocument()
   expect(target).toHaveStyle({

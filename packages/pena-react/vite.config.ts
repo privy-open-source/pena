@@ -13,10 +13,11 @@ export default defineConfig({
       formats : ['es', 'umd'],
     },
     rollupOptions: {
-      external: ['react', 'react-dom'],
+      external: ['react', 'react-dom', '@privyid/pena'],
       output  : {
         globals: {
-          react: 'React'
+          'react'        : 'React',
+          '@privyid/pena': 'Pena',
         }
       }
     }

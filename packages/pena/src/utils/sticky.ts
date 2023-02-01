@@ -38,12 +38,15 @@ export function useSticky (target: HTMLElement) {
   }
 
   function init() {
+    window.addEventListener('scroll', render, { passive: true })
+    window.addEventListener('resize', render, { passive: true })
+
     render()
   }
 
   function destroy () {
-    window.addEventListener('scroll', render, { passive: true })
-    window.addEventListener('resize', render, { passive: true })
+    window.removeEventListener('scroll', render)
+    window.removeEventListener('resize', render)
   }
 
   // onMounted

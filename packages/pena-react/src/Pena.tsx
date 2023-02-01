@@ -1,13 +1,13 @@
-import { FC, useEffect, useRef } from "react"
-import Pena from "@privyid/pena"
+import { FC, useEffect, useRef } from 'react'
+import Pena from '@privyid/pena'
 
-const PenaReact: FC<Omit<Pena.PenaOption, 'target'>> = (props) => {
+const PenaReact: FC<Omit<Pena.PenaOption, 'container'>> = (props) => {
   const target = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     if (target.current) {
       const cleanup = Pena.docSign({
-        target       : target.current,
+        container    : target.current,
         url          : props.url,
         lang         : props.lang,
         signature    : props.signature,
