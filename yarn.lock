@@ -822,6 +822,7 @@ __metadata:
     "@testing-library/jest-dom": ^5.16.5
     "@vitest/coverage-c8": ^0.28.3
     happy-dom: ^8.2.2
+    nanodelay: ^2.0.2
     typescript: ^4.9.3
     vite: ^4.0.0
     vite-plugin-dts: ^1.7.1
@@ -3591,6 +3592,13 @@ __metadata:
   version: 0.1.0
   resolution: "muggle-string@npm:0.1.0"
   checksum: c892cb53c9e066185913e4d6d0af71df6a2a8d8fd614903d13cd6b260c32ebc7b08ae7190a5faf3f7a25ba01cb9be34844d2a069351c090e4a6013f1eee58a50
+  languageName: node
+  linkType: hard
+
+"nanodelay@npm:^2.0.2":
+  version: 2.0.2
+  resolution: "nanodelay@npm:2.0.2"
+  checksum: 459fb58e3b9d262a16a5f5ab63ff71ca1f83a61c712b5ba7495d03d4d28dc96dcef3bbc282e277187d05e4ccfa7345e7c0082dcc76ae9790bb416eb2f6e627ae
   languageName: node
   linkType: hard
 

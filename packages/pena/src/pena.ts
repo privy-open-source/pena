@@ -1,4 +1,5 @@
-import { createIframe } from './iframe'
+import { createIframe } from './utils/iframe'
+import { useSticky } from './utils/sticky'
 
 interface Payload {
   /**
@@ -89,6 +90,7 @@ export function docSign (config: PenaOption): CleanupFn {
 
   let iframe: HTMLIFrameElement
   let url: URL
+  let unsticky: ReturnType<typeof useSticky>
 
   function parseURL() {
     try {
@@ -117,71 +119,44 @@ export function docSign (config: PenaOption): CleanupFn {
     }
   }
 
-  function onScroll () {
-    if (config.layout === 'fit') {
-      const {
-        top,
-        height,
-      } = container.getBoundingClientRect()
+  function onMessage (event: MessageEvent) {
+    if (event.origin === url.origin && typeof event.data === 'string') {
+      if (typeof config.onAfterAction === 'function') {
+        try {
+          const payload: Payload = JSON.parse(event.data)
 
-      const {
-        top: offsetTop,
-        left,
-        width,
-      } = iframe.getBoundingClientRect()
-
-      if (top >= 0) {
-        iframe.style.setProperty('height', `${window.innerHeight - top}px`)
-        iframe.style.setProperty('width', '100%')
-
-        container.style.removeProperty('min-height')
-
-        iframe.style.removeProperty('position')
-        iframe.style.removeProperty('top')
-        iframe.style.removeProperty('left')
-      } else {
-        container.style.setProperty('min-height', `${height}px`)
-
-        iframe.style.setProperty('position', 'fixed')
-        iframe.style.setProperty('top', `${offsetTop}px`)
-        iframe.style.setProperty('left', `${left}px`)
-        iframe.style.setProperty('width', `${width}px`)
-        iframe.style.setProperty('height', `${window.innerHeight - offsetTop}px`)
+          config.onAfterAction(payload)
+        } catch (error) {
+          console.warn(error)
+        }
       }
     }
   }
 
-  function onMessage (event: MessageEvent) {
-    if (event.origin === url.origin && typeof config.onAfterAction === 'function') {
-      config.onAfterAction(JSON.parse(event.data))
-    }
-  }
-
   function init () {
-    url        = parseURL()
-    iframe     = createIframe()
-    iframe.src = url.href
-
-    if (config.layout !== 'fit')
-      iframe.style.setProperty('min-height', `${297 / 210 * container.clientWidth}px`)
+    url                   = parseURL()
+    iframe                = createIframe()
+    iframe.src            = url.href
+    iframe.dataset.layout = config.layout ?? 'fixed'
 
     container.append(iframe)
-
     window.addEventListener('message', onMessage, { passive: true })
-    window.addEventListener('scroll', onScroll, { passive: true })
-    window.addEventListener('resize', onScroll, { passive: true })
 
-    onScroll()
+    if (config.layout === 'fit')
+      unsticky = useSticky(iframe)
+    else
+      iframe.style.setProperty('min-height', `${297 / 210 * container.clientWidth}px`)
   }
 
   function destroy () {
     iframe.remove()
-
     window.removeEventListener('message', onMessage)
-    window.removeEventListener('scroll', onScroll)
-    window.removeEventListener('resize', onScroll)
+
+    if (typeof unsticky === 'function')
+      unsticky()
   }
 
+  // onMounted
   init()
 
   return destroy

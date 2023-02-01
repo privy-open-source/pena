@@ -1,7 +1,14 @@
+/**
+ * Generate random id
+ * @param prefix
+ */
 function randomID (prefix: string) {
   return Math.random().toString(36).replace('0.', prefix)
 }
 
+/**
+ * Create iframe element
+ */
 export function createIframe () {
   const iframe = document.createElement('iframe')
 
