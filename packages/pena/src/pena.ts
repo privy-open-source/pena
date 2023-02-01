@@ -1,9 +1,13 @@
-import defu from "defu"
-import { createIframe } from "./iframe"
+import { createIframe } from './iframe'
 
 interface Payload {
+  /**
+   * Event type
+   */
   event: string,
-
+  /**
+   * Payload data
+   */
   payload: unknown
 }
 
@@ -41,7 +45,7 @@ export interface PenaOption {
    * Target container
    * @default '.pena''
    */
-  target?: string | HTMLElement,
+  container?: string | HTMLDivElement,
 
   /**
    * Layout mode
@@ -72,42 +76,27 @@ export interface PenaOption {
 }
 
 /**
- *
- * @param url Document URL
+ * Create sign
  * @param options Options
  */
-export function docSign (url: string, options?: Omit<PenaOption, 'url'>): CleanupFn
-/**
- *
- * @param options Options
- */
-export function docSign (options: PenaOption): CleanupFn
-export function docSign (optionOrURL: string | PenaOption, options: Omit<PenaOption, 'url'> = {}): CleanupFn {
-  if (typeof optionOrURL === 'string')
-    return docSign({ url: optionOrURL, ...options })
+export function docSign (config: PenaOption): CleanupFn {
+  const container = config.container instanceof HTMLDivElement
+    ? config.container
+    : document.querySelector(config.container || '.pena') as HTMLDivElement
 
-  const config = defu(optionOrURL, {
-    target   : '.pena',
-    layout   : 'fixed',
-    lang     : 'en',
-    signature: { fixed: false },
-  } as Required<PenaOption>)
+  if (!container)
+    throw new Error('Cannot find target container')
 
-  const target = config.target instanceof HTMLElement
-    ? config.target
-    : document.querySelector(config.target) as HTMLElement
+  let iframe: HTMLIFrameElement
+  let url: URL
 
-  if (!target)
-    throw new Error('Cannot find target')
-
-  const iframe = createIframe()
-
-  function getURL() {
+  function parseURL() {
     try {
       const url          = new URL(config.url)
-      const hasSignature = Number.isFinite(config.signature?.x)
-        && Number.isFinite(config.signature?.x)
-        && Number.isFinite(config.signature?.page)
+      const hasSignature = config.signature
+        && Number.isFinite(config.signature.x)
+        && Number.isFinite(config.signature.x)
+        && Number.isFinite(config.signature.page)
 
       if (config.lang)
         url.searchParams.set('lang', config.lang)
@@ -116,13 +105,13 @@ export function docSign (optionOrURL: string | PenaOption, options: Omit<PenaOpt
         url.searchParams.set('privyId', config.privyId)
 
       if (hasSignature) {
-        url.searchParams.set('x', config.signature.x.toString())
-        url.searchParams.set('y', config.signature.y.toString())
-        url.searchParams.set('page', config.signature.page.toString())
-        url.searchParams.set('fixed', config.signature?.fixed ? 'true' : 'false')
+        url.searchParams.set('x', config.signature!.x.toString())
+        url.searchParams.set('y', config.signature!.y.toString())
+        url.searchParams.set('page', config.signature!.page.toString())
+        url.searchParams.set('fixed', config.signature!.fixed ? 'true' : 'false')
       }
 
-      return url.href
+      return url
     } catch {
       throw new Error(`Invalid URL: ${config.url}`)
     }
@@ -133,7 +122,7 @@ export function docSign (optionOrURL: string | PenaOption, options: Omit<PenaOpt
       const {
         top,
         height,
-      } = target.getBoundingClientRect()
+      } = container.getBoundingClientRect()
 
       const {
         top: offsetTop,
@@ -145,13 +134,13 @@ export function docSign (optionOrURL: string | PenaOption, options: Omit<PenaOpt
         iframe.style.setProperty('height', `${window.innerHeight - top}px`)
         iframe.style.setProperty('width', '100%')
 
-        target.style.removeProperty('min-height')
+        container.style.removeProperty('min-height')
 
         iframe.style.removeProperty('position')
         iframe.style.removeProperty('top')
         iframe.style.removeProperty('left')
       } else {
-        target.style.setProperty('min-height', `${height}px`)
+        container.style.setProperty('min-height', `${height}px`)
 
         iframe.style.setProperty('position', 'fixed')
         iframe.style.setProperty('top', `${offsetTop}px`)
@@ -163,29 +152,24 @@ export function docSign (optionOrURL: string | PenaOption, options: Omit<PenaOpt
   }
 
   function onMessage (event: MessageEvent) {
-    if (event.origin === origin) {
-      try {
-        const payload = JSON.parse(event.data)
-
-        if (typeof config.onAfterAction === 'function')
-          config.onAfterAction(payload)
-      } catch (error) {
-        console.warn(error)
-      }
+    if (event.origin === url.origin && typeof config.onAfterAction === 'function') {
+      config.onAfterAction(JSON.parse(event.data))
     }
   }
 
   function init () {
-    iframe.src = getURL()
+    url        = parseURL()
+    iframe     = createIframe()
+    iframe.src = url.href
 
-    if (config.layout === 'fixed')
-      iframe.style.setProperty('min-height', `${297 / 210 * target.clientWidth}px`)
+    if (config.layout !== 'fit')
+      iframe.style.setProperty('min-height', `${297 / 210 * container.clientWidth}px`)
 
-    target.append(iframe)
+    container.append(iframe)
 
     window.addEventListener('message', onMessage, { passive: true })
-    window.addEventListener('scroll', onScroll, { passive: false })
-    window.addEventListener('resize', onScroll, { passive: false })
+    window.addEventListener('scroll', onScroll, { passive: true })
+    window.addEventListener('resize', onScroll, { passive: true })
 
     onScroll()
   }
