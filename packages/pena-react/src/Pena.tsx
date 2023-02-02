@@ -3,9 +3,9 @@ import {
   useEffect,
   useRef,
 } from 'react'
-import Pena from '@privyid/pena'
+import Pena, { type PenaOption } from '@privyid/pena'
 
-const PenaReact: FC<Omit<Pena.PenaOption, 'container'>> = (props) => {
+const PenaReact: FC<Omit<PenaOption, 'container'>> = (props) => {
   const target = useRef<HTMLDivElement>(null)
 
   useEffect(() => {

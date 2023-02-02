@@ -1,20 +1,14 @@
-import { defineConfig } from 'vite'
-import { svelte } from '@sveltejs/vite-plugin-svelte'
-import svelteDts from 'svelte-dts'
+// eslint-disable-next-line @typescript-eslint/triple-slash-reference
+/// <reference types="vitest" />
+// eslint-disable-next-line @typescript-eslint/triple-slash-reference
+/// <reference types="@sveltejs/kit" />
 
-// https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [svelteDts(), svelte()],
-  build  : {
-    lib: {
-      entry   : 'src/index.ts',
-      name    : 'PenaSvelte',
-      fileName: 'pena-svelte',
-      formats : ['es', 'umd'],
-    },
-    rollupOptions: {
-      external: ['@privyid/pena'],
-      output  : { globals: { '@privyid/pena': 'Pena' } },
-    },
-  },
-})
+import { sveltekit } from '@sveltejs/kit/vite'
+import type { UserConfig } from 'vite'
+
+const config: UserConfig = {
+  plugins: [sveltekit()],
+  test   : { include: ['src/**/*.{test,spec}.{js,ts}'] },
+}
+
+export default config

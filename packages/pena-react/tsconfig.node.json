@@ -5,7 +5,10 @@
     "moduleResolution": "Node",
     "allowSyntheticDefaultImports": true,
     "strict": false,
-    "strictNullChecks": true,
+    "strictNullChecks": true
   },
-  "include": ["vite.config.ts"]
+  "include": [
+    "dev",
+    "vite.config.ts",
+  ]
 }

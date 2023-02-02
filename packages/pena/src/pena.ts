@@ -1,86 +1,17 @@
 import { createIframe } from './utils/iframe'
 import { useSticky } from './utils/sticky'
-
-export interface Payload {
-  /**
-   * Event type
-   */
-  event: string,
-  /**
-   * Payload data
-   */
-  payload: unknown,
-}
-
-type HookFn = (payload: Payload) => unknown
-
-type CleanupFn = () => void
-
-export interface Placement {
-  /**
-   * X Position
-   */
-  x: number,
-  /**
-   * Y Position
-   */
-  y: number,
-  /**
-   * Page number
-   */
-  page: number,
-  /**
-   * Disabled signature to move
-   * @default false
-   */
-  fixed?: boolean,
-}
-
-export interface PenaOption {
-  /**
-   * Document URL
-   */
-  url: string,
-
-  /**
-   * Target container
-   * @default '.pena''
-   */
-  container?: string | HTMLDivElement,
-
-  /**
-   * Layout mode
-   * @default 'fixed'
-   */
-  layout?: 'fixed' | 'fit',
-
-  /**
-   * Recipient PrivyID
-   */
-  privyId?: string,
-
-  /**
-   * Language set
-   * @default 'en'
-   */
-  lang?: 'en' | 'id',
-
-  /**
-   * Signature placement position
-   */
-  signature?: Placement,
-
-  /**
-   * After action (sign, review, etc) hook
-   */
-  onAfterAction?: HookFn,
-}
+import type {
+  Payload,
+  Placement,
+  CleanupFn,
+  PenaOption,
+} from './types'
 
 /**
  * @private
  * @param signature
  */
-export function isHavePlacement (signature?: Placement): signature is Required<Placement> {
+function isHavePlacement (signature?: Placement): signature is Required<Placement> {
   return Boolean(signature
     && Number.isFinite(signature.x)
     && Number.isFinite(signature.x)

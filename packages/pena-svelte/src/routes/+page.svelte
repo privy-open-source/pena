@@ -1,12 +1,15 @@
 <script lang="ts">
-  import Pena from '../src'
+  import type { Payload } from '@privyid/pena'
+  import { page } from '$app/stores'
+  import Pena from '../lib'
 
-  const url = new URL('./dev/testpage.html', location.origin).href
+  const url = new URL('./testpage', $page.url).href
 
+  let log       = [] as Payload[]
   let layoutFit = false
 
-  function onAfterAction (data: CustomEvent) {
-    console.log(data.detail)
+  function onAfterAction (data: CustomEvent<Payload>) {
+    log = [...log, data.detail]
   }
 </script>
 
@@ -23,6 +26,11 @@
     <button on:click={() => layoutFit = !layoutFit}>
       Change Layout
     </button>
+    <ul>
+      {#each log as l}
+        <li>{l.event} - {JSON.stringify(l.payload)}</li>
+      {/each}
+    </ul>
   </div>
 </div>
 

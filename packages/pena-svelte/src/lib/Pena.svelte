@@ -1,19 +1,20 @@
 <script lang="ts">
   import Pena from '@privyid/pena'
+  import type { PenaOption, Payload } from '@privyid/pena'
   import { createEventDispatcher, onDestroy } from 'svelte'
 
-  export let url: Pena.PenaOption['url']
-  export let lang: Pena.PenaOption['lang'] = undefined
-  export let signature: Pena.PenaOption['signature'] = undefined
-  export let layout: Pena.PenaOption['layout'] = undefined
-  export let privyId: Pena.PenaOption['privyId'] = undefined
+  export let url: PenaOption['url']
+  export let lang: PenaOption['lang'] = undefined
+  export let signature: PenaOption['signature'] = undefined
+  export let layout: PenaOption['layout'] = undefined
+  export let privyId: PenaOption['privyId'] = undefined
 
   let target: HTMLDivElement
   let cleanup: ReturnType<typeof Pena.docSign>
 
-  const emit = createEventDispatcher<{ afterAction: Pena.Payload }>()
+  const emit = createEventDispatcher<{ afterAction: Payload }>()
 
-  const onAfterAction: Pena.PenaOption['onAfterAction'] = (payload) => {
+  const onAfterAction = (payload: Payload) => {
     emit('afterAction', payload)
   }
 

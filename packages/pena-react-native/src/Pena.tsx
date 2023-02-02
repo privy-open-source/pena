@@ -1,15 +1,19 @@
 import React, { type FC, useMemo } from 'react'
 import { WebView, type WebViewMessageEvent } from 'react-native-webview'
-import type Pena from '@privyid/pena'
+import type {
+  Payload,
+  PenaOption,
+  Placement,
+} from '@privyid/pena'
 
-function isHaveSignature (signature?: Pena.Placement): signature is Required<Pena.Placement> {
+function isHaveSignature (signature?: Placement): signature is Required<Placement> {
   return Boolean(signature
     && Number.isFinite(signature.x)
     && Number.isFinite(signature.x)
     && Number.isFinite(signature.page))
 }
 
-const PenaReact: FC<Omit<Pena.PenaOption, 'container' | 'layout'>> = (props) => {
+const PenaReact: FC<Omit<PenaOption, 'container' | 'layout'>> = (props) => {
   const url = useMemo(() => {
     const result = new URL(props.url)
 
@@ -32,7 +36,7 @@ const PenaReact: FC<Omit<Pena.PenaOption, 'container' | 'layout'>> = (props) => 
   function onMessage (event: WebViewMessageEvent) {
     if (event.nativeEvent.url === url.hostname) {
       try {
-        const payload: Pena.Payload = JSON.parse(event.nativeEvent.data)
+        const payload: Payload = JSON.parse(event.nativeEvent.data)
 
         if (typeof props.onAfterAction === 'function')
           props.onAfterAction(payload)

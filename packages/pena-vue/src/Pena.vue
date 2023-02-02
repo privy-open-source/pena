@@ -5,9 +5,9 @@ import {
   ref,
   watchEffect,
 } from 'vue'
-import Pena from '@privyid/pena'
+import Pena, { PenaOption } from '@privyid/pena'
 
-const PenaVue: FunctionalComponent<Omit<Pena.PenaOption, 'container'>> = (props) => {
+const PenaVue: FunctionalComponent<Omit<PenaOption, 'container'>> = (props) => {
   const target = ref<HTMLDivElement>()
 
   watchEffect((onCleanUp) => {
