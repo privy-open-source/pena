@@ -1,3 +1,3 @@
-import Pena from './Pena'
-
-export default Pena
+export {
+  default,
+} from './Pena'

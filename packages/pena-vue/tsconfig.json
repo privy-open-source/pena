@@ -4,7 +4,8 @@
     "useDefineForClassFields": true,
     "module": "ESNext",
     "moduleResolution": "Node",
-    "strict": true,
+    "strict": false,
+    "strictNullChecks": true,
     "jsx": "preserve",
     "resolveJsonModule": true,
     "isolatedModules": true,
@@ -13,6 +14,15 @@
     "skipLibCheck": true,
     "noEmit": true
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "dev/**/*.ts",
+    "dev/**/*.d.ts",
+    "dev/**/*.tsx",
+    "dev/**/*.vue"
+  ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

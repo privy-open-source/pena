@@ -14,11 +14,7 @@ export default defineConfig({
     },
     rollupOptions: {
       external: ['@privyid/pena'],
-      output  : {
-        globals: {
-          '@privyid/pena': 'Pena',
-        }
-      }
-    }
+      output  : { globals: { '@privyid/pena': 'Pena' } },
+    },
   },
 })

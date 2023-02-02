@@ -5,7 +5,8 @@
     "module": "ESNext",
     "lib": ["ESNext", "DOM"],
     "moduleResolution": "Node",
-    "strict": true,
+    "strict": false,
+    "strictNullChecks": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "esModuleInterop": true,
@@ -16,6 +17,8 @@
     "skipLibCheck": true
   },
   "include": [
-    "src"
-  ]
+    "src",
+    "dev",
+  ],
+  "references": [{ "path": "./tsconfig.node.json" }]
 }

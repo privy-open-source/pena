@@ -1,13 +1,14 @@
 <script setup lang="ts">
-  import { ref } from 'vue'
-  import { Pena } from '../src'
+import { ref } from 'vue'
+import { Pena } from '../src'
 
-  const url       = new URL('./dev/testpage.html', location.origin).href
-  const layoutFit = ref(false)
+const url       = new URL('dev/testpage.html', location.origin).href
+const layoutFit = ref(false)
 
-  function onAfterAction (data: unknown) {
-    console.log(data)
-  }
+function onAfterAction (data: unknown) {
+  // eslint-disable-next-line no-console
+  console.log(data)
+}
 </script>
 
 <template>

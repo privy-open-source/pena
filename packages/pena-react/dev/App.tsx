@@ -1,23 +1,27 @@
+import type Pena from '@privyid/pena'
 import { useState } from 'react'
-import Pena from '../src'
+import PenaReact from '../src'
 
-function App() {
-  const url                       = new URL('./dev/testpage.html', location.origin).href
+function App () {
+  const url                       = new URL('dev/testpage.html', location.origin).href
   const [layoutFit, setLayoutFit] = useState(false)
 
-  function changeUrl() {
+  function changeUrl () {
     setLayoutFit((value) => !value)
+  }
+
+  function onAfterAction (data: Pena.Payload) {
+    // eslint-disable-next-line no-console
+    console.log(data.event, data.payload)
   }
 
   return (
     <div style={{ display: 'flex' }}>
       <div style={{ width: '50%' }}>
-        <Pena
+        <PenaReact
           url={url}
           layout={layoutFit ? 'fit' : 'fixed'}
-          onAfterAction={(data) => {
-            console.log(data.event, data.payload)
-          }} />
+          onAfterAction={onAfterAction} />
       </div>
       <div style={{ width: '50%' }}>
         <button onClick={changeUrl}>Change URL</button>

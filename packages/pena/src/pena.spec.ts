@@ -10,8 +10,8 @@ it('should render iframe to target', () => {
   document.body.append(container)
 
   const cleanUp = Pena.docSign({
-    container: container,
-    url      : 'http://sign.document.com/123456',
+    container,
+    url: 'http://sign.document.com/123456',
   })
 
   const iframe = queryByTestId(container, 'pena-iframe')
@@ -47,9 +47,7 @@ it('should search `.pena` if target not set', () => {
   container.setAttribute('class', 'pena')
   document.body.append(container)
 
-  const cleanUp = Pena.docSign({
-    url: 'http://sign.document.com/123456',
-  })
+  const cleanUp = Pena.docSign({ url: 'http://sign.document.com/123456' })
 
   const iframe = queryByTestId(container, 'pena-iframe')
 
@@ -86,9 +84,9 @@ it('should able to set privyId with option `privyId`', () => {
   document.body.append(container)
 
   const cleanUp = Pena.docSign({
-    container : '#app',
-    url    : 'http://sign.document.com/123456',
-    privyId: 'UAT001'
+    container: '#app',
+    url      : 'http://sign.document.com/123456',
+    privyId  : 'UAT001',
   })
 
   const iframe = queryByTestId(container, 'pena-iframe')
@@ -112,7 +110,7 @@ it('should able to add placement signature with option `signature`', () => {
       x   : 50,
       y   : 100,
       page: 1,
-    }
+    },
   })
 
   const iframe = queryByTestId(container, 'pena-iframe')
@@ -137,7 +135,7 @@ it('should able to disabled move with option `signature.fixed` set to true', () 
       y    : 100,
       page : 1,
       fixed: true,
-    }
+    },
   })
 
   const iframe = queryByTestId(container, 'pena-iframe')
@@ -156,28 +154,24 @@ it('should call onAfterAction if got an action', () => {
 
   const onAfterAction = vi.fn()
   const cleanUp       = Pena.docSign({
-    container    : '#app',
-    url          : 'http://sign.document.com/123456',
-    onAfterAction: onAfterAction,
+    container: '#app',
+    url      : 'http://sign.document.com/123456',
+    onAfterAction,
   })
 
   const event = Object.assign(new MessageEvent('message'), {
     origin: 'http://sign.document.com',
     data  : JSON.stringify({
       event  : 'sign',
-      payload: {
-        message: 'OK',
-      },
-    })
+      payload: { message: 'OK' },
+    }),
   })
 
   fireEvent(window, event)
 
   expect(onAfterAction).toBeCalledWith({
     event  : 'sign',
-    payload: {
-      message: 'OK',
-    },
+    payload: { message: 'OK' },
   })
 
   container.remove()
@@ -192,14 +186,14 @@ it('should not cal onAfterAction if got an action from another', () => {
 
   const onAfterAction = vi.fn()
   const cleanUp       = Pena.docSign({
-    container    : '#app',
-    url          : 'http://sign.document.com/123456',
-    onAfterAction: onAfterAction,
+    container: '#app',
+    url      : 'http://sign.document.com/123456',
+    onAfterAction,
   })
 
   const event = Object.assign(new MessageEvent('message'), {
     origin: 'http://sign.document.com',
-    data  : 'Hello World'
+    data  : 'Hello World',
   })
 
   fireEvent(window, event)
@@ -228,14 +222,11 @@ it('should use sticky layout if option layout set to `fit`', () => {
 
   container.remove()
   cleanUp()
-
 })
 
 it('should throw an error if target container not found', () => {
   expect(() => {
-    Pena.docSign({
-      url: 'http://sign.document.com/123456',
-    })
+    Pena.docSign({ url: 'http://sign.document.com/123456' })
   }).toThrowError('Cannot find target container')
 })
 

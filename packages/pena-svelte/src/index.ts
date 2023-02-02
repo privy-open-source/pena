@@ -1,4 +1,3 @@
-import Pena from './Pena.svelte'
-
-export default Pena
-
+export {
+  default,
+} from './Pena.svelte'

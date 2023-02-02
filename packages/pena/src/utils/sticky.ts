@@ -37,7 +37,7 @@ export function useSticky (target: HTMLElement) {
     }
   }
 
-  function init() {
+  function init () {
     window.addEventListener('scroll', render, { passive: true })
     window.addEventListener('resize', render, { passive: true })
 

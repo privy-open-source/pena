@@ -1,4 +1,8 @@
-import { FC, useEffect, useRef } from 'react'
+import {
+  type FC,
+  useEffect,
+  useRef,
+} from 'react'
 import Pena from '@privyid/pena'
 
 const PenaReact: FC<Omit<Pena.PenaOption, 'container'>> = (props) => {

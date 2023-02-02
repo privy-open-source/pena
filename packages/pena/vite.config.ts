@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/triple-slash-reference
 /// <reference types="vitest" />
 
 import { defineConfig } from 'vite'
@@ -18,5 +19,5 @@ export default defineConfig({
     globals    : true,
     setupFiles : ['./vitest.setup.ts'],
     environment: 'happy-dom',
-  }
+  },
 })

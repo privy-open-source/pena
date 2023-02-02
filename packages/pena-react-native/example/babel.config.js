@@ -1,8 +1,8 @@
-const path = require('path')
+const path = require('node:path')
 const pak  = require('../package.json')
 
 module.exports = function (api) {
-  api.cache(true);
+  api.cache(true)
 
   return {
     presets: ['babel-preset-expo'],
@@ -10,7 +10,12 @@ module.exports = function (api) {
       [
         'module-resolver',
         {
-          extensions: ['.tsx', '.ts', '.js', '.json'],
+          extensions: [
+            '.tsx',
+            '.ts',
+            '.js',
+            '.json',
+          ],
           alias: {
             // For development, we want to alias the library to the source
             [pak.name]: path.join(__dirname, '..', pak.source),
@@ -18,5 +23,5 @@ module.exports = function (api) {
         },
       ],
     ],
-  };
-};
+  }
+}

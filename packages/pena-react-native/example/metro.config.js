@@ -1,21 +1,17 @@
-const path                 = require('path');
-const escape               = require('escape-string-regexp');
-const { getDefaultConfig } = require('@expo/metro-config');
-const exclusionList        = require('metro-config/src/defaults/exclusionList');
-const pak                  = require('../package.json');
+const path                 = require('node:path')
+const escape               = require('escape-string-regexp')
+const { getDefaultConfig } = require('@expo/metro-config')
+const exclusionList        = require('metro-config/src/defaults/exclusionList')
+const pak                  = require('../package.json')
 
-const root = path.resolve(__dirname, '..');
-
-const modules = Object.keys({
-  ...pak.peerDependencies,
-});
-
-const defaultConfig = getDefaultConfig(__dirname);
+const root          = path.resolve(__dirname, '..')
+const modules       = Object.keys({ ...pak.peerDependencies })
+const defaultConfig = getDefaultConfig(__dirname)
 
 module.exports = {
   ...defaultConfig,
 
-  projectRoot: __dirname,
+  projectRoot : __dirname,
   watchFolders: [root],
 
   // We need to make sure that only one version is loaded for peerDependencies
@@ -26,13 +22,14 @@ module.exports = {
     blacklistRE: exclusionList(
       modules.map(
         (m) =>
-          new RegExp(`^${escape(path.join(root, 'node_modules', m))}\\/.*$`)
-      )
+          new RegExp(`^${escape(path.join(root, 'node_modules', m))}\\/.*$`),
+      ),
     ),
 
+    // eslint-disable-next-line unicorn/no-array-reduce
     extraNodeModules: modules.reduce((acc, name) => {
-      acc[name] = path.join(__dirname, 'node_modules', name);
-      return acc;
+      acc[name] = path.join(__dirname, 'node_modules', name)
+      return acc
     }, {}),
   },
-};
+}

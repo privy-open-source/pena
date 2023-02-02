@@ -1,0 +1,28 @@
+{
+  "extends": ["@privyid/eslint-config-persona"],
+  "parserOptions": {
+    "project": [
+      "./packages/*/tsconfig.node.json",
+      "./packages/*/tsconfig.json"
+    ]
+  },
+  "rules": {
+    "@typescript-eslint/key-spacing": "off"
+  },
+  "overrides": [
+    {
+      "files": ["*.tsx"],
+      "rules": {
+        "unicorn/filename-case": [
+          "error",
+          {
+            "cases": {
+              "kebabCase": true,
+              "pascalCase": true
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

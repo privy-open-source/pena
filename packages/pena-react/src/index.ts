@@ -1,3 +1,3 @@
-import PenaReact from './Pena'
-
-export default PenaReact
+export {
+  default,
+} from './Pena'

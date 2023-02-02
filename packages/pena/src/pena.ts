@@ -9,7 +9,7 @@ export interface Payload {
   /**
    * Payload data
    */
-  payload: unknown
+  payload: unknown,
 }
 
 type HookFn = (payload: Payload) => unknown
@@ -63,7 +63,7 @@ export interface PenaOption {
    * Language set
    * @default 'en'
    */
-  lang?: 'en' | 'id'
+  lang?: 'en' | 'id',
 
   /**
    * Signature placement position
@@ -77,13 +77,24 @@ export interface PenaOption {
 }
 
 /**
+ * @private
+ * @param signature
+ */
+export function isHavePlacement (signature?: Placement): signature is Required<Placement> {
+  return Boolean(signature
+    && Number.isFinite(signature.x)
+    && Number.isFinite(signature.x)
+    && Number.isFinite(signature.page))
+}
+
+/**
  * Create sign
  * @param options Options
  */
 export function docSign (config: PenaOption): CleanupFn {
   const container = config.container instanceof HTMLDivElement
     ? config.container
-    : document.querySelector(config.container || '.pena') as HTMLDivElement
+    : document.querySelector(config.container ?? '.pena') as HTMLDivElement
 
   if (!container)
     throw new Error('Cannot find target container')
@@ -92,13 +103,9 @@ export function docSign (config: PenaOption): CleanupFn {
   let url: URL
   let unsticky: ReturnType<typeof useSticky>
 
-  function parseURL() {
+  function parseURL () {
     try {
-      const url          = new URL(config.url)
-      const hasSignature = config.signature
-        && Number.isFinite(config.signature.x)
-        && Number.isFinite(config.signature.x)
-        && Number.isFinite(config.signature.page)
+      const url = new URL(config.url)
 
       if (config.lang)
         url.searchParams.set('lang', config.lang)
@@ -106,11 +113,11 @@ export function docSign (config: PenaOption): CleanupFn {
       if (config.privyId)
         url.searchParams.set('privyId', config.privyId)
 
-      if (hasSignature) {
-        url.searchParams.set('x', config.signature!.x.toString())
-        url.searchParams.set('y', config.signature!.y.toString())
-        url.searchParams.set('page', config.signature!.page.toString())
-        url.searchParams.set('fixed', config.signature!.fixed ? 'true' : 'false')
+      if (isHavePlacement(config.signature)) {
+        url.searchParams.set('x', config.signature.x.toString())
+        url.searchParams.set('y', config.signature.y.toString())
+        url.searchParams.set('page', config.signature.page.toString())
+        url.searchParams.set('fixed', config.signature.fixed ? 'true' : 'false')
       }
 
       return url
@@ -120,15 +127,13 @@ export function docSign (config: PenaOption): CleanupFn {
   }
 
   function onMessage (event: MessageEvent) {
-    if (event.origin === url.origin && typeof event.data === 'string') {
-      if (typeof config.onAfterAction === 'function') {
-        try {
-          const payload: Payload = JSON.parse(event.data)
+    if (event.origin === url.origin && typeof event.data === 'string' && typeof config.onAfterAction === 'function') {
+      try {
+        const payload: Payload = JSON.parse(event.data)
 
-          config.onAfterAction(payload)
-        } catch (error) {
-          console.warn(error)
-        }
+        config.onAfterAction(payload)
+      } catch (error) {
+        console.warn(error)
       }
     }
   }

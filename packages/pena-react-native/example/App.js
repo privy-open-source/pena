@@ -1,1 +1,4 @@
-export { default } from './src/App';
+/* eslint-disable unicorn/filename-case */
+export {
+  default,
+} from './src/App'

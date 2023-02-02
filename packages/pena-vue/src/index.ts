@@ -1,8 +1,10 @@
-import { Plugin } from 'vue'
+import { type Plugin } from 'vue'
 import Pena from './Pena.vue'
 
 export const install: Plugin = (app) => {
-  app.component('pena', Pena)
+  app.component('Pena', Pena)
 }
 
-export { Pena }
+export {
+  default as Pena,
+} from './Pena.vue'

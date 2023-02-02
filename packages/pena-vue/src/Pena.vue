@@ -29,7 +29,7 @@ const PenaVue: FunctionalComponent<Omit<Pena.PenaOption, 'container'>> = (props)
   return h('div', { ref: target, class: ['pena__container'] })
 }
 
-PenaVue['emits'] = ['after-sign']
+PenaVue.emits = ['after-sign']
 
 export default PenaVue
 </script>

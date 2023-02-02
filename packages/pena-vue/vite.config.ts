@@ -18,8 +18,8 @@ export default defineConfig({
         globals: {
           'vue'          : 'Vue',
           '@privyid/pena': 'Pena',
-        }
-      }
-    }
+        },
+      },
+    },
   },
 })
