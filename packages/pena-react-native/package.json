@@ -1,0 +1,121 @@
+{
+  "name": "@privyid/pena-react-native",
+  "version": "0.1.0",
+  "description": "test",
+  "type": "module",
+  "main": "lib/commonjs/index",
+  "module": "lib/module/index",
+  "types": "lib/typescript/index.d.ts",
+  "react-native": "src/index",
+  "source": "src/index",
+  "files": [
+    "src",
+    "lib",
+    "android",
+    "ios",
+    "cpp",
+    "*.podspec",
+    "!lib/typescript/example",
+    "!ios/build",
+    "!android/build",
+    "!android/gradle",
+    "!android/gradlew",
+    "!android/gradlew.bat",
+    "!android/local.properties",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__",
+    "!**/.*"
+  ],
+  "scripts": {
+    "dev": "yarn --cwd dev/ expo start dev/",
+    "test": "jest",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint . --ext .js,.vue,.ts,.tsx",
+    "fix": "yarn lint --fix",
+    "prepack": "bob build",
+    "release": "release-it",
+    "example": "yarn --cwd dev",
+    "bootstrap": "yarn example && yarn install"
+  },
+  "keywords": [
+    "react-native",
+    "ios",
+    "android"
+  ],
+  "repository": "https://github.com/privy-open-source/pena",
+  "author": "Ade Novid <adenvt@gmail.com> (https://github.com/adenvt)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/privy-open-source/pena/issues"
+  },
+  "dependencies": {
+    "react-native-webview": "^11.26.1"
+  },
+  "homepage": "https://github.com/privy-open-source/pena#readme",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "devDependencies": {
+    "@privyid/eslint-config-persona": "^0.7.0",
+    "@privyid/pena": "workspace:^",
+    "@react-native-community/eslint-config": "^3.0.2",
+    "@release-it/conventional-changelog": "^5.0.0",
+    "@types/jest": "^28.1.2",
+    "@types/react": "^18.0.27",
+    "@types/react-native": "0.70.0",
+    "@typescript-eslint/eslint-plugin": "^5.50.0",
+    "@typescript-eslint/parser": "^5.50.0",
+    "@vue/eslint-config-typescript": "^11.0.2",
+    "del-cli": "^5.0.0",
+    "eslint": "^8.33.0",
+    "eslint-config-standard-with-typescript": "^34.0.0",
+    "eslint-plugin-align-assignments": "^1.1.2",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.6.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-unicorn": "^45.0.2",
+    "eslint-plugin-varspacing": "^1.2.2",
+    "eslint-plugin-vue": "^9.9.0",
+    "expo": "^47.0.13",
+    "jest": "^28.1.1",
+    "pod-install": "^0.1.0",
+    "react": "18.1.0",
+    "react-native": "0.70.5",
+    "react-native-builder-bob": "^0.20.0",
+    "typescript": "^4.5.2"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
+  "engines": {
+    "node": ">= 16.0.0"
+  },
+  "jest": {
+    "preset": "react-native",
+    "modulePathIgnorePatterns": [
+      "<rootDir>/example/node_modules",
+      "<rootDir>/lib/"
+    ]
+  },
+  "react-native-builder-bob": {
+    "source": "src",
+    "output": "lib",
+    "targets": [
+      "commonjs",
+      "module",
+      [
+        "typescript",
+        {
+          "project": "tsconfig.build.json"
+        }
+      ]
+    ]
+  },
+  "installConfig": {
+    "hoistingLimits": "workspaces"
+  }
+}

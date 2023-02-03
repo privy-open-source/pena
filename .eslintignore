@@ -128,3 +128,8 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# Spesific
+packages/pena-react-native/lib/
+packages/pena-svelte/package/
+packages/pena-svelte/.svelte-kit

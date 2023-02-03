@@ -1,0 +1,44 @@
+{
+  "name": "@privyid/pena-monorepo",
+  "packageManager": "yarn@3.3.1",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "lint": "eslint . --ext .js,.ts,.jsx,.tsx,.vue",
+    "fix": "yarn lint --fix",
+    "build": "yarn workspaces foreach -vtp run build",
+    "check": "yarn dlx @yarnpkg/doctor packages/",
+    "coverage": "yarn workspaces foreach -vtp run coverage"
+  },
+  "repository": "https://github.com/privy-open-source/pena",
+  "author": "Ade Novid <adenvt@gmail.com> (https://github.com/adenvt)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/privy-open-source/pena/issues"
+  },
+  "homepage": "https://github.com/privy-open-source/pena#readme",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@privyid/eslint-config-persona": "^0.7.0",
+    "@typescript-eslint/eslint-plugin": "^5.50.0",
+    "@typescript-eslint/parser": "^5.50.0",
+    "@vue/eslint-config-typescript": "^11.0.2",
+    "eslint": "^8.33.0",
+    "eslint-config-standard-with-typescript": "^34.0.0",
+    "eslint-formatter-pretty": "^4.1.0",
+    "eslint-plugin-align-assignments": "^1.1.2",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.6.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-unicorn": "^45.0.2",
+    "eslint-plugin-varspacing": "^1.2.2",
+    "eslint-plugin-vue": "^9.9.0"
+  }
+}

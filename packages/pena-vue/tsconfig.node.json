@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "allowSyntheticDefaultImports": true,
+    "strict": false,
+    "strictNullChecks": true
+  },
+  "include": [
+    "dev/**/*.ts",
+    "dev/**/*.d.ts",
+    "dev/**/*.tsx",
+    "dev/**/*.vue",
+    "vite.config.ts"
+  ]
+}
