@@ -1,12 +1,12 @@
 export interface Payload {
   /**
-   * Event type
+   * Action type
    */
-  event: string,
+  action: string,
   /**
    * Payload data
    */
-  payload: unknown,
+  data: unknown,
 }
 
 export type HookFn = (payload: Payload) => unknown
@@ -64,6 +64,17 @@ export interface PenaOption {
 
   /**
    * Signature placement position
+   * @example
+   * {
+   *  //...
+   *  signature: {
+   *    x: 100,
+   *    y: 200,
+   *    page: 1,
+   *    fixed: true,
+   *  }
+   *  //...
+   * }
    */
   signature?: Placement,
 
@@ -73,7 +84,14 @@ export interface PenaOption {
   onAfterAction?: HookFn,
 
   /**
-   * Enable debug mode
+   * Signature visibility
+   * @default true
    */
-  debug?: boolean
+  visibility?: boolean,
+
+  /**
+   * Enable debug mode
+   * @default false
+   */
+  debug?: boolean,
 }

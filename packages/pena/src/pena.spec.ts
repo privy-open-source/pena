@@ -1,6 +1,7 @@
 import { fireEvent, queryByTestId } from '@testing-library/dom'
 import { vi } from 'vitest'
 import * as Pena from './pena'
+import type { Payload } from './types'
 
 vi.mock('./utils/sticky.ts', () => ({ useSticky: vi.fn(() => vi.fn()) }))
 
@@ -146,6 +147,46 @@ it('should able to disabled move with option `signature.fixed` set to true', () 
   cleanUp()
 })
 
+it('should able to enable debug mode with option `debug` set to true', () => {
+  const container = document.createElement('div')
+
+  container.setAttribute('id', 'app')
+  document.body.append(container)
+
+  const cleanUp = Pena.docSign({
+    container: '#app',
+    url      : 'http://sign.document.com/123456',
+    debug    : true,
+  })
+
+  const iframe = queryByTestId(container, 'pena-iframe')
+
+  expect(iframe).toHaveProperty('src', 'http://sign.document.com/123456?debug=true')
+
+  container.remove()
+  cleanUp()
+})
+
+it('should able to set invisible signature with `visibility` set to false', () => {
+  const container = document.createElement('div')
+
+  container.setAttribute('id', 'app')
+  document.body.append(container)
+
+  const cleanUp = Pena.docSign({
+    container : '#app',
+    url       : 'http://sign.document.com/123456',
+    visibility: false,
+  })
+
+  const iframe = queryByTestId(container, 'pena-iframe')
+
+  expect(iframe).toHaveProperty('src', 'http://sign.document.com/123456?visibility=false')
+
+  container.remove()
+  cleanUp()
+})
+
 it('should call onAfterAction if got an action', () => {
   const container = document.createElement('div')
 
@@ -178,7 +219,7 @@ it('should call onAfterAction if got an action', () => {
   cleanUp()
 })
 
-it('should not cal onAfterAction if got an action from another', () => {
+it('should call onAfterAction if got an action (legacy)', () => {
   const container = document.createElement('div')
 
   container.setAttribute('id', 'app')
@@ -191,7 +232,37 @@ it('should not cal onAfterAction if got an action from another', () => {
     onAfterAction,
   })
 
-  const event = Object.assign(new MessageEvent('message'), {
+  const payload = { action: 'sign', data: { message: 'OK' } }
+  const event   = Object.assign(new MessageEvent('message'), {
+    origin: 'http://sign.document.com',
+    data  : { event: 'after-sign', data: payload },
+  })
+
+  fireEvent(window, event)
+
+  expect(onAfterAction).toBeCalledWith({
+    action: 'sign',
+    data  : { message: 'OK' },
+  })
+
+  container.remove()
+  cleanUp()
+})
+
+it('should not call onAfterAction if got an action from another', () => {
+  const container = document.createElement('div')
+
+  container.setAttribute('id', 'app')
+  document.body.append(container)
+
+  const onAfterAction = vi.fn()
+  const cleanUp       = Pena.docSign({
+    container: '#app',
+    url      : 'http://sign.document.com/123456',
+    onAfterAction,
+  })
+
+  const event = Object.assign(new MessageEvent<Payload>('message'), {
     origin: 'http://sign.document.com',
     data  : 'Hello World',
   })

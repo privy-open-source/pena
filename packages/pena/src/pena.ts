@@ -8,14 +8,14 @@ import type {
 } from './types'
 
 /**
- * @private
+ * CHeck is signature valid
  * @param signature
  */
 function isHavePlacement (signature?: Placement): signature is Required<Placement> {
-  return Boolean(signature
+  return signature !== undefined
     && Number.isFinite(signature.x)
     && Number.isFinite(signature.x)
-    && Number.isFinite(signature.page))
+    && Number.isFinite(signature.page)
 }
 
 /**
@@ -30,8 +30,8 @@ export function docSign (config: PenaOption): CleanupFn {
   if (!container)
     throw new Error('Cannot find target container')
 
-  let iframe: HTMLIFrameElement
   let url: URL
+  let iframe: HTMLIFrameElement
   let unsticky: ReturnType<typeof useSticky>
 
   function parseURL () {
@@ -51,6 +51,12 @@ export function docSign (config: PenaOption): CleanupFn {
         url.searchParams.set('fixed', config.signature.fixed ? 'true' : 'false')
       }
 
+      if (config.debug !== undefined)
+        url.searchParams.set('debug', JSON.stringify(config.debug))
+
+      if (config.visibility !== undefined)
+        url.searchParams.set('visibility', JSON.stringify(config.visibility))
+
       return url
     } catch {
       throw new Error(`Invalid URL: ${config.url}`)
@@ -58,11 +64,20 @@ export function docSign (config: PenaOption): CleanupFn {
   }
 
   function onMessage (event: MessageEvent) {
-    if (event.origin === url.origin && typeof event.data === 'string' && typeof config.onAfterAction === 'function') {
+    if (event.origin === url.origin && typeof config.onAfterAction === 'function') {
       try {
-        const payload: Payload = JSON.parse(event.data)
+        let payload: Payload | undefined
 
-        config.onAfterAction(payload)
+        // V1 Payload format
+        if (event.data.event && event.data.data)
+          payload = event.data.data
+
+        // V2 Payload format
+        if (typeof event.data === 'string')
+          payload = JSON.parse(event.data)
+
+        if (payload)
+          config.onAfterAction(payload)
       } catch (error) {
         console.warn(error)
       }

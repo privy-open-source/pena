@@ -4,6 +4,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "lint": "eslint . --ext .js,.ts,.jsx,.tsx,.vue",
+    "fix": "yarn lint --fix",
     "build": "yarn workspaces foreach -vtp run build",
     "check": "yarn dlx @yarnpkg/doctor packages/",
     "coverage": "yarn workspaces foreach -vtp run coverage"

@@ -15,7 +15,6 @@
 - [x] Install for Svelte
 - [x] Install for React
 - [x] Install for React Native
-- [ ] Install for Angular
 
 ## License
 
