@@ -47,7 +47,19 @@ Pena.docSign({
 
 ## Option
 
-Coming Soon...
+| Options       | Type     | Default | Description                                      |
+|---------------|----------|---------|--------------------------------------------------|
+| url           | string   | -       | **(Required)** Document's url                    |
+| target        | string   | `.pena` | Container query selector                         |
+| lang          | string   | `en`    | Set language, valid value is `en` or `id`        |
+| layout        | string   | `fixed` | Set layout mode, valid value is `fixed` or `fit` |
+| debug         | boolean  | `false` | Enable debug mode                                |
+| visibility    | boolean  | `true`  | Set signature visibility                         |
+| onAfterAction | function | -       | After action hook                                |
+
+
+
+
 
 ## Migration from [privy-sdk](https://www.npmjs.com/package/privy-sdk)
 
