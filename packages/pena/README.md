@@ -28,7 +28,7 @@ Not very recommended, but you can use Pena with CDN, just add this in your HTML:
 ## Usage
 
 ```js
-import Pena from '@privyid/pena' // Require If install via Package Manager
+import Pena from '@privyid/pena' // Require If installed via Package Manager
 
 Pena.docSign({
   target       : '#app',                                // Target container
@@ -38,7 +38,7 @@ Pena.docSign({
   onAfterAction: (data) => {
     // Do something after action (sign, review, etc) done
     // example: redirect to specific location after sign
-    if (data.event === 'sign') {
+    if (data.action === 'sign') {
       location.href = '/somepath'
     }
   },
@@ -63,6 +63,49 @@ Pena.docSign({
 
 ## Migration from [privy-sdk](https://www.npmjs.com/package/privy-sdk)
 
+1. Change package from `privy-sdk` to `@privyid/pena`
+```js
+import Privy from 'privy-sdk'
+
+// Change to
+
+import Pena from '@privyid/pena'
+```
+2. Parameter `doctoken` now is changed to fullpath `url`.
+```js
+Privy.signDoc('doctokenXXXX')
+
+// Change to
+
+Pena.docSign({
+  url: 'https://sign.privy.id/doc/doctokenXXXX',
+})
+```
+3. Option `dev` is removed, environment between dev or production is follow the base url.
+    - **production**: `https://sign.privy.id/`
+    - **development**: `https://stg-sign.privy.id/`
+4. Hook `.on('after-action')`, `.on('after-sign')` and `.on('after-review')` is unified into option `onAfterAction`
+```js
+Privy.signDoc(/* .... */)
+  .on('after-sign', () => { })
+  .on('after-review', () => { })
+  .on('after-action', () => { })
+
+// Change to
+
+Pena.docSign({
+  url: 'https://sign.privy.id/doc/doctokenXXXX',
+  onAfterAction (data) {
+    if (data.action === 'sign') {
+      // Do something after sign
+    }
+    
+    if (data.action === 'review') {
+      // Do something after sign
+    }
+  }
+})
+```
 ## License
 
 MIT License
