@@ -2800,7 +2800,7 @@ __metadata:
     tslib: ^2.4.1
     typescript: ^4.9.3
     vite: ^4.0.0
-    vitest: ^0.25.3
+    vitest: ^0.28.0
   peerDependencies:
     svelte: "*"
   languageName: unknown
@@ -14976,7 +14976,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tinypool@npm:^0.3.0, tinypool@npm:^0.3.1":
+"tinypool@npm:^0.3.1":
   version: 0.3.1
   resolution: "tinypool@npm:0.3.1"
   checksum: 23af5f3889ccab1619a0459748bd419db52b5cbdfd409241f8d42993ace485af5fa4eb3d945e5c37f4b90690b727b7858696967b00b4292149b5d71fb5848185
@@ -15859,48 +15859,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vitest@npm:^0.25.3":
-  version: 0.25.8
-  resolution: "vitest@npm:0.25.8"
-  dependencies:
-    "@types/chai": ^4.3.4
-    "@types/chai-subset": ^1.3.3
-    "@types/node": "*"
-    acorn: ^8.8.1
-    acorn-walk: ^8.2.0
-    chai: ^4.3.7
-    debug: ^4.3.4
-    local-pkg: ^0.4.2
-    source-map: ^0.6.1
-    strip-literal: ^1.0.0
-    tinybench: ^2.3.1
-    tinypool: ^0.3.0
-    tinyspy: ^1.0.2
-    vite: ^3.0.0 || ^4.0.0
-  peerDependencies:
-    "@edge-runtime/vm": "*"
-    "@vitest/browser": "*"
-    "@vitest/ui": "*"
-    happy-dom: "*"
-    jsdom: "*"
-  peerDependenciesMeta:
-    "@edge-runtime/vm":
-      optional: true
-    "@vitest/browser":
-      optional: true
-    "@vitest/ui":
-      optional: true
-    happy-dom:
-      optional: true
-    jsdom:
-      optional: true
-  bin:
-    vitest: vitest.mjs
-  checksum: 2444dc04c87c261fcd43e1e240e5c62d6e96d0b52c0142f30200fde1078e97afad7cc6dd3163aa520ef4b0584f02cecfcc676300cb839e4470751403f54d2623
-  languageName: node
-  linkType: hard
-
-"vitest@npm:^0.28.4":
+"vitest@npm:^0.28.0, vitest@npm:^0.28.4":
   version: 0.28.4
   resolution: "vitest@npm:0.28.4"
   dependencies:
