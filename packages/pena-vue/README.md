@@ -7,7 +7,7 @@
 **NPM**
 
 ```bash
-npm install @privyid/pena-vue
+npm install --save @privyid/pena-vue
 ```
 
 **Yarn**

@@ -1,4 +1,4 @@
-# Pena ❤️ Svelte
+# Pena 🧡 Svelte
 
 > Pena plugin for Svelte
 
@@ -7,7 +7,7 @@
 **NPM**
 
 ```bash
-npm install @privyid/pena-svelte
+npm install --save @privyid/pena-svelte
 ```
 
 **Yarn**

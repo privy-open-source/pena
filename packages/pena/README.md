@@ -2,14 +2,12 @@
 
 > Official PrivyID Sign SDK
 
-## Getting Started
-
-### Install using Package Manager
+## Installation
 
 **NPM**
 
 ```bash
-npm install @privyid/pena
+npm install --save @privyid/pena
 ```
 
 **Yarn**
@@ -17,25 +15,17 @@ npm install @privyid/pena
 yarn add @privyid/pena
 ```
 
-### Install using CDN
-
-Not very recommended, but you can use Pena with CDN, just add this in your HTML:
-
-```html
-<script src="https://unpkg.com/@privyid/pena"></script>
-```
-
 ## Usage
 
 ```js
-import Pena from '@privyid/pena' // Require If installed via Package Manager
+import Pena from '@privyid/pena'
 
 Pena.openDoc({
-  target   : '#app',                                // Target container
+  container: '#app',                                // Target container
   url      : 'https://sign.privy.id/doc/xxxxxxx',   // Document URL
   lang     : 'en',                                  // Set language, 'en' or 'id'
   layout   : 'fixed',                               // Set layout mode, 'fixed' or 'fit'
-  signature: {                                      // Set placement
+  signature: {
     x    : 100,
     y    : 200,
     page : 1,
@@ -56,7 +46,7 @@ Pena.openDoc({
 | Options         | Type     | Default | Description                                                                                                  |
 |-----------------|----------|:-------:|--------------------------------------------------------------------------------------------------------------|
 | `url`           | string   |    -    | **(Required)** Document's url                                                                                |
-| `target`        | string   | `.pena` | Container query selector                                                                                     |
+| `container`     | string   | `.pena` | Target's query selector                                                                                      |
 | `lang`          | string   |  `en`   | Set language, valid value is `en` or `id`                                                                    |
 | `layout`        | string   | `fixed` | Set layout mode, valid value is `fixed` or `fit`                                                             |
 | `visibility`    | boolean  | `true`  | Set signature visibility                                                                                     |
@@ -68,6 +58,14 @@ Pena.openDoc({
 | └ `fixed`       | boolean  | `false` | Disabled signature for moving                                                                                |
 | `debug`         | boolean  | `false` | Enable debug mode                                                                                            |
 | `onAfterAction` | function |    -    | After action hook                                                                                            |
+
+## Using CDN
+
+Not very recommended, but you can also use Pena with CDN, just add this in your HTML:
+
+```html
+<script src="https://unpkg.com/@privyid/pena"></script>
+```
 
 ## Migration from [privy-sdk](https://www.npmjs.com/package/privy-sdk)
 
@@ -115,6 +113,13 @@ Pena.openDoc({
   // ...
 })
 ```
+5. Pena introduce new layout mode `fixed`, which used as the default. If you prefer to keep old behaviour. Set layout to `fit`.
+```js
+Pena.openDoc({
+  layout: 'fit',
+})
+```
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](/LICENSE) file for details

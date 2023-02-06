@@ -2,4 +2,4 @@
 
 > Shared utilities for Pena Project
 
-This is part of Pena Project, it's not intended for independent use.
+This is part of [Pena Project](https://github.com/privy-open-source/pena), it's not intended for independent use.

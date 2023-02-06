@@ -23,6 +23,9 @@
     "test": "vitest",
     "coverage": "vitest run --coverage"
   },
+  "dependencies": {
+    "@privyid/pena-utils": "workspace:^"
+  },
   "devDependencies": {
     "@testing-library/dom": "^8.20.0",
     "@testing-library/jest-dom": "^5.16.5",
@@ -36,8 +39,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "dependencies": {
-    "@privyid/pena-utils": "workspace:^"
   }
 }

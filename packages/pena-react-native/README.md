@@ -1,30 +1,52 @@
-# react-native-pena-react-native
+# Pena 🖤 React Native
 
-Pena for React Native
+> Pena plugin for React Native
 
 ## Installation
 
-```sh
-npm install react-native-pena-react-native
+**NPM**
+
+```bash
+npm install --save @privyid/pena-react-native
+```
+
+**Yarn**
+```bash
+yarn add @privyid/pena-react-native
 ```
 
 ## Usage
 
-```js
-import { multiply } from 'react-native-pena-react-native';
+```tsx
+import Pena from '@privyid/pena-react-native'
 
-// ...
-
-const result = await multiply(3, 7);
+export default function App () {
+  return (
+    <Pena
+      url="http://sign.document.com/doc/xxx"
+      lang="en"
+      signature={{
+        x    : 100,
+        y    : 200,
+        page : 1,
+        fixed: false,
+      }}
+      onAfterAction={(event) => {
+        // Do something after action (sign, review, etc) done
+        // example: redirect to specific location after sign
+        if (event.action === 'sign') {
+          location.href = '/somepath'
+        }
+      }}
+    />
+  )
+}
 ```
-
-## Contributing
-
-See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
 
 ## License
 
-MIT
+This project is licensed under the MIT License - see the [LICENSE](/LICENSE) file for details
+
 
 ---
 

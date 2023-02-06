@@ -7,7 +7,7 @@
 **NPM**
 
 ```bash
-npm install @privyid/pena-react
+npm install --save @privyid/pena-react
 ```
 
 **Yarn**

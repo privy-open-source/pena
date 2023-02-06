@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import Pena from '@privyid/pena-react-native'
 import {
   StyleSheet,
