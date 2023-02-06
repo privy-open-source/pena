@@ -14,7 +14,7 @@ import type {
 export function isHavePlacement (signature?: unknown): signature is Required<Placement> {
   return signature !== undefined
     && Number.isFinite((signature as Placement).x)
-    && Number.isFinite((signature as Placement).x)
+    && Number.isFinite((signature as Placement).y)
     && Number.isFinite((signature as Placement).page)
 }
 
