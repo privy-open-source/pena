@@ -1,36 +1,13 @@
 import React, { type FC, useMemo } from 'react'
 import { WebView, type WebViewMessageEvent } from 'react-native-webview'
-import type {
-  Payload,
-  PenaOption,
-  Placement,
+import Pena, {
+  type Payload,
+  type PenaOption,
 } from '@privyid/pena'
-
-function isHaveSignature (signature?: Placement): signature is Required<Placement> {
-  return Boolean(signature
-    && Number.isFinite(signature.x)
-    && Number.isFinite(signature.x)
-    && Number.isFinite(signature.page))
-}
 
 const PenaReact: FC<Omit<PenaOption, 'container' | 'layout'>> = (props) => {
   const url = useMemo(() => {
-    const result = new URL(props.url)
-
-    if (props.lang)
-      result.searchParams.set('lang', props.lang)
-
-    if (props.privyId)
-      result.searchParams.set('privyId', props.privyId)
-
-    if (isHaveSignature(props.signature)) {
-      result.searchParams.set('x', props.signature.x.toString())
-      result.searchParams.set('y', props.signature.y.toString())
-      result.searchParams.set('page', props.signature.page.toString())
-      result.searchParams.set('fixed', props.signature.fixed ? 'true' : 'false')
-    }
-
-    return result
+    return Pena.createURL(props)
   }, [props])
 
   function onMessage (event: WebViewMessageEvent) {

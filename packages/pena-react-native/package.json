@@ -29,11 +29,12 @@
   ],
   "scripts": {
     "dev": "yarn --cwd dev/ expo start dev/",
+    "build": "bob build",
     "test": "jest",
     "typecheck": "tsc --noEmit",
     "lint": "eslint . --ext .js,.vue,.ts,.tsx",
     "fix": "yarn lint --fix",
-    "prepack": "bob build",
+    "prepack": "yarn build",
     "release": "release-it",
     "example": "yarn --cwd dev",
     "bootstrap": "yarn example && yarn install"
@@ -49,17 +50,17 @@
   "bugs": {
     "url": "https://github.com/privy-open-source/pena/issues"
   },
-  "dependencies": {
-    "react-native-webview": "^11.26.1"
-  },
   "homepage": "https://github.com/privy-open-source/pena#readme",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
+  "dependencies": {
+    "@privyid/pena": "workspace:^",
+    "react-native-webview": "^11.26.1"
+  },
   "devDependencies": {
     "@privyid/eslint-config-persona": "^0.7.0",
-    "@privyid/pena": "workspace:^",
     "@react-native-community/eslint-config": "^3.0.2",
     "@release-it/conventional-changelog": "^5.0.0",
     "@types/jest": "^28.1.2",

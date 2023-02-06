@@ -5,312 +5,278 @@ import type { Payload } from './types'
 
 vi.mock('./utils/sticky.ts', () => ({ useSticky: vi.fn(() => vi.fn()) }))
 
-it('should render iframe to target', () => {
-  const container = document.createElement('div')
-
-  document.body.append(container)
-
-  const cleanUp = Pena.docSign({
-    container,
-    url: 'http://sign.document.com/123456',
-  })
-
-  const iframe = queryByTestId(container, 'pena-iframe')
-
-  expect(iframe).toBeInTheDocument()
-
-  container.remove()
-  cleanUp()
-})
-
-it('should able to use query selector as target', () => {
-  const container = document.createElement('div')
-
-  container.setAttribute('id', 'app')
-  document.body.append(container)
-
-  const cleanUp = Pena.docSign({
-    container: '#app',
-    url      : 'http://sign.document.com/123456',
-  })
-
-  const iframe = queryByTestId(container, 'pena-iframe')
-
-  expect(iframe).toBeInTheDocument()
-
-  container.remove()
-  cleanUp()
-})
-
-it('should search `.pena` if target not set', () => {
-  const container = document.createElement('div')
-
-  container.setAttribute('class', 'pena')
-  document.body.append(container)
-
-  const cleanUp = Pena.docSign({ url: 'http://sign.document.com/123456' })
-
-  const iframe = queryByTestId(container, 'pena-iframe')
-
-  expect(iframe).toBeInTheDocument()
-
-  container.remove()
-  cleanUp()
-})
-
-it('should able to set lang with option `lang`', () => {
-  const container = document.createElement('div')
-
-  container.setAttribute('id', 'app')
-  document.body.append(container)
-
-  const cleanUp = Pena.docSign({
-    container: '#app',
-    url      : 'http://sign.document.com/123456',
-    lang     : 'id',
-  })
-
-  const iframe = queryByTestId(container, 'pena-iframe')
-
-  expect(iframe).toHaveProperty('src', 'http://sign.document.com/123456?lang=id')
-
-  container.remove()
-  cleanUp()
-})
-
-it('should able to set privyId with option `privyId`', () => {
-  const container = document.createElement('div')
-
-  container.setAttribute('id', 'app')
-  document.body.append(container)
-
-  const cleanUp = Pena.docSign({
-    container: '#app',
-    url      : 'http://sign.document.com/123456',
-    privyId  : 'UAT001',
-  })
-
-  const iframe = queryByTestId(container, 'pena-iframe')
-
-  expect(iframe).toHaveProperty('src', 'http://sign.document.com/123456?privyId=UAT001')
-
-  container.remove()
-  cleanUp()
-})
-
-it('should able to add placement signature with option `signature`', () => {
-  const container = document.createElement('div')
-
-  container.setAttribute('id', 'app')
-  document.body.append(container)
-
-  const cleanUp = Pena.docSign({
-    container: '#app',
-    url      : 'http://sign.document.com/123456',
-    signature: {
+describe('isHavePlacement', () => {
+  it('should return true if value have property `x`, `y`, `page`', () => {
+    const result = Pena.isHavePlacement({
       x   : 50,
-      y   : 100,
+      y   : 30,
       page: 1,
-    },
+    })
+
+    expect(result).toBe(true)
   })
 
-  const iframe = queryByTestId(container, 'pena-iframe')
+  it('should return false if value is undefined', () => {
+    const result = Pena.isHavePlacement()
 
-  expect(iframe).toHaveProperty('src', 'http://sign.document.com/123456?x=50&y=100&page=1&fixed=false')
+    expect(result).toBe(false)
+  })
 
-  container.remove()
-  cleanUp()
+  it('should return false if value is only have partial', () => {
+    const result = Pena.isHavePlacement({
+      x   : 50,
+      page: 1,
+    })
+
+    expect(result).toBe(false)
+  })
 })
 
-it('should able to disabled move with option `signature.fixed` set to true', () => {
-  const container = document.createElement('div')
+describe('createURL', () => {
+  it('should able to set lang with option `lang`', () => {
+    const url = Pena.createURL({
+      url : 'http://sign.document.com/123456',
+      lang: 'id',
+    })
 
-  container.setAttribute('id', 'app')
-  document.body.append(container)
-
-  const cleanUp = Pena.docSign({
-    container: '#app',
-    url      : 'http://sign.document.com/123456',
-    signature: {
-      x    : 50,
-      y    : 100,
-      page : 1,
-      fixed: true,
-    },
+    expect(url.href).toBe('http://sign.document.com/123456?lang=id')
   })
 
-  const iframe = queryByTestId(container, 'pena-iframe')
+  it('should able to set privyId with option `privyId`', () => {
+    const url = Pena.createURL({
+      url    : 'http://sign.document.com/123456',
+      privyId: 'UAT001',
+    })
 
-  expect(iframe).toHaveProperty('src', 'http://sign.document.com/123456?x=50&y=100&page=1&fixed=true')
+    expect(url.href).toBe('http://sign.document.com/123456?privyId=UAT001')
+  })
 
-  container.remove()
-  cleanUp()
+  it('should able to add placement signature with option `signature`', () => {
+    const url = Pena.createURL({
+      url      : 'http://sign.document.com/123456',
+      signature: {
+        x   : 50,
+        y   : 100,
+        page: 1,
+      },
+    })
+
+    expect(url.href).toBe('http://sign.document.com/123456?x=50&y=100&page=1&fixed=false')
+  })
+
+  it('should able to disabled move with option `signature.fixed` set to true', () => {
+    const url = Pena.createURL({
+      container: '#app',
+      url      : 'http://sign.document.com/123456',
+      signature: {
+        x    : 50,
+        y    : 100,
+        page : 1,
+        fixed: true,
+      },
+    })
+
+    expect(url.href).toBe('http://sign.document.com/123456?x=50&y=100&page=1&fixed=true')
+  })
+
+  it('should able to enable debug mode with option `debug` set to true', () => {
+    const url = Pena.createURL({
+      url  : 'http://sign.document.com/123456',
+      debug: true,
+    })
+
+    expect(url.href).toBe('http://sign.document.com/123456?debug=true')
+  })
+
+  it('should able to set invisible signature with `visibility` set to false', () => {
+    const url = Pena.createURL({
+      url       : 'http://sign.document.com/123456',
+      visibility: false,
+    })
+
+    expect(url.href).toBe('http://sign.document.com/123456?visibility=false')
+  })
 })
 
-it('should able to enable debug mode with option `debug` set to true', () => {
-  const container = document.createElement('div')
+describe('openDoc', () => {
+  it('should render iframe to target', () => {
+    const container = document.createElement('div')
 
-  container.setAttribute('id', 'app')
-  document.body.append(container)
+    document.body.append(container)
 
-  const cleanUp = Pena.docSign({
-    container: '#app',
-    url      : 'http://sign.document.com/123456',
-    debug    : true,
+    const cleanUp = Pena.openDoc({
+      container,
+      url: 'http://sign.document.com/123456',
+    })
+
+    const iframe = queryByTestId(container, 'pena-iframe')
+
+    expect(iframe).toBeInTheDocument()
+
+    container.remove()
+    cleanUp()
   })
 
-  const iframe = queryByTestId(container, 'pena-iframe')
+  it('should able to use query selector as target', () => {
+    const container = document.createElement('div')
 
-  expect(iframe).toHaveProperty('src', 'http://sign.document.com/123456?debug=true')
+    container.setAttribute('id', 'app')
+    document.body.append(container)
 
-  container.remove()
-  cleanUp()
-})
+    const cleanUp = Pena.openDoc({
+      container: '#app',
+      url      : 'http://sign.document.com/123456',
+    })
 
-it('should able to set invisible signature with `visibility` set to false', () => {
-  const container = document.createElement('div')
+    const iframe = queryByTestId(container, 'pena-iframe')
 
-  container.setAttribute('id', 'app')
-  document.body.append(container)
+    expect(iframe).toBeInTheDocument()
 
-  const cleanUp = Pena.docSign({
-    container : '#app',
-    url       : 'http://sign.document.com/123456',
-    visibility: false,
+    container.remove()
+    cleanUp()
   })
 
-  const iframe = queryByTestId(container, 'pena-iframe')
+  it('should search `.pena` if target not set', () => {
+    const container = document.createElement('div')
 
-  expect(iframe).toHaveProperty('src', 'http://sign.document.com/123456?visibility=false')
+    container.setAttribute('class', 'pena')
+    document.body.append(container)
 
-  container.remove()
-  cleanUp()
-})
+    const cleanUp = Pena.openDoc({ url: 'http://sign.document.com/123456' })
 
-it('should call onAfterAction if got an action', () => {
-  const container = document.createElement('div')
+    const iframe = queryByTestId(container, 'pena-iframe')
 
-  container.setAttribute('id', 'app')
-  document.body.append(container)
+    expect(iframe).toBeInTheDocument()
 
-  const onAfterAction = vi.fn()
-  const cleanUp       = Pena.docSign({
-    container: '#app',
-    url      : 'http://sign.document.com/123456',
-    onAfterAction,
+    container.remove()
+    cleanUp()
   })
 
-  const event = Object.assign(new MessageEvent('message'), {
-    origin: 'http://sign.document.com',
-    data  : JSON.stringify({
+  it('should call onAfterAction if got an action', () => {
+    const container = document.createElement('div')
+
+    container.setAttribute('id', 'app')
+    document.body.append(container)
+
+    const onAfterAction = vi.fn()
+    const cleanUp       = Pena.openDoc({
+      container: '#app',
+      url      : 'http://sign.document.com/123456',
+      onAfterAction,
+    })
+
+    const event = Object.assign(new MessageEvent('message'), {
+      origin: 'http://sign.document.com',
+      data  : JSON.stringify({
+        event  : 'sign',
+        payload: { message: 'OK' },
+      }),
+    })
+
+    fireEvent(window, event)
+
+    expect(onAfterAction).toBeCalledWith({
       event  : 'sign',
       payload: { message: 'OK' },
-    }),
-  })
-
-  fireEvent(window, event)
-
-  expect(onAfterAction).toBeCalledWith({
-    event  : 'sign',
-    payload: { message: 'OK' },
-  })
-
-  container.remove()
-  cleanUp()
-})
-
-it('should call onAfterAction if got an action (legacy)', () => {
-  const container = document.createElement('div')
-
-  container.setAttribute('id', 'app')
-  document.body.append(container)
-
-  const onAfterAction = vi.fn()
-  const cleanUp       = Pena.docSign({
-    container: '#app',
-    url      : 'http://sign.document.com/123456',
-    onAfterAction,
-  })
-
-  const payload = { action: 'sign', data: { message: 'OK' } }
-  const event   = Object.assign(new MessageEvent('message'), {
-    origin: 'http://sign.document.com',
-    data  : { event: 'after-sign', data: payload },
-  })
-
-  fireEvent(window, event)
-
-  expect(onAfterAction).toBeCalledWith({
-    action: 'sign',
-    data  : { message: 'OK' },
-  })
-
-  container.remove()
-  cleanUp()
-})
-
-it('should not call onAfterAction if got an action from another', () => {
-  const container = document.createElement('div')
-
-  container.setAttribute('id', 'app')
-  document.body.append(container)
-
-  const onAfterAction = vi.fn()
-  const cleanUp       = Pena.docSign({
-    container: '#app',
-    url      : 'http://sign.document.com/123456',
-    onAfterAction,
-  })
-
-  const event = Object.assign(new MessageEvent<Payload>('message'), {
-    origin: 'http://sign.document.com',
-    data  : 'Hello World',
-  })
-
-  fireEvent(window, event)
-
-  expect(onAfterAction).not.toBeCalled()
-
-  container.remove()
-  cleanUp()
-})
-
-it('should use sticky layout if option layout set to `fit`', () => {
-  const container = document.createElement('div')
-
-  container.setAttribute('id', 'app')
-  document.body.append(container)
-
-  const cleanUp = Pena.docSign({
-    container: '#app',
-    url      : 'http://sign.document.com/123456',
-    layout   : 'fit',
-  })
-
-  const iframe = queryByTestId(container, 'pena-iframe')
-
-  expect(iframe).toHaveAttribute('data-layout', 'fit')
-
-  container.remove()
-  cleanUp()
-})
-
-it('should throw an error if target container not found', () => {
-  expect(() => {
-    Pena.docSign({ url: 'http://sign.document.com/123456' })
-  }).toThrowError('Cannot find target container')
-})
-
-it('should throw an error if url is invalid', () => {
-  const container = document.createElement('div')
-
-  container.setAttribute('id', 'app')
-  document.body.append(container)
-
-  expect(() => {
-    Pena.docSign({
-      container: '#app',
-      url      : '123456',
     })
-  }).toThrowError('Invalid URL:')
+
+    container.remove()
+    cleanUp()
+  })
+
+  it('should call onAfterAction if got an action (legacy)', () => {
+    const container = document.createElement('div')
+
+    container.setAttribute('id', 'app')
+    document.body.append(container)
+
+    const onAfterAction = vi.fn()
+    const cleanUp       = Pena.openDoc({
+      container: '#app',
+      url      : 'http://sign.document.com/123456',
+      onAfterAction,
+    })
+
+    const payload = { action: 'sign', data: { message: 'OK' } }
+    const event   = Object.assign(new MessageEvent('message'), {
+      origin: 'http://sign.document.com',
+      data  : { event: 'after-sign', data: payload },
+    })
+
+    fireEvent(window, event)
+
+    expect(onAfterAction).toBeCalledWith({
+      action: 'sign',
+      data  : { message: 'OK' },
+    })
+
+    container.remove()
+    cleanUp()
+  })
+
+  it('should not call onAfterAction if got an action from another', () => {
+    const container = document.createElement('div')
+
+    container.setAttribute('id', 'app')
+    document.body.append(container)
+
+    const onAfterAction = vi.fn()
+    const cleanUp       = Pena.openDoc({
+      container: '#app',
+      url      : 'http://sign.document.com/123456',
+      onAfterAction,
+    })
+
+    const event = Object.assign(new MessageEvent<Payload>('message'), {
+      origin: 'http://sign.document.com',
+      data  : 'Hello World',
+    })
+
+    fireEvent(window, event)
+
+    expect(onAfterAction).not.toBeCalled()
+
+    container.remove()
+    cleanUp()
+  })
+
+  it('should use sticky layout if option layout set to `fit`', () => {
+    const container = document.createElement('div')
+
+    container.setAttribute('id', 'app')
+    document.body.append(container)
+
+    const cleanUp = Pena.openDoc({
+      container: '#app',
+      url      : 'http://sign.document.com/123456',
+      layout   : 'fit',
+    })
+
+    const iframe = queryByTestId(container, 'pena-iframe')
+
+    expect(iframe).toHaveAttribute('data-layout', 'fit')
+
+    container.remove()
+    cleanUp()
+  })
+
+  it('should throw an error if target container not found', () => {
+    expect(() => {
+      Pena.openDoc({ url: 'http://sign.document.com/123456' })
+    }).toThrowError('Cannot find target container')
+  })
+
+  it('should throw an error if url is invalid', () => {
+    const container = document.createElement('div')
+
+    container.setAttribute('id', 'app')
+    document.body.append(container)
+
+    expect(() => {
+      Pena.openDoc({
+        container: '#app',
+        url      : '123456',
+      })
+    }).toThrowError('Invalid URL:')
+  })
 })

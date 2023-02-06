@@ -10,6 +10,7 @@ module.exports = function (api) {
       [
         'module-resolver',
         {
+          root      : ['./src/'],
           extensions: [
             '.tsx',
             '.ts',
@@ -18,7 +19,8 @@ module.exports = function (api) {
           ],
           alias: {
             // For development, we want to alias the library to the source
-            [pak.name]: path.join(__dirname, '..', pak.source),
+            [pak.name]     : path.join(__dirname, '..', pak.source),
+            '@privyid/pena': require.resolve('../../pena/'),
           },
         },
       ],

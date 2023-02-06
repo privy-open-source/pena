@@ -10,7 +10,7 @@ const PenaReact: FC<Omit<PenaOption, 'container'>> = (props) => {
 
   useEffect(() => {
     if (target.current) {
-      const cleanup = Pena.docSign({
+      const cleanup = Pena.openDoc({
         container    : target.current,
         url          : props.url,
         lang         : props.lang,

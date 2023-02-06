@@ -12,7 +12,7 @@ const PenaVue: FunctionalComponent<Omit<PenaOption, 'container'>> = (props) => {
 
   watchEffect((onCleanUp) => {
     if (target.value) {
-      const cleanup = Pena.docSign({
+      const cleanup = Pena.openDoc({
         container    : target.value,
         url          : props.url,
         lang         : props.lang,

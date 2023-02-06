@@ -64,6 +64,7 @@ export interface PenaOption {
 
   /**
    * Signature placement position
+   * @deprecated use API to set placement when upload the document instead
    * @example
    * {
    *  //...
