@@ -12,7 +12,7 @@ module.exports = {
   ...defaultConfig,
 
   projectRoot : __dirname,
-  watchFolders: [root],
+  watchFolders: [root, path.resolve(__dirname, '../../pena-utils/')],
 
   // We need to make sure that only one version is loaded for peerDependencies
   // So we block them at the root, and alias them to the versions in example's node_modules

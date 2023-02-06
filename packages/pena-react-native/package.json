@@ -28,7 +28,7 @@
     "!**/.*"
   ],
   "scripts": {
-    "dev": "yarn --cwd dev/ expo start dev/",
+    "dev": "cd dev && yarn dev",
     "build": "bob build",
     "test": "jest",
     "typecheck": "tsc --noEmit",
@@ -56,11 +56,12 @@
     "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
-    "@privyid/pena": "workspace:^",
+    "@privyid/pena-utils": "workspace:^",
     "react-native-webview": "^11.26.1"
   },
   "devDependencies": {
     "@privyid/eslint-config-persona": "^0.7.0",
+    "@privyid/pena": "workspace:^",
     "@react-native-community/eslint-config": "^3.0.2",
     "@release-it/conventional-changelog": "^5.0.0",
     "@types/jest": "^28.1.2",

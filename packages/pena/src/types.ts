@@ -1,3 +1,5 @@
+import type { UrlParams } from '@privyid/pena-utils'
+
 export interface Payload {
   /**
    * Action type
@@ -33,11 +35,7 @@ export interface Placement {
   fixed?: boolean,
 }
 
-export interface PenaOption {
-  /**
-   * Document URL
-   */
-  url: string,
+export interface PenaOption extends UrlParams {
 
   /**
    * Target container
@@ -52,47 +50,7 @@ export interface PenaOption {
   layout?: 'fixed' | 'fit',
 
   /**
-   * Recipient PrivyID
-   */
-  privyId?: string,
-
-  /**
-   * Language set
-   * @default 'en'
-   */
-  lang?: 'en' | 'id',
-
-  /**
-   * Signature placement position
-   * @deprecated use API to set placement when upload the document instead
-   * @example
-   * {
-   *  //...
-   *  signature: {
-   *    x: 100,
-   *    y: 200,
-   *    page: 1,
-   *    fixed: true,
-   *  }
-   *  //...
-   * }
-   */
-  signature?: Placement,
-
-  /**
    * After action (sign, review, etc) hook
    */
   onAfterAction?: HookFn,
-
-  /**
-   * Signature visibility
-   * @default true
-   */
-  visibility?: boolean,
-
-  /**
-   * Enable debug mode
-   * @default false
-   */
-  debug?: boolean,
 }

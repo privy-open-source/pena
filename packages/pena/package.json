@@ -36,5 +36,8 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "@privyid/pena-utils": "workspace:^"
   }
 }

@@ -1,55 +1,11 @@
 import { createIframe } from './utils/iframe'
 import { useSticky } from './utils/sticky'
+import { createURL } from '@privyid/pena-utils'
 import type {
   Payload,
-  Placement,
   CleanupFn,
   PenaOption,
 } from './types'
-
-/**
- * Check is signature valid
- * @param signature
- */
-export function isHavePlacement (signature?: unknown): signature is Required<Placement> {
-  return signature !== undefined
-    && Number.isFinite((signature as Placement).x)
-    && Number.isFinite((signature as Placement).y)
-    && Number.isFinite((signature as Placement).page)
-}
-
-/**
- * Generate url from config
- * @param config Options
- */
-export function createURL (config: PenaOption): URL {
-  try {
-    const url = new URL(config.url)
-
-    if (config.lang)
-      url.searchParams.set('lang', config.lang)
-
-    if (config.privyId)
-      url.searchParams.set('privyId', config.privyId)
-
-    if (isHavePlacement(config.signature)) {
-      url.searchParams.set('x', config.signature.x.toString())
-      url.searchParams.set('y', config.signature.y.toString())
-      url.searchParams.set('page', config.signature.page.toString())
-      url.searchParams.set('fixed', config.signature.fixed ? 'true' : 'false')
-    }
-
-    if (config.debug !== undefined)
-      url.searchParams.set('debug', JSON.stringify(config.debug))
-
-    if (config.visibility !== undefined)
-      url.searchParams.set('visibility', JSON.stringify(config.visibility))
-
-    return url
-  } catch {
-    throw new Error(`Invalid URL: ${config.url}`)
-  }
-}
 
 /**
  * Create signing page
