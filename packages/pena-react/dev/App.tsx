@@ -1,18 +1,17 @@
-import type Pena from '@privyid/pena'
-import { useState } from 'react'
-import PenaReact from '../src'
+import React, { useState } from 'react'
+import PenaReact, { type Payload } from '..'
 
 function App () {
   const url                       = new URL('dev/testpage.html', location.origin).href
   const [layoutFit, setLayoutFit] = useState(false)
 
-  function changeUrl () {
+  function changeLayout () {
     setLayoutFit((value) => !value)
   }
 
-  function onAfterAction (data: Pena.Payload) {
+  function onAfterAction (event: Payload) {
     // eslint-disable-next-line no-console
-    console.log(data.event, data.payload)
+    console.log(event.action, event.data)
   }
 
   return (
@@ -24,7 +23,7 @@ function App () {
           onAfterAction={onAfterAction} />
       </div>
       <div style={{ width: '50%' }}>
-        <button onClick={changeUrl}>Change URL</button>
+        <button onClick={changeLayout}>Change Layout</button>
       </div>
     </div>
   )

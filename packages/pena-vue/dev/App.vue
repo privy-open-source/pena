@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { Pena } from '../src'
+import { Pena, type Payload } from '..'
 
 const url       = new URL('dev/testpage.html', location.origin).href
 const layoutFit = ref(false)
 
-function onAfterAction (data: unknown) {
+function onAfterAction (data: Payload) {
   // eslint-disable-next-line no-console
-  console.log(data)
+  console.log(data.action, data.data)
 }
 </script>
 

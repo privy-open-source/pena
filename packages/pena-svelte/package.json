@@ -23,5 +23,8 @@
   "type": "module",
   "dependencies": {
     "@privyid/pena": "workspace:^"
+  },
+  "peerDependencies": {
+    "svelte": "*"
   }
 }

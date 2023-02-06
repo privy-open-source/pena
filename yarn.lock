@@ -2734,6 +2734,7 @@ __metadata:
   dependencies:
     "@privyid/eslint-config-persona": ^0.7.0
     "@privyid/pena": "workspace:^"
+    "@privyid/pena-utils": "workspace:^"
     "@react-native-community/eslint-config": ^3.0.2
     "@release-it/conventional-changelog": ^5.0.0
     "@types/jest": ^28.1.2
@@ -2781,8 +2782,8 @@ __metadata:
     vite: ^4.0.0
     vite-plugin-dts: ^1.7.2
   peerDependencies:
-    react: ">=18.0.0"
-    react-dom: ">=18.0.0"
+    react: "*"
+    react-dom: "*"
   languageName: unknown
   linkType: soft
 
@@ -2800,6 +2801,19 @@ __metadata:
     typescript: ^4.9.3
     vite: ^4.0.0
     vitest: ^0.28.0
+  peerDependencies:
+    svelte: "*"
+  languageName: unknown
+  linkType: soft
+
+"@privyid/pena-utils@workspace:^, @privyid/pena-utils@workspace:packages/pena-utils":
+  version: 0.0.0-use.local
+  resolution: "@privyid/pena-utils@workspace:packages/pena-utils"
+  dependencies:
+    typescript: ^4.9.3
+    vite: ^4.0.0
+    vite-plugin-dts: ^1.7.2
+    vitest: ^0.28.4
   languageName: unknown
   linkType: soft
 
@@ -2823,6 +2837,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@privyid/pena@workspace:packages/pena"
   dependencies:
+    "@privyid/pena-utils": "workspace:^"
     "@testing-library/dom": ^8.20.0
     "@testing-library/jest-dom": ^5.16.5
     "@vitest/coverage-c8": ^0.28.3
@@ -15844,7 +15859,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vitest@npm:^0.28.0":
+"vitest@npm:^0.28.0, vitest@npm:^0.28.4":
   version: 0.28.4
   resolution: "vitest@npm:0.28.4"
   dependencies:

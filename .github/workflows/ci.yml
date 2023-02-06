@@ -51,6 +51,9 @@ jobs:
       - name: Install Deps
         run: yarn install --immutable
 
+      - name: Run Build
+        run: yarn build
+
       - name: Run Test
         run: yarn coverage
 

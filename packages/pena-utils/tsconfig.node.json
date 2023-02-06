@@ -1,15 +1,15 @@
 {
   "compilerOptions": {
     "composite": true,
-    "jsx": "react",
     "module": "ESNext",
     "moduleResolution": "Node",
-    "allowSyntheticDefaultImports": true,
     "strict": false,
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "allowSyntheticDefaultImports": true
   },
   "include": [
     "dev",
-    "vite.config.ts"
+    "vite.config.ts",
+    "vitest.setup.ts"
   ]
 }

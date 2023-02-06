@@ -10,7 +10,7 @@
   export let privyId: PenaOption['privyId'] = undefined
 
   let target: HTMLDivElement
-  let cleanup: ReturnType<typeof Pena.docSign>
+  let cleanup: ReturnType<typeof Pena.openDoc>
 
   const emit = createEventDispatcher<{ afterAction: Payload }>()
 
@@ -22,7 +22,7 @@
     if (cleanup)
       cleanup()
 
-    cleanup = Pena.docSign({
+    cleanup = Pena.openDoc({
       container    : target,
       url          : url,
       lang         : lang,

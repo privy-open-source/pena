@@ -1,7 +1,6 @@
 <script lang="ts">
-  import type { Payload } from '@privyid/pena'
   import { page } from '$app/stores'
-  import Pena from '../lib'
+  import Pena, { type Payload } from '../lib'
 
   const url = new URL('./testpage', $page.url).href
 
@@ -28,7 +27,7 @@
     </button>
     <ul>
       {#each log as l}
-        <li>{l.event} - {JSON.stringify(l.payload)}</li>
+        <li>{l.action} - {JSON.stringify(l.data)}</li>
       {/each}
     </ul>
   </div>

@@ -1,5 +1,5 @@
-import * as React from 'react'
-import Pena from '../../src'
+import React from 'react'
+import Pena from '@privyid/pena-react-native'
 import {
   StyleSheet,
   SafeAreaView,

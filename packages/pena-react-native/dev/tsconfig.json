@@ -1,6 +1,13 @@
 {
   "extends": "../tsconfig",
   "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@privyid/pena-react-native": ["../src/"]
+    }
     // Avoid expo-cli auto-generating a tsconfig
-  }
+  },
+  "include": [
+    "src"
+  ]
 }

@@ -1,30 +1,31 @@
-# Pena 🖤 React Native
+# Pena 💙 React
 
-> Pena plugin for React Native
+> Pena plugin for React
 
 ## Installation
 
 **NPM**
 
 ```bash
-npm install --save @privyid/pena-react-native
+npm install --save @privyid/pena-react
 ```
 
 **Yarn**
 ```bash
-yarn add @privyid/pena-react-native
+yarn add @privyid/pena-react
 ```
 
 ## Usage
 
 ```tsx
-import Pena from '@privyid/pena-react-native'
+import Pena from '@privyid/pena-react'
 
 export default function App () {
   return (
     <Pena
       url="http://sign.document.com/doc/xxx"
       lang="en"
+      layout="fixed"
       signature={{
         x    : 100,
         y    : 200,
@@ -46,8 +47,3 @@ export default function App () {
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](/LICENSE) file for details
-
-
----
-
-Made with [create-react-native-library](https://github.com/callstack/react-native-builder-bob)

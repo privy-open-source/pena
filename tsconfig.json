@@ -1,6 +1,10 @@
 {
   "compilerOptions": {
     "strict": false,
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "baseUrl": ".",
+    "paths": {
+      "@privyid/*": ["packages/*/src/"]
+    }
   }
 }

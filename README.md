@@ -10,12 +10,20 @@
 
 ## Getting Started
 
-- [x] Install for Vanila
-- [x] Install for Vue
-- [x] Install for Svelte
-- [x] Install for React
-- [x] Install for React Native
+- [Install for Vanilla][vanilla]
+- [Install for Vue][vue]
+- [Install for Svelte][svelte]
+- [Install for React][react]
+- [Install for React Native][react-native]
+- Install for Angular - *TODO*
+- Install for Android (Kotlin) - *TODO*
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](/LICENSE) file for details
+
+[vanilla]: /packages/pena/README.md
+[vue]: /packages/pena-vue/README.md
+[svelte]: /packages/pena-svelte/README.md
+[react]: /packages/pena-react/README.md
+[react-native]: /packages/pena-react-native/README.md
