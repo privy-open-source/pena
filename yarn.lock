@@ -2782,8 +2782,8 @@ __metadata:
     vite: ^4.0.0
     vite-plugin-dts: ^1.7.2
   peerDependencies:
-    react: ">=18.0.0"
-    react-dom: ">=18.0.0"
+    react: "*"
+    react-dom: "*"
   languageName: unknown
   linkType: soft
 
@@ -2801,6 +2801,8 @@ __metadata:
     typescript: ^4.9.3
     vite: ^4.0.0
     vitest: ^0.25.3
+  peerDependencies:
+    svelte: "*"
   languageName: unknown
   linkType: soft
 

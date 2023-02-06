@@ -34,7 +34,7 @@ yarn add @privyid/pena-vue
 <template>
 
 <script>
-import Pena from '@privyid/pena-vue'
+import { Pena } from '@privyid/pena-vue'
 
 export default {
    components: { Pena },
