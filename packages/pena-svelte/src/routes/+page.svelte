@@ -28,7 +28,7 @@
     </button>
     <ul>
       {#each log as l}
-        <li>{l.event} - {JSON.stringify(l.payload)}</li>
+        <li>{l.action} - {JSON.stringify(l.data)}</li>
       {/each}
     </ul>
   </div>

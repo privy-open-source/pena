@@ -1,18 +1,56 @@
-# Vue 3 + TypeScript + Vite
+# Pena 💚 Vue
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+> Pena plugin for Vue
 
-## Recommended IDE Setup
+## Installation
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+**NPM**
 
-## Type Support For `.vue` Imports in TS
+```bash
+npm install @privyid/pena-vue
+```
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+**Yarn**
+```bash
+yarn add @privyid/pena-vue
+```
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+## Usage
 
-1. Disable the built-in TypeScript Extension
-   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+```vue
+<template>
+   <pena
+      url="http://sign.document.com/doc/xxx"
+      lang="en"
+      layout="fixed"
+      :signature="{
+         x    : 100,
+         y    : 200,
+         page : 1,
+         fixed: false,
+      }"
+      @after-action="onAfterAction"
+   />
+<template>
+
+<script>
+import Pena from '@privyid/pena-vue'
+
+export default {
+   components: { Pena },
+   methods: {
+      onAfterAction (event) {
+         // Do something after action (sign, review, etc) done
+         // example: redirect to specific location after sign
+         if (event.action === 'sign') {
+            location.href = '/somepath'
+         }
+      }
+   }
+}
+</script>
+```
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](/LICENSE) file for details
