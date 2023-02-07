@@ -15,26 +15,6 @@ export type HookFn = (payload: Payload) => unknown
 
 export type CleanupFn = () => void
 
-export interface Placement {
-  /**
-   * X Position
-   */
-  x: number,
-  /**
-   * Y Position
-   */
-  y: number,
-  /**
-   * Page number
-   */
-  page: number,
-  /**
-   * Disabled signature to move
-   * @default false
-   */
-  fixed?: boolean,
-}
-
 export interface PenaOption extends UrlParams {
 
   /**

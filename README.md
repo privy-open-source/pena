@@ -15,7 +15,7 @@
 - [Install for Svelte][svelte]
 - [Install for React][react]
 - [Install for React Native][react-native]
-- Install for Angular - *TODO*
+- [Install for Angular][angular]
 - Install for Android (Kotlin) - *TODO*
 
 ## License
@@ -27,3 +27,4 @@ This project is licensed under the MIT License - see the [LICENSE](/LICENSE) fil
 [svelte]: /packages/pena-svelte/README.md
 [react]: /packages/pena-react/README.md
 [react-native]: /packages/pena-react-native/README.md
+[angular]: /packages/pena-angular/README.md

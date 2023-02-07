@@ -22,7 +22,8 @@
     "registry": "https://registry.npmjs.org/"
   },
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "packages/pena-angular/projects/*"
   ],
   "devDependencies": {
     "@privyid/eslint-config-persona": "^0.7.0",
