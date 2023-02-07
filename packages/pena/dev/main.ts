@@ -1,6 +1,6 @@
-import Pena from '../src'
+import Pena from '..'
 
-Pena.docSign({
+Pena.openDoc({
   url          : new URL('/dev/testpage.html', location.origin).href,
   container    : '#app',
   layout       : 'fit',

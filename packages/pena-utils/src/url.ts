@@ -25,12 +25,6 @@ export interface UrlParams {
   url: string,
 
   /**
-   * Layout mode
-   * @default 'fixed'
-   */
-  layout?: 'fixed' | 'fit',
-
-  /**
    * Recipient PrivyID
    */
   privyId?: string,
