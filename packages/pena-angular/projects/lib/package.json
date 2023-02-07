@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "peerDependencies": {
     "@angular/common": "^15.1.0",
-    "@angular/core": "^15.1.0"
+    "@angular/core": "^15.1.0",
+    "@privyid/pena": "workspace:^"
   },
   "dependencies": {
-    "@privyid/pena": "workspace:^",
     "tslib": "^2.3.0"
   },
   "sideEffects": false

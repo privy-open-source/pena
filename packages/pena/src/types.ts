@@ -34,3 +34,7 @@ export interface PenaOption extends UrlParams {
    */
   onAfterAction?: HookFn,
 }
+
+export type {
+  Placement,
+} from '@privyid/pena-utils'

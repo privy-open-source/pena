@@ -1,11 +1,11 @@
 {
-  "name": "@privyid/pena-angular-workspace",
+  "name": "@privyid/pena-angular",
   "version": "0.1.0",
   "scripts": {
     "ng": "ng",
     "dev": "yarn start",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build lib",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },

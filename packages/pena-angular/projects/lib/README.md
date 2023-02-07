@@ -1,24 +1,70 @@
-# PenaAngular
+# Pena ❤️ Angular
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.0.
+> Pena plugin for Angular
 
-## Code scaffolding
+## Installation
 
-Run `ng generate component component-name --project pena-angular` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project pena-angular`.
-> Note: Don't forget to add `--project pena-angular` or else it will be added to the default project in your `angular.json` file. 
+1. Add as dependencies to your `package.json`
 
-## Build
+**NPM**
 
-Run `ng build pena-angular` to build the project. The build artifacts will be stored in the `dist/` directory.
+```bash
+npm install --save @privyid/pena-angular @privyid/pena
+```
 
-## Publishing
+**Yarn**
+```bash
+yarn add @privyid/pena-angular @privyid/pena
+```
 
-After building your library with `ng build pena-angular`, go to the dist folder `cd dist/pena-angular` and run `npm publish`.
+2. Register the module.
 
-## Running unit tests
+```ts
+import { PenaModule } from '@privyid/pena-angular'
 
-Run `ng test pena-angular` to execute the unit tests via [Karma](https://karma-runner.github.io).
+@NgModule({
+  /* ... */
+  imports: [PenaModule],
+  /* ... */
+})
+export class AppModule {}
 
-## Further help
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Usage
+
+```ts
+import type { Placement, Payload } from '@privyid/pena'
+
+@Component({
+  selector: 'app-root',
+  template: `
+    <pena
+      url="http://sign.document.com/doc/xxx"
+      lang="en"
+      layout="fixed"
+      [signature]="signature"
+      (afterSign)="onAfterSign"
+    />
+  `,
+  styles: [],
+})
+export class AppComponent {
+  signature: Placement = {
+    x    : 100,
+    y    : 200,
+    page : 1,
+    fixed: false,
+  }
+
+  onAfterSign (event: Payload) {
+    if (event.action === 'sign') {
+      location.href = '/somepath'
+    }
+  }
+}
+```
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](/LICENSE) file for details

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core'
-import type { Placement } from '@privyid/pena'
+import type { Payload, Placement } from '@privyid/pena'
 
 @Component({
   selector   : 'app-root',
@@ -9,9 +9,20 @@ import type { Placement } from '@privyid/pena'
 export class AppComponent {
   title = 'dev'
 
+  layoutFit = false
+
   signature: Placement = {
     x   : 50,
     y   : 30,
     page: 1,
+  }
+
+  changeLayout () {
+    this.layoutFit = !this.layoutFit
+  }
+
+  onAfterAction (event: Payload) {
+    // eslint-disable-next-line no-console
+    console.log(event.action, event.data)
   }
 }

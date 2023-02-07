@@ -42,7 +42,7 @@ export class PenaComponent {
   @ViewChild('container')
     container?: ElementRef<HTMLDivElement>
 
-  @Output()
+  @Output('afterAction')
     afterAction = new EventEmitter<Payload>()
 
   // onMounted
@@ -68,7 +68,7 @@ export class PenaComponent {
         privyId      : this.privyId,
         visibility   : this.visibility,
         signature    : this.signature,
-        onAfterAction: this.onAfterAction,
+        onAfterAction: this.onAfterAction.bind(this),
       })
     }
   }
