@@ -28,13 +28,12 @@ export function openDoc (config: PenaOption): CleanupFn {
       try {
         let payload: Payload | undefined
 
-        // V1 Payload format
-        if (event.data.event && event.data.data)
-          payload = event.data.data
-
         // V2 Payload format
         if (typeof event.data === 'string')
           payload = JSON.parse(event.data)
+        // V1 Payload format
+        else if (event.data.event && event.data.data)
+          payload = event.data.data
 
         if (payload)
           config.onAfterAction(payload)

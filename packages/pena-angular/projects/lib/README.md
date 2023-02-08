@@ -44,7 +44,7 @@ import type { Placement, Payload } from '@privyid/pena'
       lang="en"
       layout="fixed"
       [signature]="signature"
-      (afterSign)="onAfterSign"
+      (afterSign)="onAfterSign($event)"
     />
   `,
   styles: [],

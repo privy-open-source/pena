@@ -24,11 +24,11 @@
   <script>
     function sendMessage () {
       window.parent.postMessage(JSON.stringify({
-        event  : 'sign',
-        payload: {
+        action: 'sign',
+        data  : {
           message: 'OK',
         },
-      }))
+      }), '*')
     }
   </script>
 </body>
