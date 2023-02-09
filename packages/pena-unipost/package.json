@@ -1,0 +1,33 @@
+{
+  "name": "@privyid/pena-unipost",
+  "description": "Universal postMessage for Web Iframe, ReactNative, and Android WebView",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "./dist/pena-unipost.umd.cjs",
+  "module": "./dist/pena-unipost.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/pena-unipost.umd.cjs",
+      "import": "./dist/pena-unipost.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite",
+    "test": "vitest",
+    "preview": "vite preview",
+    "prepack": "yarn build",
+    "coverage": "vitest run --coverage"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.3",
+    "vite": "^4.0.0",
+    "vite-plugin-dts": "^1.7.2",
+    "vitest": "^0.28.4"
+  }
+}
