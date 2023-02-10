@@ -18,7 +18,4 @@ export default function postMessage (message: string) {
   // Standard Iframe
   else if (typeof window.parent.postMessage === 'function')
     window.parent.postMessage(message, '*')
-  // Non Iframe
-  else
-    window.postMessage(message, '*')
 }

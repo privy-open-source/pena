@@ -1,68 +1,24 @@
-# Pena ❤️ Angular
+# Angular Workspace
 
-> Pena plugin for Angular
+This is Angular Workspace, if you looking for lib's source, goto [`./project/lib/`](./projects/lib/)
 
-## Installation
-
-1. Add as dependencies to your `package.json`
-
-**NPM**
+## Getting Started
 
 ```bash
-npm install --save @privyid/pena-angular
-```
+# Install deps
+yarn
 
-**Yarn**
-```bash
-yarn add @privyid/pena-angular
-```
+# Run dev server
+yarn dev
 
-2. Registering the module.
+# Run test
+yarn test
 
-```ts
-import { PenaModule } from '@privyid/pena-angular'
+# Build package
+yarn build
 
-@NgModule({
-  /* ... */
-  imports: [PenaModule],
-  /* ... */
-})
-export class AppModule {}
-
-```
-
-## Usage
-
-```ts
-import type { Placement, Payload } from '@privyid/pena'
-
-@Component({
-  selector: 'app-root',
-  template: `
-    <pena
-      url="http://sign.document.com/doc/xxx"
-      lang="en"
-      layout="fixed"
-      [signature]="signature"
-      (afterSign)="onAfterSign($event)"
-    />
-  `,
-  styles: [],
-})
-export class AppComponent {
-  signature: Placement = {
-    x    : 100,
-    y    : 200,
-    page : 1,
-    fixed: false,
-  }
-
-  onAfterSign (event: Payload) {
-    if (event.action === 'sign') {
-      location.href = '/somepath'
-    }
-  }
-}
+# Publish package
+yarn npm publish dist/pena-angular
 ```
 
 ## License
