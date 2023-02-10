@@ -16,7 +16,7 @@
 - [Install for React][react]
 - [Install for React Native][react-native]
 - [Install for Angular][angular]
-- Install for Android (Kotlin) - *TODO*
+- [Install for Android (Kotlin)][android]
 
 ## License
 
@@ -27,4 +27,5 @@ This project is licensed under the MIT License - see the [LICENSE](/LICENSE) fil
 [svelte]: /packages/pena-svelte/README.md
 [react]: /packages/pena-react/README.md
 [react-native]: /packages/pena-react-native/README.md
-[angular]: /packages/pena-angular/README.md
+[angular]: /packages/pena-angular/projects/lib/README.md
+[android]: https://github.com/privy-open-source/pena-android

@@ -3295,6 +3295,7 @@ __metadata:
     react: 18.1.0
     react-native: 0.71.2
     react-native-builder-bob: ^0.20.0
+    react-native-url-polyfill: ^1.3.0
     react-native-webview: ^11.26.1
     typescript: ^4.5.2
   peerDependencies:
@@ -3341,14 +3342,29 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@privyid/pena-unipost@workspace:packages/pena-unipost":
+  version: 0.0.0-use.local
+  resolution: "@privyid/pena-unipost@workspace:packages/pena-unipost"
+  dependencies:
+    "@vitest/coverage-c8": ^0.28.3
+    happy-dom: ^8.2.2
+    typescript: ^4.9.3
+    vite: ^4.0.0
+    vite-plugin-dts: ^1.7.1
+    vitest: 0.28.3
+  languageName: unknown
+  linkType: soft
+
 "@privyid/pena-utils@workspace:^, @privyid/pena-utils@workspace:packages/pena-utils":
   version: 0.0.0-use.local
   resolution: "@privyid/pena-utils@workspace:packages/pena-utils"
   dependencies:
+    "@vitest/coverage-c8": ^0.28.3
+    happy-dom: ^8.2.2
     typescript: ^4.9.3
     vite: ^4.0.0
-    vite-plugin-dts: ^1.7.2
-    vitest: ^0.28.4
+    vite-plugin-dts: ^1.7.1
+    vitest: 0.28.3
   languageName: unknown
   linkType: soft
 
@@ -3362,9 +3378,14 @@ __metadata:
     vite: ^4.0.0
     vite-plugin-dts: ^1.7.2
     vue: ^3.2.45
+    vue-demi: ^0.13.11
     vue-tsc: ^1.0.11
   peerDependencies:
-    vue: ">=3.0.0"
+    "@vue/composition-api": ^1.0.0
+    vue: ^2.0.0 || >=3.0.0
+  peerDependenciesMeta:
+    "@vue/composition-api":
+      optional: true
   languageName: unknown
   linkType: soft
 
@@ -3375,13 +3396,12 @@ __metadata:
     "@privyid/pena-utils": "workspace:^"
     "@testing-library/dom": ^8.20.0
     "@testing-library/jest-dom": ^5.16.5
-    "@vitest/coverage-c8": ^0.28.3
+    "@vitest/coverage-c8": 0.28.3
     happy-dom: ^8.2.2
-    nanodelay: ^2.0.2
     typescript: ^4.9.3
     vite: ^4.0.0
     vite-plugin-dts: ^1.7.1
-    vitest: ^0.28.3
+    vitest: 0.28.3
   languageName: unknown
   linkType: soft
 
@@ -4763,7 +4783,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vitest/coverage-c8@npm:^0.28.3":
+"@vitest/coverage-c8@npm:0.28.3, @vitest/coverage-c8@npm:^0.28.3":
   version: 0.28.3
   resolution: "@vitest/coverage-c8@npm:0.28.3"
   dependencies:
@@ -6304,7 +6324,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"buffer@npm:^5.5.0":
+"buffer@npm:^5.4.3, buffer@npm:^5.5.0":
   version: 5.7.1
   resolution: "buffer@npm:5.7.1"
   dependencies:
@@ -14058,13 +14078,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nanodelay@npm:^2.0.2":
-  version: 2.0.2
-  resolution: "nanodelay@npm:2.0.2"
-  checksum: 459fb58e3b9d262a16a5f5ab63ff71ca1f83a61c712b5ba7495d03d4d28dc96dcef3bbc282e277187d05e4ccfa7345e7c0082dcc76ae9790bb416eb2f6e627ae
-  languageName: node
-  linkType: hard
-
 "nanoid@npm:^3.3.4":
   version: 3.3.4
   resolution: "nanoid@npm:3.3.4"
@@ -15579,7 +15592,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"punycode@npm:^2.1.0":
+"punycode@npm:^2.1.0, punycode@npm:^2.1.1":
   version: 2.3.0
   resolution: "punycode@npm:2.3.0"
   checksum: 39f760e09a2a3bbfe8f5287cf733ecdad69d6af2fe6f97ca95f24b8921858b91e9ea3c9eeec6e08cede96181b3bb33f95c6ffd8c77e63986508aa2e8159fa200
@@ -15780,6 +15793,17 @@ __metadata:
   version: 0.71.14
   resolution: "react-native-gradle-plugin@npm:0.71.14"
   checksum: fc2599cdc6b64f09cdd1ad9b0aa6b45265b5905d13ab69174f46134d7a42b324459e169b0aaef67e075b5b65fe93704980718fd2c26245ef2b1d5fd29e391813
+  languageName: node
+  linkType: hard
+
+"react-native-url-polyfill@npm:^1.3.0":
+  version: 1.3.0
+  resolution: "react-native-url-polyfill@npm:1.3.0"
+  dependencies:
+    whatwg-url-without-unicode: 8.0.0-3
+  peerDependencies:
+    react-native: "*"
+  checksum: 24ef81493a642b9359c1e8048de4da84fb554ffcf35677f9d8b11956d700faa4b9ac9d74f56aee67dd8d8b4ef6d9879e7431848785880ada657f8bec0211b00a
   languageName: node
   linkType: hard
 
@@ -18993,7 +19017,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vitest@npm:0.28.3, vitest@npm:^0.28.3":
+"vitest@npm:0.28.3":
   version: 0.28.3
   resolution: "vitest@npm:0.28.3"
   dependencies:
@@ -19044,7 +19068,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vitest@npm:^0.28.0, vitest@npm:^0.28.4":
+"vitest@npm:^0.28.0":
   version: 0.28.4
   resolution: "vitest@npm:0.28.4"
   dependencies:
@@ -19106,6 +19130,22 @@ __metadata:
   version: 2.0.1
   resolution: "void-elements@npm:2.0.1"
   checksum: 700c07ba9cfa2dff88bb23974b3173118f9ad8107143db9e5d753552be15cf93380954d4e7f7d7bc80e7306c35c3a7fb83ab0ce4d4dcc18abf90ca8b31452126
+  languageName: node
+  linkType: hard
+
+"vue-demi@npm:^0.13.11":
+  version: 0.13.11
+  resolution: "vue-demi@npm:0.13.11"
+  peerDependencies:
+    "@vue/composition-api": ^1.0.0-rc.1
+    vue: ^3.0.0-0 || ^2.6.0
+  peerDependenciesMeta:
+    "@vue/composition-api":
+      optional: true
+  bin:
+    vue-demi-fix: bin/vue-demi-fix.js
+    vue-demi-switch: bin/vue-demi-switch.js
+  checksum: 0fbe9bf8ab7fe498ffa2bbd0cfc8f6f43a6bbaa5eda3e20ef1b70dca7c8b0ddb216a7ff2f632b694fe0735805638975abb441c621ec0bd2e6d4656353f316c15
   languageName: node
   linkType: hard
 
@@ -19204,6 +19244,13 @@ __metadata:
   version: 3.0.1
   resolution: "webidl-conversions@npm:3.0.1"
   checksum: c92a0a6ab95314bde9c32e1d0a6dfac83b578f8fa5f21e675bc2706ed6981bc26b7eb7e6a1fab158e5ce4adf9caa4a0aee49a52505d4d13c7be545f15021b17c
+  languageName: node
+  linkType: hard
+
+"webidl-conversions@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "webidl-conversions@npm:5.0.0"
+  checksum: ccf1ec2ca7c0b5671e5440ace4a66806ae09c49016ab821481bec0c05b1b82695082dc0a27d1fe9d804d475a408ba0c691e6803fd21be608e710955d4589cd69
   languageName: node
   linkType: hard
 
@@ -19395,6 +19442,17 @@ __metadata:
   version: 3.0.0
   resolution: "whatwg-mimetype@npm:3.0.0"
   checksum: ce08bbb36b6aaf64f3a84da89707e3e6a31e5ab1c1a2379fd68df79ba712a4ab090904f0b50e6693b0dafc8e6343a6157e40bf18fdffd26e513cf95ee2a59824
+  languageName: node
+  linkType: hard
+
+"whatwg-url-without-unicode@npm:8.0.0-3":
+  version: 8.0.0-3
+  resolution: "whatwg-url-without-unicode@npm:8.0.0-3"
+  dependencies:
+    buffer: ^5.4.3
+    punycode: ^2.1.1
+    webidl-conversions: ^5.0.0
+  checksum: 1fe266f7161e0bd961087c1254a5a59d1138c3d402064495eed65e7590d9caed5a1d9acfd6e7a1b0bf0431253b0e637ee3e4ffc08387cd60e0b2ddb9d4687a4b
   languageName: node
   linkType: hard
 

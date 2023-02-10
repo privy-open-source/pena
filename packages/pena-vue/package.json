@@ -23,10 +23,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@privyid/pena": "workspace:^"
+    "@privyid/pena": "workspace:^",
+    "vue-demi": "^0.13.11"
   },
   "peerDependencies": {
-    "vue": ">=3.0.0"
+    "@vue/composition-api": "^1.0.0",
+    "vue": "^2.0.0 || >=3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@vue/composition-api": {
+      "optional": true
+    }
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.0.0",

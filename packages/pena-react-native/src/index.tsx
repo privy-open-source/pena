@@ -1,3 +1,5 @@
+import 'react-native-url-polyfill/auto'
+
 export type {
   PenaOption,
   Payload,

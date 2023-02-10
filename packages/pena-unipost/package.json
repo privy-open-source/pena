@@ -1,15 +1,15 @@
 {
-  "name": "@privyid/pena-utils",
-  "description": "Shared utils for Pena project",
+  "name": "@privyid/pena-unipost",
+  "description": "Universal postMessage for Web Iframe, ReactNative, and Android WebView",
   "version": "0.1.0",
   "type": "module",
-  "main": "./dist/pena-utils.umd.cjs",
-  "module": "./dist/pena-utils.js",
+  "main": "./dist/pena-unipost.umd.cjs",
+  "module": "./dist/pena-unipost.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "require": "./dist/pena-utils.umd.cjs",
-      "import": "./dist/pena-utils.js",
+      "require": "./dist/pena-unipost.umd.cjs",
+      "import": "./dist/pena-unipost.js",
       "types": "./dist/index.d.ts"
     }
   },
@@ -18,6 +18,7 @@
   ],
   "scripts": {
     "build": "vite build",
+    "dev": "vite",
     "test": "vitest",
     "preview": "vite preview",
     "prepack": "yarn build",

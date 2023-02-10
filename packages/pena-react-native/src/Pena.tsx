@@ -9,15 +9,13 @@ const PenaReact: FC<Omit<PenaOption, 'container' | 'layout'>> = (props) => {
   }, [props])
 
   function onMessage (event: WebViewMessageEvent) {
-    if (event.nativeEvent.url === url.hostname) {
-      try {
-        const payload: Payload = JSON.parse(event.nativeEvent.data)
+    try {
+      const payload: Payload = JSON.parse(event.nativeEvent.data)
 
-        if (typeof props.onAfterAction === 'function')
-          props.onAfterAction(payload)
-      } catch (error) {
-        console.warn(error)
-      }
+      if (typeof props.onAfterAction === 'function')
+        props.onAfterAction(payload)
+    } catch (error) {
+      console.warn(error)
     }
   }
 

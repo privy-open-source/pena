@@ -1,35 +1,76 @@
+<template>
+  <div
+    ref="container"
+    class="pena__container" />
+</template>
+
 <script lang="ts">
+import Pena, { Payload, type PenaOption } from '@privyid/pena'
 import {
-  FunctionalComponent,
-  h,
-  ref,
+  type PropType,
   watchEffect,
-} from 'vue'
-import Pena, { PenaOption } from '@privyid/pena'
+  defineComponent,
+  ref,
+} from 'vue-demi'
 
-const PenaVue: FunctionalComponent<Omit<PenaOption, 'container'>> = (props) => {
-  const target = ref<HTMLDivElement>()
+export default defineComponent({
+  props: {
+    url: {
+      type    : String as PropType<PenaOption['url']>,
+      required: true,
+    },
+    layout: {
+      type   : String as PropType<PenaOption['layout']>,
+      default: undefined,
+    },
+    lang: {
+      type   : String as PropType<PenaOption['lang']>,
+      default: undefined,
+    },
+    debug: {
+      type   : Boolean as PropType<PenaOption['debug']>,
+      default: undefined,
+    },
+    privyId: {
+      type   : String as PropType<PenaOption['privyId']>,
+      default: undefined,
+    },
+    visibility: {
+      type   : Boolean as PropType<PenaOption['visibility']>,
+      default: undefined,
+    },
+    signature: {
+      type   : Object as PropType<PenaOption['signature']>,
+      default: undefined,
+    },
+  },
+  emits: ['after-action'],
+  setup (props, { emit }) {
+    const container = ref<HTMLDivElement>()
 
-  watchEffect((onCleanUp) => {
-    if (target.value) {
-      const cleanup = Pena.openDoc({
-        container    : target.value,
-        url          : props.url,
-        lang         : props.lang,
-        signature    : props.signature,
-        layout       : props.layout,
-        privyId      : props.privyId,
-        onAfterAction: props.onAfterAction,
-      })
-
-      onCleanUp(cleanup)
+    function onAfterAction (payload: Payload) {
+      emit('after-action', payload)
     }
-  })
 
-  return h('div', { ref: target, class: ['pena__container'] })
-}
+    watchEffect((onCleanUp) => {
+      if (container.value) {
+        const cleanup = Pena.openDoc({
+          container : container.value,
+          url       : props.url,
+          layout    : props.layout,
+          lang      : props.lang,
+          debug     : props.debug,
+          privyId   : props.privyId,
+          visibility: props.visibility,
+          signature : props.signature,
+          onAfterAction,
+        })
 
-PenaVue.emits = ['after-sign']
+        onCleanUp(cleanup)
+      }
+    })
 
-export default PenaVue
+    return { container }
+  },
+})
 </script>

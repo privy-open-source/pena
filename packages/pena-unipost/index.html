@@ -16,20 +16,10 @@
 <body>
   <div id="app">
     <h1>Test Page</h1>
-    <button onclick="sendMessage()">
+    <button id="send">
       Send
     </button>
   </div>
-
-  <script>
-    function sendMessage () {
-      window.parent.postMessage(JSON.stringify({
-        action: 'sign',
-        data  : {
-          message: 'OK',
-        },
-      }), '*')
-    }
-  </script>
+  <script type="module" src="/dev/main.ts"></script>
 </body>
 </html>

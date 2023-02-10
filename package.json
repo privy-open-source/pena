@@ -8,7 +8,7 @@
     "fix": "yarn lint --fix",
     "build": "yarn workspaces foreach -vtp run build",
     "check": "yarn dlx @yarnpkg/doctor packages/",
-    "coverage": "yarn workspaces foreach -vtp run coverage"
+    "coverage": "yarn workspaces foreach -vp run coverage"
   },
   "repository": "https://github.com/privy-open-source/pena",
   "author": "Ade Novid <adenvt@gmail.com> (https://github.com/adenvt)",
