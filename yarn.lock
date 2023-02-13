@@ -3188,9 +3188,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@privyid/eslint-config-persona@npm:^0.7.0":
-  version: 0.7.0
-  resolution: "@privyid/eslint-config-persona@npm:0.7.0"
+"@privyid/eslint-config-persona@npm:^0.8.0":
+  version: 0.8.0
+  resolution: "@privyid/eslint-config-persona@npm:0.8.0"
   peerDependencies:
     "@typescript-eslint/eslint-plugin": ">=5.47.0"
     "@typescript-eslint/parser": ">=5.47.0"
@@ -3206,7 +3206,7 @@ __metadata:
     eslint-plugin-unicorn: ">=45.0.2"
     eslint-plugin-varspacing: ">=1.2.2"
     eslint-plugin-vue: ">=9.8.0"
-  checksum: 1f55650eae872f4ff534a4a00efba5a56930c421e32f2e6f6e35d2fa8c1d082e0eb6682df1786b939db050ff429a5515d291c46a5a532edf471bbf56e2087f19
+  checksum: 8666b0135c3bd1f5d06e4ac9884467bbf56aead1c122ef0d03a0ab57bcea042f50623d930196f0b0b41f0ce4d25c126ace850a84c010b4003e72a67f21555a5d
   languageName: node
   linkType: hard
 
@@ -3245,7 +3245,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@privyid/pena-monorepo@workspace:."
   dependencies:
-    "@privyid/eslint-config-persona": ^0.7.0
+    "@privyid/eslint-config-persona": ^0.8.0
     "@typescript-eslint/eslint-plugin": ^5.50.0
     "@typescript-eslint/parser": ^5.50.0
     "@vue/eslint-config-typescript": ^11.0.2
@@ -3267,7 +3267,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@privyid/pena-react-native@workspace:packages/pena-react-native"
   dependencies:
-    "@privyid/eslint-config-persona": ^0.7.0
+    "@privyid/eslint-config-persona": ^0.8.0
     "@privyid/pena": "workspace:^"
     "@privyid/pena-utils": "workspace:^"
     "@react-native-community/eslint-config": ^3.0.2
