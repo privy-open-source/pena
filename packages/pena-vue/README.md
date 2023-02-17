@@ -7,12 +7,12 @@
 **NPM**
 
 ```bash
-npm install --save @privyid/pena-vue
+npm install --save @privyid/pena-vue @privyid/pena
 ```
 
 **Yarn**
 ```bash
-yarn add @privyid/pena-vue
+yarn add @privyid/pena-vue @privyid/pena
 ```
 
 ## Usage
@@ -31,26 +31,53 @@ yarn add @privyid/pena-vue
       }"
       @after-action="onAfterAction"
    />
-<template>
+</template>
 
 <script>
 import { Pena } from '@privyid/pena-vue'
 
 export default {
-   components: { Pena },
-   methods: {
-      onAfterAction (event) {
-         // Do something after action (sign, review, etc) done
-         // example: redirect to specific location after sign
-         if (event.action === 'sign') {
-            location.href = '/somepath'
-         }
+  components: { Pena },
+  methods: {
+    onAfterAction (event) {
+      // Do something after action (sign, review, etc) done
+      // example: redirect to specific location after sign
+      if (event.action === 'sign') {
+        location.href = '/somepath'
       }
-   }
+    }
+  }
 }
 </script>
 ```
 
+## Options
+
+### Props
+
+| Name            | Type     | Default | Description                                                                                                  |
+|-----------------|----------|:-------:|--------------------------------------------------------------------------------------------------------------|
+| `url`           | string   |    -    | **(Required)** Document's url                                                                                |
+| `lang`          | string   |  `en`   | Set language, valid value is `en` or `id`                                                                    |
+| `layout`        | string   | `fixed` | Set layout mode, valid value is `fixed` or `fit`, see the [different][different]                             |
+| `visibility`    | boolean  | `true`  | Set signature visibility                                                                                     |
+| `privyId`       | string   |    -    | Set recipient's privyId                                                                                      |
+| `signature`     | object   |    -    | Set signature placement<br/> <strong>(Deprecated)</strong> use API to set placement when upload the document |
+| ├ `x`           | number   |    -    | X Coordinate                                                                                                 |
+| ├ `y`           | number   |    -    | Y Coordinate                                                                                                 |
+| ├ `page`        | number   |    -    | Target page                                                                                                  |
+| └ `fixed`       | boolean  | `false` | Disabled signature for moving                                                                                |
+| `debug`         | boolean  | `false` | Enable debug mode                                                                                            |
+| `onAfterAction` | function |    -    | After action hook                                                                                            |
+
+### Events
+
+| Name           | Arguments | Description       |
+|----------------|-----------|-------------------|
+| `after-action` | Payload   | After action hook |
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](/LICENSE) file for details
+
+[different]: ../pena/README.md#layout-fixed-vs-fit

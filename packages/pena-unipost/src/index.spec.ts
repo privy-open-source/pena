@@ -2,6 +2,10 @@ import { vi } from 'vitest'
 import unipost from '.'
 
 afterEach(() => {
+  delete window.PenaAndroid
+  delete window.PenaFlutter
+  delete window.ReactNativeWebView
+
   vi.resetAllMocks()
 })
 
@@ -18,6 +22,18 @@ it('should call PenaAndroid postMessage if exist', () => {
   const postMessage       = vi.spyOn(window, 'postMessage')
 
   window.PenaAndroid = { postMessage: parentPostMessage }
+
+  unipost('Hello')
+
+  expect(postMessage).not.toBeCalled()
+  expect(parentPostMessage).toBeCalledWith('Hello')
+})
+
+it('should call PenaFlutter postMessage if exist', () => {
+  const parentPostMessage = vi.fn()
+  const postMessage       = vi.spyOn(window, 'postMessage')
+
+  window.PenaFlutter = { postMessage: parentPostMessage }
 
   unipost('Hello')
 
