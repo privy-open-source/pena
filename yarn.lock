@@ -3188,9 +3188,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@privyid/eslint-config-persona@npm:^0.7.0":
-  version: 0.7.0
-  resolution: "@privyid/eslint-config-persona@npm:0.7.0"
+"@privyid/eslint-config-persona@npm:^0.8.0":
+  version: 0.8.0
+  resolution: "@privyid/eslint-config-persona@npm:0.8.0"
   peerDependencies:
     "@typescript-eslint/eslint-plugin": ">=5.47.0"
     "@typescript-eslint/parser": ">=5.47.0"
@@ -3206,7 +3206,7 @@ __metadata:
     eslint-plugin-unicorn: ">=45.0.2"
     eslint-plugin-varspacing: ">=1.2.2"
     eslint-plugin-vue: ">=9.8.0"
-  checksum: 1f55650eae872f4ff534a4a00efba5a56930c421e32f2e6f6e35d2fa8c1d082e0eb6682df1786b939db050ff429a5515d291c46a5a532edf471bbf56e2087f19
+  checksum: 8666b0135c3bd1f5d06e4ac9884467bbf56aead1c122ef0d03a0ab57bcea042f50623d930196f0b0b41f0ce4d25c126ace850a84c010b4003e72a67f21555a5d
   languageName: node
   linkType: hard
 
@@ -3263,7 +3263,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@privyid/pena-monorepo@workspace:."
   dependencies:
-    "@privyid/eslint-config-persona": ^0.7.0
+    "@privyid/eslint-config-persona": ^0.8.0
     "@typescript-eslint/eslint-plugin": ^5.50.0
     "@typescript-eslint/parser": ^5.50.0
     "@vue/eslint-config-typescript": ^11.0.2
@@ -3285,14 +3285,14 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@privyid/pena-react-native@workspace:packages/pena-react-native"
   dependencies:
-    "@privyid/eslint-config-persona": ^0.7.0
+    "@privyid/eslint-config-persona": ^0.8.0
     "@privyid/pena": "workspace:^"
     "@privyid/pena-utils": "workspace:^"
     "@react-native-community/eslint-config": ^3.0.2
     "@release-it/conventional-changelog": ^5.0.0
     "@types/jest": ^28.1.2
     "@types/react": ^18.0.27
-    "@types/react-native": 0.71.2
+    "@types/react-native": 0.71.3
     "@typescript-eslint/eslint-plugin": ^5.50.0
     "@typescript-eslint/parser": ^5.50.0
     "@vue/eslint-config-typescript": ^11.0.2
@@ -3310,8 +3310,8 @@ __metadata:
     expo: ^47.0.13
     jest: ^28.1.1
     pod-install: ^0.1.0
-    react: 18.1.0
-    react-native: 0.71.2
+    react: 18.2.0
+    react-native: 0.71.3
     react-native-builder-bob: ^0.20.0
     react-native-url-polyfill: ^1.3.0
     react-native-webview: ^11.26.1
@@ -3369,7 +3369,7 @@ __metadata:
     typescript: ^4.9.3
     vite: ^4.0.0
     vite-plugin-dts: ^1.7.1
-    vitest: 0.28.3
+    vitest: 0.28.5
   languageName: unknown
   linkType: soft
 
@@ -3382,7 +3382,7 @@ __metadata:
     typescript: ^4.9.3
     vite: ^4.0.0
     vite-plugin-dts: ^1.7.1
-    vitest: 0.28.3
+    vitest: 0.28.5
   languageName: unknown
   linkType: soft
 
@@ -3414,12 +3414,12 @@ __metadata:
     "@privyid/pena-utils": "workspace:^"
     "@testing-library/dom": ^8.20.0
     "@testing-library/jest-dom": ^5.16.5
-    "@vitest/coverage-c8": 0.28.3
+    "@vitest/coverage-c8": 0.28.5
     happy-dom: ^8.2.2
     typescript: ^4.9.3
     vite: ^4.0.0
     vite-plugin-dts: ^1.7.1
-    vitest: 0.28.3
+    vitest: 0.28.5
   languageName: unknown
   linkType: soft
 
@@ -4489,12 +4489,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-native@npm:0.71.2":
-  version: 0.71.2
-  resolution: "@types/react-native@npm:0.71.2"
+"@types/react-native@npm:0.71.3":
+  version: 0.71.3
+  resolution: "@types/react-native@npm:0.71.3"
   dependencies:
     "@types/react": "*"
-  checksum: 42dc06ae47a7db7ecd41ce66625cdb6f975bfc610127bf3fb36fedc894ac1aa2698b215984750de79369627f270260bd94a376ff37455589c55454d25b4d32b9
+  checksum: 5ee02f9c780c630e145c1887c80d1739d59e01d45ff9e862b475538376ddd17fc605a1245fea04813593c1c0153b5f4a41247283036adcdfbf4779555f956d93
   languageName: node
   linkType: hard
 
@@ -4817,7 +4817,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vitest/coverage-c8@npm:0.28.3, @vitest/coverage-c8@npm:^0.28.3":
+"@vitest/coverage-c8@npm:0.28.5":
+  version: 0.28.5
+  resolution: "@vitest/coverage-c8@npm:0.28.5"
+  dependencies:
+    c8: ^7.12.0
+    picocolors: ^1.0.0
+    std-env: ^3.3.1
+    vitest: 0.28.5
+  checksum: da7168da8d8589d09226f37686eae65ecfdd0eeabba15591265942d308b84816a6b3c0cdf026ee3e39c3d0bb273fe768a8830fbcf79745dcbd85c76ad1f45253
+  languageName: node
+  linkType: hard
+
+"@vitest/coverage-c8@npm:^0.28.3":
   version: 0.28.3
   resolution: "@vitest/coverage-c8@npm:0.28.3"
   dependencies:
@@ -4851,6 +4863,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@vitest/expect@npm:0.28.5":
+  version: 0.28.5
+  resolution: "@vitest/expect@npm:0.28.5"
+  dependencies:
+    "@vitest/spy": 0.28.5
+    "@vitest/utils": 0.28.5
+    chai: ^4.3.7
+  checksum: d51325957ce21937d41f6c8665f00c5d447892383c65eac68313bd89b540621d4da8a08b3f478d9e0512760ed66e7cdbadea7e46b0fb83252ad7deff1f9206d7
+  languageName: node
+  linkType: hard
+
 "@vitest/runner@npm:0.28.3":
   version: 0.28.3
   resolution: "@vitest/runner@npm:0.28.3"
@@ -4873,6 +4896,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@vitest/runner@npm:0.28.5":
+  version: 0.28.5
+  resolution: "@vitest/runner@npm:0.28.5"
+  dependencies:
+    "@vitest/utils": 0.28.5
+    p-limit: ^4.0.0
+    pathe: ^1.1.0
+  checksum: 1b7bb6fa8df40181582a52a332230154f65d049dc154b342642e0c2f2323ae74b301a7ec20a3c2963cf20925a3d63d9dff05f57183bc0e5d705331795316a1dd
+  languageName: node
+  linkType: hard
+
 "@vitest/spy@npm:0.28.3":
   version: 0.28.3
   resolution: "@vitest/spy@npm:0.28.3"
@@ -4888,6 +4922,15 @@ __metadata:
   dependencies:
     tinyspy: ^1.0.2
   checksum: 0305e5562bdbb151390d2dcc791784078c0d34394e58cda1c0b277cd0806e0b1bad4fd9481de65f11c2827b87f5b76e74fe001b37d5153240ec769c7bbee8e1b
+  languageName: node
+  linkType: hard
+
+"@vitest/spy@npm:0.28.5":
+  version: 0.28.5
+  resolution: "@vitest/spy@npm:0.28.5"
+  dependencies:
+    tinyspy: ^1.0.2
+  checksum: 169621f420bec4ea7e14c54b3626811a6de70c13b5882e808ef3c4cda56cca8ce9ad611ca0d7cc200ef81c19965a27236af6f1067a5464c8ccfd3d4eee41074e
   languageName: node
   linkType: hard
 
@@ -4914,6 +4957,19 @@ __metadata:
     picocolors: ^1.0.0
     pretty-format: ^27.5.1
   checksum: b5868afe5196ee9703fe3bcb4161d828124a1990efeb01a179f61bb7a1be236991ff0627ec20397ca581bed24e0d7c069a509bfb40cd2b7bc6401a274d82f14d
+  languageName: node
+  linkType: hard
+
+"@vitest/utils@npm:0.28.5":
+  version: 0.28.5
+  resolution: "@vitest/utils@npm:0.28.5"
+  dependencies:
+    cli-truncate: ^3.1.0
+    diff: ^5.1.0
+    loupe: ^2.3.6
+    picocolors: ^1.0.0
+    pretty-format: ^27.5.1
+  checksum: 23dcfe63e16df2267fa3f1d38c9f2ea670b68479ae3fa3815556fed6889f43a0033c1bcfb39d5f162e8935193e5c3340fc64bc948b8b612c962668f598981dec
   languageName: node
   linkType: hard
 
@@ -12391,10 +12447,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jsc-android@npm:^250230.2.1":
-  version: 250230.2.1
-  resolution: "jsc-android@npm:250230.2.1"
-  checksum: 11b7c41a0a9192ea4697e61f72a65341afd143550159bbc951cfe8e08eaee4fb119a7f4b9241de15b7156a873f0faef677f6ee72c243ace013e537bfc819dd6d
+"jsc-android@npm:^250231.0.0":
+  version: 250231.0.0
+  resolution: "jsc-android@npm:250231.0.0"
+  checksum: 6c3f0f6f02fa37a19935b2fbe651e9d6ecc370eb30f2ecee76379337bbf084abb568a1ef1133fe622c5b76f43cf54bb7716f92a94dca010985da38edc48841e2
   languageName: node
   linkType: hard
 
@@ -15818,22 +15874,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-codegen@npm:^0.71.3":
-  version: 0.71.3
-  resolution: "react-native-codegen@npm:0.71.3"
+"react-native-codegen@npm:^0.71.5":
+  version: 0.71.5
+  resolution: "react-native-codegen@npm:0.71.5"
   dependencies:
     "@babel/parser": ^7.14.0
     flow-parser: ^0.185.0
     jscodeshift: ^0.13.1
     nullthrows: ^1.1.1
-  checksum: 3cb65d0ed56b8b01e97ad202061a50ee3c5bd0deb5af19c99d3207eaca237c1316bbaec47299e220db7396724175dadb87f7573d1630b6d93c81d64c4884948c
+  checksum: d3a40b557d4b3a0d51664070eb8388b0dde247a0518025ff5a815d3573c98ff16f616df8236e827ee16625f685169931db5c966dd144d860ad5aed437b65b28c
   languageName: node
   linkType: hard
 
-"react-native-gradle-plugin@npm:^0.71.14":
-  version: 0.71.14
-  resolution: "react-native-gradle-plugin@npm:0.71.14"
-  checksum: fc2599cdc6b64f09cdd1ad9b0aa6b45265b5905d13ab69174f46134d7a42b324459e169b0aaef67e075b5b65fe93704980718fd2c26245ef2b1d5fd29e391813
+"react-native-gradle-plugin@npm:^0.71.15":
+  version: 0.71.15
+  resolution: "react-native-gradle-plugin@npm:0.71.15"
+  checksum: e1c1714568324405fbca4ca841a0ab62cd8b90c65b3320183825161358f2bdb5226c8b22153b3007c2455dc7535d839d07d43148e6cba7952ae948636154f2b6
   languageName: node
   linkType: hard
 
@@ -15861,9 +15917,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native@npm:0.71.2":
-  version: 0.71.2
-  resolution: "react-native@npm:0.71.2"
+"react-native@npm:0.71.3":
+  version: 0.71.3
+  resolution: "react-native@npm:0.71.3"
   dependencies:
     "@jest/create-cache-key-function": ^29.2.1
     "@react-native-community/cli": 10.1.3
@@ -15879,7 +15935,7 @@ __metadata:
     event-target-shim: ^5.0.1
     invariant: ^2.2.4
     jest-environment-node: ^29.2.1
-    jsc-android: ^250230.2.1
+    jsc-android: ^250231.0.0
     memoize-one: ^5.0.0
     metro-react-native-babel-transformer: 0.73.7
     metro-runtime: 0.73.7
@@ -15889,8 +15945,8 @@ __metadata:
     pretty-format: ^26.5.2
     promise: ^8.3.0
     react-devtools-core: ^4.26.1
-    react-native-codegen: ^0.71.3
-    react-native-gradle-plugin: ^0.71.14
+    react-native-codegen: ^0.71.5
+    react-native-gradle-plugin: ^0.71.15
     react-refresh: ^0.4.0
     react-shallow-renderer: ^16.15.0
     regenerator-runtime: ^0.13.2
@@ -15903,7 +15959,7 @@ __metadata:
     react: 18.2.0
   bin:
     react-native: cli.js
-  checksum: c95bceaf75875aa612591b4de4f53918296aa8af1097ad8a75409fcae5292059db1a2da2dd97d791f02aa4397ad4da3ac21d91e2e3cc529c6a7de17a14358fe3
+  checksum: 1f6cee37352db4981eadee3e07b04f19d4ad3eeebf2ede7e8d98d42c87ea6041ec3e5703038349c650148fadb1bfab3db0c52121620fd946d9cf4a47b130b715
   languageName: node
   linkType: hard
 
@@ -15926,16 +15982,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@npm:18.1.0":
-  version: 18.1.0
-  resolution: "react@npm:18.1.0"
-  dependencies:
-    loose-envify: ^1.1.0
-  checksum: 5bb296b561b43ef2220395da4faac86c14a087c8c80e1a7598a5740f01ee605c11eaf249985c1e2000971c4cd32ccb46d40f00479bbd9fb6b1c7cf857393b7d4
-  languageName: node
-  linkType: hard
-
-"react@npm:^18.2.0":
+"react@npm:18.2.0, react@npm:^18.2.0":
   version: 18.2.0
   resolution: "react@npm:18.2.0"
   dependencies:
@@ -18972,6 +19019,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"vite-node@npm:0.28.5":
+  version: 0.28.5
+  resolution: "vite-node@npm:0.28.5"
+  dependencies:
+    cac: ^6.7.14
+    debug: ^4.3.4
+    mlly: ^1.1.0
+    pathe: ^1.1.0
+    picocolors: ^1.0.0
+    source-map: ^0.6.1
+    source-map-support: ^0.5.21
+    vite: ^3.0.0 || ^4.0.0
+  bin:
+    vite-node: vite-node.mjs
+  checksum: b3813b784f551613e561bf85e64ceb8e869d760d34f135dc3351b093618c6fc3c64f23839ac530ddc49724beb83c3f70ee6392e62676c78141ed04c7ab1e0aa0
+  languageName: node
+  linkType: hard
+
 "vite-plugin-dts@npm:^1.7.1":
   version: 1.7.1
   resolution: "vite-plugin-dts@npm:1.7.1"
@@ -19106,6 +19171,57 @@ __metadata:
   bin:
     vitest: vitest.mjs
   checksum: 13ee3d8b7554cbe46516a1cc46082eb11443532d11b263c1ed2ad3187339bb71ec705669e9d3d59653a8bd230c21488e1f5caa69b2aa20acabd3ee2b283b805c
+  languageName: node
+  linkType: hard
+
+"vitest@npm:0.28.5":
+  version: 0.28.5
+  resolution: "vitest@npm:0.28.5"
+  dependencies:
+    "@types/chai": ^4.3.4
+    "@types/chai-subset": ^1.3.3
+    "@types/node": "*"
+    "@vitest/expect": 0.28.5
+    "@vitest/runner": 0.28.5
+    "@vitest/spy": 0.28.5
+    "@vitest/utils": 0.28.5
+    acorn: ^8.8.1
+    acorn-walk: ^8.2.0
+    cac: ^6.7.14
+    chai: ^4.3.7
+    debug: ^4.3.4
+    local-pkg: ^0.4.2
+    pathe: ^1.1.0
+    picocolors: ^1.0.0
+    source-map: ^0.6.1
+    std-env: ^3.3.1
+    strip-literal: ^1.0.0
+    tinybench: ^2.3.1
+    tinypool: ^0.3.1
+    tinyspy: ^1.0.2
+    vite: ^3.0.0 || ^4.0.0
+    vite-node: 0.28.5
+    why-is-node-running: ^2.2.2
+  peerDependencies:
+    "@edge-runtime/vm": "*"
+    "@vitest/browser": "*"
+    "@vitest/ui": "*"
+    happy-dom: "*"
+    jsdom: "*"
+  peerDependenciesMeta:
+    "@edge-runtime/vm":
+      optional: true
+    "@vitest/browser":
+      optional: true
+    "@vitest/ui":
+      optional: true
+    happy-dom:
+      optional: true
+    jsdom:
+      optional: true
+  bin:
+    vitest: vitest.mjs
+  checksum: 5360278bfe592e929718ce98b0c3979e132c80028d2ea4879f6c902dba7c66116684ad16578818d506853d4a6ca6ff8a42c737f302f864721fd0b5582f9ee4d1
   languageName: node
   linkType: hard
 
