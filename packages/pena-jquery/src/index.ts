@@ -16,6 +16,8 @@ declare global {
 }
 
 $.fn.openDoc = function (options) {
+  this.closeDoc()
+
   this.each(function () {
     const config  = $.extend({}, options, { container: this as HTMLDivElement })
     const cleanUp = Pena.openDoc(config)
@@ -34,7 +36,3 @@ $.fn.closeDoc = function () {
 
   return this
 }
-
-export {
-  default,
-} from 'jquery'

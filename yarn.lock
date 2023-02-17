@@ -3246,6 +3246,8 @@ __metadata:
   resolution: "@privyid/pena-jquery@workspace:packages/pena-jquery"
   dependencies:
     "@privyid/pena": "workspace:^"
+    "@testing-library/dom": ^8.20.0
+    "@testing-library/jest-dom": ^5.16.5
     "@types/jquery": ^3.5.16
     "@vitest/coverage-c8": ^0.28.3
     happy-dom: ^8.2.2
@@ -3253,7 +3255,7 @@ __metadata:
     typescript: ^4.9.3
     vite: ^4.0.0
     vite-plugin-dts: ^1.7.1
-    vitest: 0.28.3
+    vitest: 0.28.5
   peerDependencies:
     jquery: ">=3"
   languageName: unknown
