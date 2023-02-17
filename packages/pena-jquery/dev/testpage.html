@@ -10,19 +10,26 @@
   <style>
     body {
       background-color: #D61355;
-      padding: 1rem;
     }
   </style>
 </head>
 <body>
   <div id="app">
     <h1>Test Page</h1>
-    <p id="query"></p>
-    <p id="dom-storage"></p>
-    <button id="sign">
-      Sign
+    <button onclick="sendMessage()">
+      Send
     </button>
   </div>
-  <script type="module" src="/dev/main.ts"></script>
+
+  <script>
+    function sendMessage () {
+      window.parent.postMessage(JSON.stringify({
+        action: 'sign',
+        data  : {
+          message: 'OK',
+        },
+      }), '*')
+    }
+  </script>
 </body>
 </html>

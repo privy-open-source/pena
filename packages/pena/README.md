@@ -73,7 +73,7 @@ If you have only Pena as a content in your page. We **recommended** to use `fit`
 Not very recommended, but you can also use Pena with CDN, just add this in your HTML:
 
 ```html
-<script src="https://unpkg.com/@privyid/pena"></script>
+<script src="https://cdn.jsdelivr.net/npm/@privyid/pena"></script>
 ```
 
 ## Migration from [privy-sdk](https://www.npmjs.com/package/privy-sdk)

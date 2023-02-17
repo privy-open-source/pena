@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + TS</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <style>
+      #app {
+        width: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script src="./dist/pena-jquery.iife.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $('#app').openDoc({
+          url   : new URL('/dev/testpage.html', location.origin).href,
+          layout: 'fixed',
+          // eslint-disable-next-line no-console
+          onAfterAction: console.log,
+        })
+      })
+    </script>
+  </body>
+</html>
