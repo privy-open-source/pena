@@ -15,13 +15,13 @@ Add this in your HTML
 
 ## Usage
 
-```html
+```vue
 <div id="pena"></div><!-- 👈 Target container -->
 
 <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/pena-jquery"></script>
 
-<script>
+<script type="text/javascript">
   $(function () {
     $('#pena').openDoc({
       url      : 'https://sign.privy.id/doc/xxxxxxx',   // Document URL
