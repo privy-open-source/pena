@@ -19,10 +19,15 @@ $.fn.openDoc = function (options) {
   this.closeDoc()
 
   this.each(function () {
-    const config  = $.extend({}, options, { container: this as HTMLDivElement })
-    const cleanUp = Pena.openDoc(config)
-
-    this._closeDoc = cleanUp
+    this._closeDoc = Pena.openDoc({
+      container    : this as HTMLDivElement,
+      url          : options.url,
+      lang         : options.lang,
+      signature    : options.signature,
+      layout       : options.layout,
+      privyId      : options.privyId,
+      onAfterAction: options.onAfterAction,
+    })
   })
 
   return this
