@@ -4,6 +4,12 @@
 
 This is part of [Pena Project](https://github.com/privy-open-source/pena), it's not intended for independent use.
 
+## Installation
+
+```bash
+yarn add @privyid/pena-unipost
+```
+
 ## Usage
 
 ```ts
@@ -16,3 +22,7 @@ postMessage(JSON.stringify({
   },
 }))
 ```
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](/LICENSE) file for details

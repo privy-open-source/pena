@@ -4,6 +4,7 @@ declare global {
   interface Window {
     ReactNativeWebView?: { postMessage: PostMessage },
     PenaAndroid?: { postMessage: PostMessage },
+    PenaFlutter?: { postMessage: PostMessage },
   }
 }
 
@@ -15,6 +16,9 @@ export default function postMessage (message: string) {
   // Pena Android (Kotlin)
   else if (typeof window.PenaAndroid?.postMessage === 'function')
     window.PenaAndroid.postMessage(message)
+  // Pena Flutter
+  else if (typeof window.PenaFlutter?.postMessage === 'function')
+    window.PenaFlutter.postMessage(message)
   // Standard Iframe
   else if (typeof window.parent.postMessage === 'function')
     window.parent.postMessage(message, '*')

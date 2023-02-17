@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + TS</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <style>
+      .row {
+        display: flex;
+      }
+
+      #app {
+        width: 50%;
+      }
+
+      #log {
+        width: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="row">
+      <div id="app"></div>
+      <div id="log">
+        <ul></ul>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script src="/dist/pena-jquery.umd.cjs"></script>
+    <script>
+      $('#app').openDoc({
+        url          : new URL('/dev/testpage.html', location.origin).href,
+        layout       : 'fit',
+        onAfterAction: (data) => {
+          const li = document.createElement('li')
+
+          li.innerText = `${data.event}: ${JSON.stringify(data.payload)}`
+
+          document.querySelector('#log > ul').append(li)
+        },
+      })
+    </script>
+  </body>
+</html>
