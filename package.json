@@ -6,9 +6,9 @@
   "scripts": {
     "lint": "eslint . --ext .js,.ts,.jsx,.tsx,.vue",
     "fix": "yarn lint --fix",
-    "build": "yarn workspaces foreach -vt run build",
+    "build": "yarn workspaces foreach -vp --topological-dev run build",
     "check": "yarn dlx @yarnpkg/doctor packages/",
-    "coverage": "yarn workspaces foreach -vp run coverage"
+    "coverage": "yarn workspaces foreach -vp --topological-dev run coverage"
   },
   "repository": "https://github.com/privy-open-source/pena",
   "author": "Ade Novid <adenvt@gmail.com> (https://github.com/adenvt)",

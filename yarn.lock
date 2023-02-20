@@ -3371,9 +3371,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@privyid/pena-angular@workspace:packages/pena-angular":
+"@privyid/pena-angular-workspace@workspace:packages/pena-angular":
   version: 0.0.0-use.local
-  resolution: "@privyid/pena-angular@workspace:packages/pena-angular"
+  resolution: "@privyid/pena-angular-workspace@workspace:packages/pena-angular"
   dependencies:
     "@angular-devkit/build-angular": ^15.1.4
     "@angular/animations": ^15.1.0
@@ -3510,9 +3510,9 @@ __metadata:
   resolution: "@privyid/pena-svelte@workspace:packages/pena-svelte"
   dependencies:
     "@privyid/pena": "workspace:^"
-    "@sveltejs/adapter-auto": ^1.0.0
+    "@sveltejs/adapter-auto": ^2.0.0
     "@sveltejs/kit": ^1.0.0
-    "@sveltejs/package": ^1.0.0
+    "@sveltejs/package": ^2.0.0
     svelte: ^3.54.0
     svelte-check: ^3.0.1
     tslib: ^2.4.1
@@ -4083,14 +4083,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sveltejs/adapter-auto@npm:^1.0.0":
-  version: 1.0.2
-  resolution: "@sveltejs/adapter-auto@npm:1.0.2"
+"@sveltejs/adapter-auto@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@sveltejs/adapter-auto@npm:2.0.0"
   dependencies:
     import-meta-resolve: ^2.2.0
   peerDependencies:
     "@sveltejs/kit": ^1.0.0
-  checksum: 46426b81164b2d60e0eb2880ca5caa4b8c5b0d0b6a1f2a8b6c2f4d5c9db326d775facfbd834e50b697629ca3e3a35138e021cf9d1cbf8215ab2820e5ed8ff001
+  checksum: 7feeb24f5253b3ec4768c130f3498614e26d146e5b45560d5f3f8e3345a821f1c24fff578348fd756625af484f5b1079d33f6ecd1d43d395a192d2d193b5ab0f
   languageName: node
   linkType: hard
 
@@ -4120,9 +4120,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sveltejs/package@npm:^1.0.0":
-  version: 1.0.2
-  resolution: "@sveltejs/package@npm:1.0.2"
+"@sveltejs/package@npm:^2.0.0":
+  version: 2.0.1
+  resolution: "@sveltejs/package@npm:2.0.1"
   dependencies:
     chokidar: ^3.5.3
     kleur: ^4.1.5
@@ -4132,7 +4132,7 @@ __metadata:
     svelte: ^3.44.0
   bin:
     svelte-package: svelte-package.js
-  checksum: f647589528f313b7f4e8b3146ab301e974d0a9887d34661bc88e684fa1cc7548d2e2836658b0d22109b1c4ec8b55eafaa539d6b7ee617d44c26075e00867b4e8
+  checksum: 118c8728ce19f284fc6aedb372f7fa3d43756056fc7c5a1f810762658cbb73b4083fb0bf33edf52c18587d330fd0e65204f861708e94a0bcbed76ea504b95443
   languageName: node
   linkType: hard
 
