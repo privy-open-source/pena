@@ -1,5 +1,5 @@
 {
-  "name": "@privyid/pena-angular",
+  "name": "@privyid/pena-angular-workspace",
   "description": "Pena plugin for Angular",
   "version": "0.1.0",
   "scripts": {
@@ -41,5 +41,8 @@
   },
   "installConfig": {
     "hoistingLimits": "workspaces"
-  }
+  },
+  "workspaces": [
+    "dist/pena-angular/"
+  ]
 }

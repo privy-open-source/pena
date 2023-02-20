@@ -26,6 +26,7 @@
     "coverage": "vitest run --coverage"
   },
   "devDependencies": {
+    "@privyid/pena": "workspace:^",
     "@testing-library/dom": "^8.20.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@types/jquery": "^3.5.16",
@@ -40,7 +41,7 @@
   "peerDependencies": {
     "jquery": ">=3"
   },
-  "dependencies": {
-    "@privyid/pena": "workspace:^"
+  "publishConfig": {
+    "access": "public"
   }
 }

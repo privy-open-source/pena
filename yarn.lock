@@ -3371,9 +3371,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@privyid/pena-angular@workspace:packages/pena-angular":
+"@privyid/pena-angular-workspace@workspace:packages/pena-angular":
   version: 0.0.0-use.local
-  resolution: "@privyid/pena-angular@workspace:packages/pena-angular"
+  resolution: "@privyid/pena-angular-workspace@workspace:packages/pena-angular"
   dependencies:
     "@angular-devkit/build-angular": ^15.1.4
     "@angular/animations": ^15.1.0
@@ -3399,6 +3399,18 @@ __metadata:
     tslib: ^2.3.0
     typescript: ~4.9.4
     zone.js: ~0.12.0
+  languageName: unknown
+  linkType: soft
+
+"@privyid/pena-angular@workspace:packages/pena-angular/dist/pena-angular":
+  version: 0.0.0-use.local
+  resolution: "@privyid/pena-angular@workspace:packages/pena-angular/dist/pena-angular"
+  dependencies:
+    tslib: ^2.3.0
+  peerDependencies:
+    "@angular/common": ^15.1.0
+    "@angular/core": ^15.1.0
+    "@privyid/pena": "workspace:^"
   languageName: unknown
   linkType: soft
 

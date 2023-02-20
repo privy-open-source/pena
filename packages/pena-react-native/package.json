@@ -52,8 +52,7 @@
   },
   "homepage": "https://github.com/privy-open-source/pena#readme",
   "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
+    "access": "public"
   },
   "dependencies": {
     "@privyid/pena-utils": "workspace:^",
