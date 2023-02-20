@@ -12,7 +12,11 @@ export default defineConfig({
       entry   : 'src/index.ts',
       name    : 'Pena',
       fileName: 'pena',
-      formats : ['es', 'umd'],
+      formats : [
+        'es',
+        'umd',
+        'iife',
+      ],
     },
   },
   test: {

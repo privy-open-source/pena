@@ -5,6 +5,7 @@
   "type": "module",
   "main": "./dist/pena.umd.cjs",
   "module": "./dist/pena.js",
+  "jsdelivr": "./dist/pena.iife.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
