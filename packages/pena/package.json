@@ -24,10 +24,8 @@
     "test": "vitest",
     "coverage": "vitest run --coverage"
   },
-  "dependencies": {
-    "@privyid/pena-utils": "workspace:^"
-  },
   "devDependencies": {
+    "@privyid/pena-utils": "workspace:^",
     "@testing-library/dom": "^8.20.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@vitest/coverage-c8": "0.28.5",
