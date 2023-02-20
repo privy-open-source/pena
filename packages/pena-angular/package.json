@@ -41,8 +41,5 @@
   },
   "installConfig": {
     "hoistingLimits": "workspaces"
-  },
-  "workspaces": [
-    "dist/pena-angular/"
-  ]
+  }
 }
