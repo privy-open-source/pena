@@ -43,12 +43,12 @@ Pena.openDoc({
 
 ## Options
 
-| Options         | Type     | Default | Description                                                                                                  |
+| Name            | Type     | Default | Description                                                                                                  |
 |-----------------|----------|:-------:|--------------------------------------------------------------------------------------------------------------|
 | `url`           | string   |    -    | **(Required)** Document's url                                                                                |
 | `container`     | string   | `.pena` | Target's query selector                                                                                      |
 | `lang`          | string   |  `en`   | Set language, valid value is `en` or `id`                                                                    |
-| `layout`        | string   | `fixed` | Set layout mode, valid value is `fixed` or `fit`, see the [different](#layout-fixed-vs-fit)                  |
+| `layout`        | string   | `fixed` | Set layout mode, valid value is `fixed` or `fit`, see the [different][different]                             |
 | `visibility`    | boolean  | `true`  | Set signature visibility                                                                                     |
 | `privyId`       | string   |    -    | Set recipient's privyId                                                                                      |
 | `signature`     | object   |    -    | Set signature placement<br/> <strong>(Deprecated)</strong> use API to set placement when upload the document |
@@ -132,3 +132,5 @@ Pena.openDoc({
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](/LICENSE) file for details
+
+[different]: #layout-fixed-vs-fit

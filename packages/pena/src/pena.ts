@@ -26,16 +26,9 @@ export function openDoc (config: PenaOption): CleanupFn {
   function onMessage (event: MessageEvent) {
     if (event.origin === url.origin && typeof config.onAfterAction === 'function') {
       try {
-        let payload: Payload | undefined
+        const payload: Payload = JSON.parse(event.data)
 
-        // V2 Payload format
-        if (typeof event.data === 'string')
-          payload = JSON.parse(event.data)
-        // V1 Payload format
-        else if (event.data.event && event.data.data)
-          payload = event.data.data
-
-        if (payload)
+        if (payload?.action && payload?.data)
           config.onAfterAction(payload)
       } catch (error) {
         console.warn(error)

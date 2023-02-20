@@ -15,11 +15,11 @@ Add this in your HTML
 
 ## Usage
 
-```vue
+```html
 <div id="pena"></div><!-- 👈 Target container -->
 
 <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/pena-jquery"></script>
+<script src="https://cdn.jsdelivr.net/npm/@privyid/pena-jquery"></script>
 
 <script type="text/javascript">
   $(function () {
@@ -42,9 +42,28 @@ Add this in your HTML
       },
     })
   })
-<script>
+</script>
 ```
+
+## Options
+
+| Name            | Type     | Default | Description                                                                                                  |
+|-----------------|----------|:-------:|--------------------------------------------------------------------------------------------------------------|
+| `url`           | string   |    -    | **(Required)** Document's url                                                                                |
+| `lang`          | string   |  `en`   | Set language, valid value is `en` or `id`                                                                    |
+| `layout`        | string   | `fixed` | Set layout mode, valid value is `fixed` or `fit`, see the [different][different]                             |
+| `visibility`    | boolean  | `true`  | Set signature visibility                                                                                     |
+| `privyId`       | string   |    -    | Set recipient's privyId                                                                                      |
+| `signature`     | object   |    -    | Set signature placement<br/> <strong>(Deprecated)</strong> use API to set placement when upload the document |
+| ├ `x`           | number   |    -    | X Coordinate                                                                                                 |
+| ├ `y`           | number   |    -    | Y Coordinate                                                                                                 |
+| ├ `page`        | number   |    -    | Target page                                                                                                  |
+| └ `fixed`       | boolean  | `false` | Disabled signature for moving                                                                                |
+| `debug`         | boolean  | `false` | Enable debug mode                                                                                            |
+| `onAfterAction` | function |    -    | After action hook                                                                                            |
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](/LICENSE) file for details
+
+[different]: ../pena/README.md#layout-fixed-vs-fit

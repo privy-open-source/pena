@@ -1,5 +1,6 @@
 {
   "name": "@privyid/pena-angular",
+  "description": "Pena plugin for Angular",
   "version": "0.1.0",
   "scripts": {
     "ng": "ng",

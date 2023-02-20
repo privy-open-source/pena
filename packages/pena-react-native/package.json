@@ -1,7 +1,7 @@
 {
   "name": "@privyid/pena-react-native",
+  "description": "Pena plugin for React Native",
   "version": "0.1.0",
-  "description": "test",
   "type": "module",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",

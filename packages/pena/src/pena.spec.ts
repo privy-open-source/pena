@@ -75,23 +75,23 @@ describe('openDoc', () => {
     const event = Object.assign(new MessageEvent('message'), {
       origin: 'http://sign.document.com',
       data  : JSON.stringify({
-        event  : 'sign',
-        payload: { message: 'OK' },
+        action: 'sign',
+        data  : { message: 'OK' },
       }),
     })
 
     fireEvent(window, event)
 
     expect(onAfterAction).toBeCalledWith({
-      event  : 'sign',
-      payload: { message: 'OK' },
+      action: 'sign',
+      data  : { message: 'OK' },
     })
 
     container.remove()
     cleanUp()
   })
 
-  it('should call onAfterAction if got an action (legacy)', () => {
+  it('should not call onAfterAction if got an legacy action', () => {
     const container = document.createElement('div')
 
     container.setAttribute('id', 'app')
@@ -112,7 +112,7 @@ describe('openDoc', () => {
 
     fireEvent(window, event)
 
-    expect(onAfterAction).toBeCalledWith({
+    expect(onAfterAction).not.toBeCalledWith({
       action: 'sign',
       data  : { message: 'OK' },
     })

@@ -12,6 +12,7 @@
     "dev/**/*.d.ts",
     "dev/**/*.tsx",
     "dev/**/*.vue",
-    "vite.config.ts"
+    "vite.config.ts",
+    "build.config.ts"
   ]
 }

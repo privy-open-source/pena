@@ -1,6 +1,7 @@
 {
   "name": "@privyid/pena",
-  "version": "0.1.0",
+  "description": "Official PrivyID Sign SDK",
+  "version": "0.0.1",
   "type": "module",
   "main": "./dist/pena.umd.cjs",
   "module": "./dist/pena.js",
