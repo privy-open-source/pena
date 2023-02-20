@@ -59,7 +59,6 @@ yarn add @privyid/pena-svelte @privyid/pena
 | ├ `page`        | number   |    -    | Target page                                                                                                  |
 | └ `fixed`       | boolean  | `false` | Disabled signature for moving                                                                                |
 | `debug`         | boolean  | `false` | Enable debug mode                                                                                            |
-| `onAfterAction` | function |    -    | After action hook                                                                                            |
 
 ### Events
 

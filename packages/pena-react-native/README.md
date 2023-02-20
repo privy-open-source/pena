@@ -51,7 +51,6 @@ export default function App () {
 |-----------------|----------|:-------:|--------------------------------------------------------------------------------------------------------------|
 | `url`           | string   |    -    | **(Required)** Document's url                                                                                |
 | `lang`          | string   |  `en`   | Set language, valid value is `en` or `id`                                                                    |
-| `layout`        | string   | `fixed` | Set layout mode, valid value is `fixed` or `fit`, see the [different][different]                             |
 | `visibility`    | boolean  | `true`  | Set signature visibility                                                                                     |
 | `privyId`       | string   |    -    | Set recipient's privyId                                                                                      |
 | `signature`     | object   |    -    | Set signature placement<br/> <strong>(Deprecated)</strong> use API to set placement when upload the document |
@@ -70,5 +69,3 @@ This project is licensed under the MIT License - see the [LICENSE](/LICENSE) fil
 ---
 
 Made with [create-react-native-library](https://github.com/callstack/react-native-builder-bob)
-
-[different]: ../../../pena/README.md#layout-fixed-vs-fit
