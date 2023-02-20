@@ -1,6 +1,7 @@
 {
   "name": "@privyid/pena-vue",
-  "version": "0.0.1",
+  "description": "Pena plugin for Vue",
+  "version": "0.1.0",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
