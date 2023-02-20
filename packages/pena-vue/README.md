@@ -2,6 +2,11 @@
 
 > Pena plugin for Vue
 
+## Compabilities
+- Vue 3
+- Vue >= 2.7
+- Vue <= 2.6 (require [`@vue/composition-api`](https://github.com/vuejs/composition-api) plugin)
+
 ## Installation
 
 **NPM**
@@ -19,18 +24,18 @@ yarn add @privyid/pena-vue @privyid/pena
 
 ```vue
 <template>
-   <pena
-      url="http://sign.document.com/doc/xxx"
-      lang="en"
-      layout="fixed"
-      :signature="{
-         x    : 100,
-         y    : 200,
-         page : 1,
-         fixed: false,
-      }"
-      @after-action="onAfterAction"
-   />
+  <pena
+    url="http://sign.document.com/doc/xxx"
+    lang="en"
+    layout="fixed"
+    :signature="{
+      x    : 100,
+      y    : 200,
+      page : 1,
+      fixed: false,
+    }"
+    @after-action="onAfterAction"
+  />
 </template>
 
 <script>
@@ -68,7 +73,6 @@ export default {
 | ├ `page`        | number   |    -    | Target page                                                                                                  |
 | └ `fixed`       | boolean  | `false` | Disabled signature for moving                                                                                |
 | `debug`         | boolean  | `false` | Enable debug mode                                                                                            |
-| `onAfterAction` | function |    -    | After action hook                                                                                            |
 
 ### Events
 
