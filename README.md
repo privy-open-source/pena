@@ -18,7 +18,7 @@
 - [Install for React Native][react-native]
 - [Install for Angular][angular]
 - [Install for Android (Kotlin)][android]
-- Install for Flutter - *TODO*
+- [Install for Flutter][flutter]
 
 ## License
 
