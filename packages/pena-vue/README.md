@@ -3,6 +3,7 @@
 > Pena plugin for Vue
 
 ## Compabilities
+
 - Vue 3
 - Vue >= 2.7
 - Vue <= 2.6 (require [`@vue/composition-api`](https://github.com/vuejs/composition-api) plugin)
@@ -18,6 +19,23 @@ npm install --save @privyid/pena-vue @privyid/pena
 **Yarn**
 ```bash
 yarn add @privyid/pena-vue @privyid/pena
+```
+
+### Nuxt 2
+
+You need transpile this package, add this in your `nuxt.config.js`.
+
+```js
+export default {
+  // ...
+  build: {
+    transpile: [
+      '@privyid/pena',
+      '@privyid/pena-vue',
+    ]
+  },
+  // ...
+}
 ```
 
 ## Usage
