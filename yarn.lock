@@ -3530,6 +3530,7 @@ __metadata:
   resolution: "@privyid/pena-unipost@workspace:packages/pena-unipost"
   dependencies:
     "@vitest/coverage-c8": ^0.28.3
+    browserslist-ua-parser: ^1.0.0
     happy-dom: ^8.2.2
     typescript: ^4.9.3
     vite: ^4.0.0
@@ -6554,6 +6555,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"browserslist-ua-parser@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "browserslist-ua-parser@npm:1.0.0"
+  dependencies:
+    caniuse-lite: ^1.0.30001431
+    semver: ^7.3.8
+    ua-parser-js: ^1.0.32
+  checksum: cd97943faf38a8749e7e2751cd0224e74d7d320159e2f046bb416492cc7881dd6663073e29a4ead869b8b2179dbc80dd5b11ee87a5b821ea3908248ab04662ac
+  languageName: node
+  linkType: hard
+
 "browserslist@npm:4.21.4":
   version: 4.21.4
   resolution: "browserslist@npm:4.21.4"
@@ -6887,6 +6899,13 @@ __metadata:
   version: 1.0.30001450
   resolution: "caniuse-lite@npm:1.0.30001450"
   checksum: 511b360bfc907b2e437699364cf96b83507bc45043926450056642332bcd6f65a1e72540c828534ae15e0ac906e3e9af46cb2bb84458dd580bc31478e9dce282
+  languageName: node
+  linkType: hard
+
+"caniuse-lite@npm:^1.0.30001431":
+  version: 1.0.30001457
+  resolution: "caniuse-lite@npm:1.0.30001457"
+  checksum: f311a7c5098681962402a86a0a367014ee91c3135395ee68bbfaf45caf0e36d581e42d7c5b1526ce99484a228e6cf5cf0e400678292c65f5a21512a3fc7a5fb6
   languageName: node
   linkType: hard
 
@@ -19057,6 +19076,13 @@ __metadata:
   version: 0.7.33
   resolution: "ua-parser-js@npm:0.7.33"
   checksum: 1510e9ec26fcaf0d8c6ae8f1078a8230e8816f083e1b5f453ea19d06b8ef2b8a596601c92148fd41899e8b3e5f83fa69c42332bd5729b931a721040339831696
+  languageName: node
+  linkType: hard
+
+"ua-parser-js@npm:^1.0.32":
+  version: 1.0.33
+  resolution: "ua-parser-js@npm:1.0.33"
+  checksum: 460adef51235267345b221842979b6b167543725d03f7c9c4f9ca6af4da835a71d016390da139d2b32828063c4730dcfae6e53b9dce815f4000be4e1fe1c7737
   languageName: node
   linkType: hard
 
