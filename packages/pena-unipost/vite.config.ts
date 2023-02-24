@@ -3,12 +3,14 @@
 
 import { defineConfig } from 'vite'
 import dts from 'vite-plugin-dts'
+import getTarget from 'browserslist-to-esbuild'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [dts()],
   build  : {
-    lib: {
+    target: getTarget(),
+    lib   : {
       entry   : 'src/index.ts',
       name    : 'Unipost',
       fileName: 'pena-unipost',

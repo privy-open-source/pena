@@ -5,9 +5,11 @@
 
 import { sveltekit } from '@sveltejs/kit/vite'
 import type { UserConfig } from 'vite'
+import getTarget from 'browserslist-to-esbuild'
 
 const config: UserConfig = {
   plugins: [sveltekit()],
+  build  : { target: getTarget() },
   test   : { include: ['src/**/*.{test,spec}.{js,ts}'] },
 }
 
