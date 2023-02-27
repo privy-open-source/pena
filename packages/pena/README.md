@@ -88,12 +88,12 @@ import Pena from '@privyid/pena'
 ```
 2. Parameter `doctoken` is changed to fullpath `url`.
 ```js
-Privy.openDoc('doctokenXXXX')
+Privy.openDoc('YOUR_DOC_TOKEN')
 
 // Change to
 
 Pena.openDoc({
-  url: 'https://sign.privy.id/doc/doctokenXXXX',
+  url: 'https://sign.privy.id/doc/YOUR_DOC_TOKEN',
 })
 ```
 3. Option `dev` is removed, environment between dev or production is follow the base url.

@@ -3349,6 +3349,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@privyid/browserslist-config@npm:^0.8.0":
+  version: 0.8.0
+  resolution: "@privyid/browserslist-config@npm:0.8.0"
+  checksum: 64c8be02cabbf76729d6fe728c2cfaba390fd3b5146d26ddbcb057855f7e45a2776b0df74ad6c1d61bb867a96ee6318139f919ecaece1bfd6beb06983476c19a
+  languageName: node
+  linkType: hard
+
 "@privyid/eslint-config-persona@npm:^0.8.0":
   version: 0.8.0
   resolution: "@privyid/eslint-config-persona@npm:0.8.0"
@@ -3386,8 +3393,10 @@ __metadata:
     "@angular/platform-browser": ^15.1.0
     "@angular/platform-browser-dynamic": ^15.1.0
     "@angular/router": ^15.1.0
+    "@privyid/browserslist-config": ^0.8.0
     "@privyid/pena": "workspace:^"
     "@types/jasmine": ~4.3.0
+    browserslist-to-esbuild: ^1.2.0
     jasmine-core: ~4.5.0
     karma: ~6.4.0
     karma-chrome-launcher: ~3.1.0
@@ -3406,11 +3415,13 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@privyid/pena-jquery@workspace:packages/pena-jquery"
   dependencies:
+    "@privyid/browserslist-config": ^0.8.0
     "@privyid/pena": "workspace:^"
     "@testing-library/dom": ^8.20.0
     "@testing-library/jest-dom": ^5.16.5
     "@types/jquery": ^3.5.16
     "@vitest/coverage-c8": ^0.28.3
+    browserslist-to-esbuild: ^1.2.0
     happy-dom: ^8.2.2
     jquery: ^3.6.3
     typescript: ^4.9.3
@@ -3426,10 +3437,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@privyid/pena-monorepo@workspace:."
   dependencies:
+    "@privyid/browserslist-config": ^0.8.0
     "@privyid/eslint-config-persona": ^0.8.0
     "@typescript-eslint/eslint-plugin": ^5.50.0
     "@typescript-eslint/parser": ^5.50.0
     "@vue/eslint-config-typescript": ^11.0.2
+    browserslist-to-esbuild: ^1.2.0
     eslint: ^8.33.0
     eslint-config-standard-with-typescript: ^34.0.0
     eslint-formatter-pretty: ^4.1.0
@@ -3448,6 +3461,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@privyid/pena-react-native@workspace:packages/pena-react-native"
   dependencies:
+    "@privyid/browserslist-config": ^0.8.0
     "@privyid/eslint-config-persona": ^0.8.0
     "@privyid/pena": "workspace:^"
     "@privyid/pena-utils": "workspace:^"
@@ -3459,6 +3473,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": ^5.50.0
     "@typescript-eslint/parser": ^5.50.0
     "@vue/eslint-config-typescript": ^11.0.2
+    browserslist-to-esbuild: ^1.2.0
     del-cli: ^5.0.0
     eslint: ^8.33.0
     eslint-config-standard-with-typescript: ^34.0.0
@@ -3489,10 +3504,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@privyid/pena-react@workspace:packages/pena-react"
   dependencies:
+    "@privyid/browserslist-config": ^0.8.0
     "@privyid/pena": "workspace:^"
     "@types/react": ^18.0.26
     "@types/react-dom": ^18.0.9
     "@vitejs/plugin-react-swc": ^3.0.0
+    browserslist-to-esbuild: ^1.2.0
     react: ^18.2.0
     react-dom: ^18.2.0
     typescript: ^4.9.3
@@ -3509,10 +3526,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@privyid/pena-svelte@workspace:packages/pena-svelte"
   dependencies:
+    "@privyid/browserslist-config": ^0.8.0
     "@privyid/pena": "workspace:^"
     "@sveltejs/adapter-auto": ^2.0.0
     "@sveltejs/kit": ^1.0.0
     "@sveltejs/package": ^2.0.0
+    browserslist-to-esbuild: ^1.2.0
     svelte: ^3.54.0
     svelte-check: ^3.0.1
     tslib: ^2.4.1
@@ -3529,7 +3548,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@privyid/pena-unipost@workspace:packages/pena-unipost"
   dependencies:
+    "@privyid/browserslist-config": ^0.8.0
     "@vitest/coverage-c8": ^0.28.3
+    browserslist-to-esbuild: ^1.2.0
+    browserslist-ua-parser: ^1.0.0
     happy-dom: ^8.2.2
     typescript: ^4.9.3
     vite: ^4.0.0
@@ -3542,7 +3564,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@privyid/pena-utils@workspace:packages/pena-utils"
   dependencies:
+    "@privyid/browserslist-config": ^0.8.0
     "@vitest/coverage-c8": ^0.28.3
+    browserslist-to-esbuild: ^1.2.0
     happy-dom: ^8.2.2
     typescript: ^4.9.3
     vite: ^4.0.0
@@ -3555,8 +3579,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@privyid/pena-vue@workspace:packages/pena-vue"
   dependencies:
+    "@privyid/browserslist-config": ^0.8.0
     "@privyid/pena": "workspace:^"
     "@vitejs/plugin-vue": ^4.0.0
+    browserslist-to-esbuild: ^1.2.0
     typescript: ^4.9.3
     unbuild: ^1.1.2
     vite: ^4.0.0
@@ -3578,10 +3604,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@privyid/pena@workspace:packages/pena"
   dependencies:
+    "@privyid/browserslist-config": ^0.8.0
     "@privyid/pena-utils": "workspace:^"
     "@testing-library/dom": ^8.20.0
     "@testing-library/jest-dom": ^5.16.5
     "@vitest/coverage-c8": 0.28.5
+    browserslist-to-esbuild: ^1.2.0
     happy-dom: ^8.2.2
     typescript: ^4.9.3
     vite: ^4.0.0
@@ -6554,6 +6582,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"browserslist-to-esbuild@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "browserslist-to-esbuild@npm:1.2.0"
+  dependencies:
+    browserslist: ^4.17.3
+  checksum: a6c1adc2ad8da0db23aa4f0b3c71e13561cbf61599e9acedc7890793d79aca250edb0f599095042e81587c88e87569bf3a1a68633026e81e4ac7548eb1c71b49
+  languageName: node
+  linkType: hard
+
+"browserslist-ua-parser@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "browserslist-ua-parser@npm:1.0.0"
+  dependencies:
+    caniuse-lite: ^1.0.30001431
+    semver: ^7.3.8
+    ua-parser-js: ^1.0.32
+  checksum: cd97943faf38a8749e7e2751cd0224e74d7d320159e2f046bb416492cc7881dd6663073e29a4ead869b8b2179dbc80dd5b11ee87a5b821ea3908248ab04662ac
+  languageName: node
+  linkType: hard
+
 "browserslist@npm:4.21.4":
   version: 4.21.4
   resolution: "browserslist@npm:4.21.4"
@@ -6568,7 +6616,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"browserslist@npm:^4.14.5, browserslist@npm:^4.20.4, browserslist@npm:^4.21.3, browserslist@npm:^4.21.4":
+"browserslist@npm:^4.14.5, browserslist@npm:^4.17.3, browserslist@npm:^4.20.4, browserslist@npm:^4.21.3, browserslist@npm:^4.21.4":
   version: 4.21.5
   resolution: "browserslist@npm:4.21.5"
   dependencies:
@@ -6887,6 +6935,13 @@ __metadata:
   version: 1.0.30001450
   resolution: "caniuse-lite@npm:1.0.30001450"
   checksum: 511b360bfc907b2e437699364cf96b83507bc45043926450056642332bcd6f65a1e72540c828534ae15e0ac906e3e9af46cb2bb84458dd580bc31478e9dce282
+  languageName: node
+  linkType: hard
+
+"caniuse-lite@npm:^1.0.30001431":
+  version: 1.0.30001457
+  resolution: "caniuse-lite@npm:1.0.30001457"
+  checksum: f311a7c5098681962402a86a0a367014ee91c3135395ee68bbfaf45caf0e36d581e42d7c5b1526ce99484a228e6cf5cf0e400678292c65f5a21512a3fc7a5fb6
   languageName: node
   linkType: hard
 
@@ -19057,6 +19112,13 @@ __metadata:
   version: 0.7.33
   resolution: "ua-parser-js@npm:0.7.33"
   checksum: 1510e9ec26fcaf0d8c6ae8f1078a8230e8816f083e1b5f453ea19d06b8ef2b8a596601c92148fd41899e8b3e5f83fa69c42332bd5729b931a721040339831696
+  languageName: node
+  linkType: hard
+
+"ua-parser-js@npm:^1.0.32":
+  version: 1.0.33
+  resolution: "ua-parser-js@npm:1.0.33"
+  checksum: 460adef51235267345b221842979b6b167543725d03f7c9c4f9ca6af4da835a71d016390da139d2b32828063c4730dcfae6e53b9dce815f4000be4e1fe1c7737
   languageName: node
   linkType: hard
 
