@@ -17,7 +17,7 @@
 - [Install for React][react]
 - [Install for React Native][react-native]
 - [Install for Angular][angular]
-- [Install for Android (Kotlin)][android]
+- [Install for Android (Kotlin/Java)][android]
 - [Install for Flutter][flutter]
 
 ## License
