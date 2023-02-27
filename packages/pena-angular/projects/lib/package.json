@@ -1,7 +1,7 @@
 {
   "name": "@privyid/pena-angular",
   "description": "Pena plugin for Angular",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "peerDependencies": {
     "@angular/common": "^15.1.0",
     "@angular/core": "^15.1.0",
