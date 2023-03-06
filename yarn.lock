@@ -3417,7 +3417,7 @@ __metadata:
   dependencies:
     "@privyid/browserslist-config": ^0.8.0
     "@privyid/pena": "workspace:^"
-    "@testing-library/dom": ^8.20.0
+    "@testing-library/dom": ^9.0.0
     "@testing-library/jest-dom": ^5.16.5
     "@types/jquery": ^3.5.16
     "@vitest/coverage-c8": ^0.28.3
@@ -3606,7 +3606,7 @@ __metadata:
   dependencies:
     "@privyid/browserslist-config": ^0.8.0
     "@privyid/pena-utils": "workspace:^"
-    "@testing-library/dom": ^8.20.0
+    "@testing-library/dom": ^9.0.0
     "@testing-library/jest-dom": ^5.16.5
     "@vitest/coverage-c8": 0.28.5
     browserslist-to-esbuild: ^1.2.0
@@ -4290,9 +4290,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/dom@npm:^8.20.0":
-  version: 8.20.0
-  resolution: "@testing-library/dom@npm:8.20.0"
+"@testing-library/dom@npm:^9.0.0":
+  version: 9.0.0
+  resolution: "@testing-library/dom@npm:9.0.0"
   dependencies:
     "@babel/code-frame": ^7.10.4
     "@babel/runtime": ^7.12.5
@@ -4302,7 +4302,7 @@ __metadata:
     dom-accessibility-api: ^0.5.9
     lz-string: ^1.4.4
     pretty-format: ^27.0.2
-  checksum: 1e599129a2fe91959ce80900a0a4897232b89e2a8e22c1f5950c36d39c97629ea86b4986b60b173b5525a05de33fde1e35836ea597b03de78cc51b122835c6f0
+  checksum: 5381bf9438f0ee35f795e7f9b203564aa455e7cd838b6677084c82dd56396779c38cc49ddffed4e57a8bcc3c62b4bc96ea684bb4b24d13655152db745327b2cd
   languageName: node
   linkType: hard
 
