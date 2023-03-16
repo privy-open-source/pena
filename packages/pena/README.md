@@ -1,6 +1,6 @@
 # Pena
 
-> Official PrivyID Sign SDK
+> PrivyID's Official Client Integration SDK Library for signing.
 
 ## Installation
 
@@ -33,9 +33,8 @@ Pena.openDoc({
   },
   onAfterAction: (data) => {
     // Do something after action (sign, review, etc) done
-    // example: redirect to specific location after sign
     if (data.action === 'sign') {
-      location.href = '/somepath'
+      window.alert('Signed')
     }
   },
 })
@@ -76,7 +75,7 @@ Not very recommended, but you can also use Pena with CDN, just add this in your 
 <script src="https://cdn.jsdelivr.net/npm/@privyid/pena"></script>
 ```
 
-## Migration from [privy-sdk](https://www.npmjs.com/package/privy-sdk)
+## MIgrate from [privy-sdk](https://www.npmjs.com/package/privy-sdk)
 
 1. Change package from `privy-sdk` to `@privyid/pena`
 ```js
@@ -99,7 +98,7 @@ Pena.openDoc({
 3. Option `dev` is removed, environment between dev or production is follow the base url.
     - **production**: `https://sign.privy.id/`
     - **development**: `https://stg-sign.privy.id/`
-4. Hook `.on('after-action')`, `.on('after-sign')` and `.on('after-review')` is unified into option `onAfterAction`
+4. Hook `.on('after-action')`, `.on('after-sign')` and `.on('after-review')` is unified into single option `onAfterAction`
 ```js
 Privy.openDoc(/* .... */)
   .on('after-sign', () => { })
@@ -111,12 +110,14 @@ Privy.openDoc(/* .... */)
 Pena.openDoc({
   // ...
   onAfterAction (data) {
+    // Do something after any action
+
     if (data.action === 'sign') {
-      // Do something after sign
+      // Do something after sign only
     }
 
     if (data.action === 'review') {
-      // Do something after sign
+      // Do something after review only
     }
   },
   // ...

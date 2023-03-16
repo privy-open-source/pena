@@ -1,6 +1,6 @@
 # Pena 🧡 Svelte
 
-> Pena plugin for Svelte
+> PrivyID's Official Client Integration Library for Svelte.
 
 ## Installation
 
@@ -34,9 +34,8 @@ yarn add @privyid/pena-svelte @privyid/pena
   }}
   on:afterAction={(event) => {
     // Do something after action (sign, review, etc) done
-    // example: redirect to specific location after sign
     if (event.detail.action === 'sign') {
-      location.href = '/somepath'
+      window.alert('Signed')
     }
   }}
 />

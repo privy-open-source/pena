@@ -1,6 +1,6 @@
 # Pena 🤍 jQuery
 
-> Pena plugin for jQuery
+> PrivyID's Official Client Integration Library for jQuery
 
 ## Installation
 
@@ -35,9 +35,8 @@ Add this in your HTML
       },
       onAfterAction: (data) => {
         // Do something after action (sign, review, etc) done
-        // example: redirect to specific location after sign
         if (data.action === 'sign') {
-          location.href = '/somepath'
+          window.alert('Signed')
         }
       },
     })

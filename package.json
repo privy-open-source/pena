@@ -1,5 +1,6 @@
 {
   "name": "@privyid/pena-monorepo",
+  "description": "PrivyID's Official Client Integration Library for signing.",
   "packageManager": "yarn@3.4.1",
   "version": "0.2.0",
   "private": true,

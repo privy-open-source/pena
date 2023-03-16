@@ -1,6 +1,6 @@
 {
   "name": "@privyid/pena-jquery",
-  "description": "Pena plugin for jQuery",
+  "description": "PrivyID's Official Client Integration Library for jQuery",
   "version": "0.2.0",
   "type": "module",
   "main": "./dist/pena-jquery.umd.cjs",

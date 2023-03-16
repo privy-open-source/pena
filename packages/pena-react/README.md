@@ -1,6 +1,6 @@
 # Pena 💙 React
 
-> Pena plugin for React
+> PrivyID's Official Client Integration Library for React
 
 ## Installation
 
@@ -34,9 +34,8 @@ export default function App () {
       }}
       onAfterAction={(event) => {
         // Do something after action (sign, review, etc) done
-        // example: redirect to specific location after sign
         if (event.action === 'sign') {
-          location.href = '/somepath'
+          window.alert('Signed')
         }
       }}
     />
