@@ -5,7 +5,7 @@
   "peerDependencies": {
     "@angular/common": "^15.1.0",
     "@angular/core": "^15.1.0",
-    "@privyid/pena": "workspace:^"
+    "@privyid/pena": "*"
   },
   "dependencies": {
     "tslib": "^2.3.0"
