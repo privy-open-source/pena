@@ -1,6 +1,6 @@
 {
   "name": "@privyid/pena-react-native",
-  "description": "Pena plugin for React Native",
+  "description": "PrivyID's Official Client Integration Library for React Native",
   "version": "0.2.0",
   "type": "module",
   "main": "lib/commonjs/index",

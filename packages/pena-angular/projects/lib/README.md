@@ -1,6 +1,6 @@
 # Pena ❤️ Angular
 
-> Pena plugin for Angular
+> PrivyID's Official Client Integration Library for Angular
 
 ## Installation
 
@@ -59,7 +59,7 @@ export class AppComponent {
 
   onAfterAction (event: Payload) {
     if (event.action === 'sign') {
-      location.href = '/somepath'
+      window.alert('Signed')
     }
   }
 }

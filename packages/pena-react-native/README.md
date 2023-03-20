@@ -1,6 +1,6 @@
 # Pena 🖤 React Native
 
-> Pena plugin for React Native
+> PrivyID's Official Client Integration Library for React Native
 
 ## Installation
 
@@ -18,6 +18,7 @@ yarn add @privyid/pena-react-native
 ## Usage
 
 ```tsx
+import { ToastAndroid } from 'react-native'
 import Pena from '@privyid/pena-react-native'
 
 export default function App () {
@@ -33,9 +34,8 @@ export default function App () {
       }}
       onAfterAction={(event) => {
         // Do something after action (sign, review, etc) done
-        // example: redirect to specific location after sign
         if (event.action === 'sign') {
-          location.href = '/somepath'
+          ToastAndroid.show('Signed', ToastAndroid.SHORT)
         }
       }}
     />

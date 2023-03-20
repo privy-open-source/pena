@@ -23,7 +23,7 @@ yarn add @privyid/pena-vue @privyid/pena
 
 ### Nuxt 2
 
-You need transpile this package, add this in your `nuxt.config.js`.
+You need to transpile this package, add this in your `nuxt.config.js`.
 
 ```js
 export default {
@@ -64,9 +64,8 @@ export default {
   methods: {
     onAfterAction (event) {
       // Do something after action (sign, review, etc) done
-      // example: redirect to specific location after sign
       if (event.action === 'sign') {
-        location.href = '/somepath'
+        window.alert('Signed')
       }
     }
   }
