@@ -44,6 +44,7 @@
     "vitest": "0.28.5"
   },
   "peerDependencies": {
+    "@privyid/pena": "*",
     "jquery": ">=3"
   },
   "publishConfig": {

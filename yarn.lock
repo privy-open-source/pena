@@ -3429,6 +3429,7 @@ __metadata:
     vite-plugin-dts: ^1.7.1
     vitest: 0.28.5
   peerDependencies:
+    "@privyid/pena": "*"
     jquery: ">=3"
   languageName: unknown
   linkType: soft

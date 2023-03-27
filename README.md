@@ -8,6 +8,8 @@
 
 </div>
 
+🚧 This project is under development. Not ready for public use yet.
+
 ## Getting Started
 
 - [Install for VanillaJS][vanilla]
