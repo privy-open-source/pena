@@ -1,7 +1,7 @@
 {
   "name": "@privyid/pena-react",
   "description": "PrivyID's Official Client Integration Library for React",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "type": "module",
   "main": "./dist/pena-react.umd.cjs",
   "module": "./dist/pena-react.js",

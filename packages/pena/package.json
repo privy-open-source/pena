@@ -1,7 +1,7 @@
 {
   "name": "@privyid/pena",
   "description": "PrivyID's Official Client Integration Library for signing",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "type": "module",
   "main": "./dist/pena.umd.cjs",
   "module": "./dist/pena.js",
@@ -28,9 +28,11 @@
   "browserslist": [
     "extends @privyid/browserslist-config"
   ],
+  "dependencies": {
+    "@privyid/pena-utils": "workspace:^"
+  },
   "devDependencies": {
     "@privyid/browserslist-config": "^0.9.0",
-    "@privyid/pena-utils": "workspace:^",
     "@testing-library/dom": "^8.20.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@vitest/coverage-c8": "0.28.5",

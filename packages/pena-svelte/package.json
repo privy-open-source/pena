@@ -1,7 +1,7 @@
 {
   "name": "@privyid/pena-svelte",
   "description": "PrivyID's Official Client Integration Library for Svelte",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",

@@ -1,7 +1,7 @@
 {
   "name": "@privyid/pena-jquery",
   "description": "PrivyID's Official Client Integration Library for jQuery",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "type": "module",
   "main": "./dist/pena-jquery.umd.cjs",
   "module": "./dist/pena-jquery.js",
@@ -44,6 +44,7 @@
     "vitest": "0.28.5"
   },
   "peerDependencies": {
+    "@privyid/pena": "*",
     "jquery": ">=3"
   },
   "publishConfig": {
