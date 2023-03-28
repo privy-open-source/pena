@@ -1,7 +1,7 @@
 {
   "name": "@privyid/pena-vue",
   "description": "PrivyID's Official Client Integration Library for Vue",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "type": "module",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",

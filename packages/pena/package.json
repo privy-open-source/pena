@@ -1,7 +1,7 @@
 {
   "name": "@privyid/pena",
   "description": "PrivyID's Official Client Integration Library for signing",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "type": "module",
   "main": "./dist/pena.umd.cjs",
   "module": "./dist/pena.js",

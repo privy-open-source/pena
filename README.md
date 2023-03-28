@@ -6,9 +6,9 @@
 
 > PrivyID's Official Client Integration Library for signing.
 
-</div>
-
 🚧 This project is under development. Not ready for public use yet.
+
+</div>
 
 ## Getting Started
 
