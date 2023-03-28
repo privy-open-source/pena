@@ -3411,6 +3411,18 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@privyid/pena-angular@workspace:packages/pena-angular/dist/pena-angular":
+  version: 0.0.0-use.local
+  resolution: "@privyid/pena-angular@workspace:packages/pena-angular/dist/pena-angular"
+  dependencies:
+    tslib: ^2.3.0
+  peerDependencies:
+    "@angular/common": ^15.1.0
+    "@angular/core": ^15.1.0
+    "@privyid/pena": "workspace:^"
+  languageName: unknown
+  linkType: soft
+
 "@privyid/pena-jquery@workspace:packages/pena-jquery":
   version: 0.0.0-use.local
   resolution: "@privyid/pena-jquery@workspace:packages/pena-jquery"

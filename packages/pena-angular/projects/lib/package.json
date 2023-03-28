@@ -1,7 +1,7 @@
 {
   "name": "@privyid/pena-angular",
   "description": "PrivyID's Official Client Integration Library for Angular",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "peerDependencies": {
     "@angular/common": "^15.1.0",
     "@angular/core": "^15.1.0",

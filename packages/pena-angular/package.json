@@ -43,5 +43,8 @@
   },
   "installConfig": {
     "hoistingLimits": "workspaces"
-  }
+  },
+  "workspaces": [
+    "dist/*"
+  ]
 }
