@@ -75,7 +75,7 @@ Not very recommended, but you can also use Pena with CDN, just add this in your 
 <script src="https://cdn.jsdelivr.net/npm/@privyid/pena"></script>
 ```
 
-## MIgrate from [privy-sdk](https://www.npmjs.com/package/privy-sdk)
+## Migrate from [privy-sdk](https://www.npmjs.com/package/privy-sdk)
 
 1. Change package from `privy-sdk` to `@privyid/pena`
 ```js

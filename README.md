@@ -39,4 +39,4 @@ This project is licensed under the MIT License - see the [LICENSE](./LICENSE) fi
 [angular]: ./packages/pena-angular/projects/lib/README.md
 [android]: https://github.com/privy-open-source/pena-android
 [flutter]: https://github.com/privy-open-source/pena-flutter
-[migration]: ./packages/pena/README.md#migration-from-privy-sdk
+[migration]: ./packages/pena/README.md#migrate-from-privy-sdk
