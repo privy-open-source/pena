@@ -739,6 +739,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/parser@npm:^7.20.15":
+  version: 7.21.4
+  resolution: "@babel/parser@npm:7.21.4"
+  bin:
+    parser: ./bin/babel-parser.js
+  checksum: de610ecd1bff331766d0c058023ca11a4f242bfafefc42caf926becccfb6756637d167c001987ca830dd4b34b93c629a4cef63f8c8c864a8564cdfde1989ac77
+  languageName: node
+  linkType: hard
+
 "@babel/plugin-bugfix-safari-id-destructuring-collision-in-function-expression@npm:^7.18.6":
   version: 7.18.6
   resolution: "@babel/plugin-bugfix-safari-id-destructuring-collision-in-function-expression@npm:7.18.6"
@@ -3426,7 +3435,7 @@ __metadata:
     jquery: ^3.6.3
     typescript: ^4.9.3
     vite: ^4.0.0
-    vite-plugin-dts: ^1.7.1
+    vite-plugin-dts: ^2.0.0
     vitest: 0.29.8
   peerDependencies:
     "@privyid/pena": "*"
@@ -3515,7 +3524,7 @@ __metadata:
     react-dom: ^18.2.0
     typescript: ^4.9.3
     vite: ^4.0.0
-    vite-plugin-dts: ^1.7.2
+    vite-plugin-dts: ^2.0.0
   peerDependencies:
     "@privyid/pena": "*"
     react: "*"
@@ -3556,7 +3565,7 @@ __metadata:
     happy-dom: ^8.2.2
     typescript: ^4.9.3
     vite: ^4.0.0
-    vite-plugin-dts: ^1.7.1
+    vite-plugin-dts: ^2.0.0
     vitest: 0.29.8
   languageName: unknown
   linkType: soft
@@ -3571,7 +3580,7 @@ __metadata:
     happy-dom: ^8.2.2
     typescript: ^4.9.3
     vite: ^4.0.0
-    vite-plugin-dts: ^1.7.1
+    vite-plugin-dts: ^2.0.0
     vitest: 0.29.8
   languageName: unknown
   linkType: soft
@@ -3587,7 +3596,7 @@ __metadata:
     typescript: ^4.9.3
     unbuild: ^1.1.2
     vite: ^4.0.0
-    vite-plugin-dts: ^1.7.2
+    vite-plugin-dts: ^2.0.0
     vue: ^3.2.45
     vue-demi: ^0.13.11
     vue-tsc: ^1.0.11
@@ -3614,7 +3623,7 @@ __metadata:
     happy-dom: ^8.2.2
     typescript: ^4.9.3
     vite: ^4.0.0
-    vite-plugin-dts: ^1.7.1
+    vite-plugin-dts: ^2.0.0
     vitest: 0.29.8
   languageName: unknown
   linkType: soft
@@ -4343,18 +4352,6 @@ __metadata:
   version: 2.0.0
   resolution: "@tootallnate/once@npm:2.0.0"
   checksum: ad87447820dd3f24825d2d947ebc03072b20a42bfc96cbafec16bff8bbda6c1a81fcb0be56d5b21968560c5359a0af4038a68ba150c3e1694fe4c109a063bed8
-  languageName: node
-  linkType: hard
-
-"@ts-morph/common@npm:~0.17.0":
-  version: 0.17.0
-  resolution: "@ts-morph/common@npm:0.17.0"
-  dependencies:
-    fast-glob: ^3.2.11
-    minimatch: ^5.1.0
-    mkdirp: ^1.0.4
-    path-browserify: ^1.0.1
-  checksum: f588c0acabcc6ca9463ac09b343d67a73f6e7bf47f674aaff11542b95b58342556b05241610b9e6dffc2966db529e7261b6860577786f919a835c22488ec9260
   languageName: node
   linkType: hard
 
@@ -18933,16 +18930,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ts-morph@npm:^16.0.0":
-  version: 16.0.0
-  resolution: "ts-morph@npm:16.0.0"
-  dependencies:
-    "@ts-morph/common": ~0.17.0
-    code-block-writer: ^11.0.3
-  checksum: a45ee1a2da09b06ac45a468c1cb9b00cc1b335224afddb22c30e4ad8a747b71c8a7c6cea29a6309ebf68d69f5dc8d3650d381891b77da5e2ad3e301dc3de40d5
-  languageName: node
-  linkType: hard
-
 "tsconfig-paths@npm:^3.14.1":
   version: 3.14.1
   resolution: "tsconfig-paths@npm:3.14.1"
@@ -19625,10 +19612,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite-plugin-dts@npm:^1.7.1":
-  version: 1.7.1
-  resolution: "vite-plugin-dts@npm:1.7.1"
+"vite-plugin-dts@npm:^2.0.0":
+  version: 2.1.0
+  resolution: "vite-plugin-dts@npm:2.1.0"
   dependencies:
+    "@babel/parser": ^7.20.15
     "@microsoft/api-extractor": ^7.33.5
     "@rollup/pluginutils": ^5.0.2
     "@rushstack/node-core-library": ^3.53.2
@@ -19636,28 +19624,11 @@ __metadata:
     fast-glob: ^3.2.12
     fs-extra: ^10.1.0
     kolorist: ^1.6.0
-    ts-morph: ^16.0.0
-  peerDependencies:
-    vite: ">=2.9.0"
-  checksum: e2714a9e1727860cb217308b000d7306f98ba626998893a72d8b0e5db577d989457827033c76125a87491ace453325726da3795f17c3fea3e8af0d5e81820e89
-  languageName: node
-  linkType: hard
-
-"vite-plugin-dts@npm:^1.7.2":
-  version: 1.7.2
-  resolution: "vite-plugin-dts@npm:1.7.2"
-  dependencies:
-    "@microsoft/api-extractor": ^7.33.5
-    "@rollup/pluginutils": ^5.0.2
-    "@rushstack/node-core-library": ^3.53.2
-    debug: ^4.3.4
-    fast-glob: ^3.2.12
-    fs-extra: ^10.1.0
-    kolorist: ^1.6.0
+    magic-string: ^0.29.0
     ts-morph: 17.0.1
   peerDependencies:
     vite: ">=2.9.0"
-  checksum: 2445cc131481eddcac8fdff7feabf49018cabf745b0f1e955b45c9ce98313e5e7d9e9bb838af78577866404ed9070d915b4b6bc80c9f6eb91ec95608ce456f2d
+  checksum: 6c51b6de986e622a8ec271b68dcbfac55ab0ba65ca3b74e19e3088ff931913e5bb5c6d15e77525ca0bc11a6c87497f4529132cd0ad6c5970e8794f809cfa9cb8
   languageName: node
   linkType: hard
 
