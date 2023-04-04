@@ -82,7 +82,6 @@ export class AppComponent {
 | ├ `page`        | number   |    -    | Target page                                                                                                  |
 | └ `fixed`       | boolean  | `false` | Disabled signature for moving                                                                                |
 | `debug`         | boolean  | `false` | Enable debug mode                                                                                            |
-| `onAfterAction` | function |    -    | After action hook                                                                                            |
 
 ### Output Events
 

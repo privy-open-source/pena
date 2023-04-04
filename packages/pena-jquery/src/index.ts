@@ -1,8 +1,6 @@
-import Pena, {
-  type CleanupFn,
-  type PenaOption,
-} from '@privyid/pena'
 import $ from 'jquery'
+import Pena from '@privyid/pena'
+import type { CleanupFn, PenaOption } from '@privyid/pena'
 
 declare global {
   interface JQuery {

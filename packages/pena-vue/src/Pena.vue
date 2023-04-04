@@ -5,9 +5,10 @@
 </template>
 
 <script lang="ts">
-import Pena, { Payload, type PenaOption } from '@privyid/pena'
+import Pena from '@privyid/pena'
+import type { Payload, PenaOption } from '@privyid/pena'
+import type { PropType } from 'vue-demi'
 import {
-  type PropType,
   watchEffect,
   defineComponent,
   ref,

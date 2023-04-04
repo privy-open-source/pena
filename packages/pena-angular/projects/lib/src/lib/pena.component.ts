@@ -10,10 +10,8 @@ import Pena, { type PenaOption, type Payload } from '@privyid/pena'
 
 @Component({
   selector: 'pena',
-  template: `
-    <div #container class="pena__container"></div>
-  `,
-  styles: [],
+  template: '<div #container class="pena__container"></div>',
+  styles  : [],
 })
 export class PenaComponent {
   cleanUp?: ReturnType<typeof Pena.openDoc>

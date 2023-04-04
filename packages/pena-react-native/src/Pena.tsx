@@ -1,11 +1,13 @@
-import React, { type FC, useMemo } from 'react'
-import { WebView, type WebViewMessageEvent } from 'react-native-webview'
-import { createURL, type UrlParams } from '@privyid/pena-utils'
+import React, { useMemo } from 'react'
+import { WebView } from 'react-native-webview'
+import { createURL } from '@privyid/pena-utils'
+import type { WebViewMessageEvent } from 'react-native-webview'
+import type { FC } from 'react'
 import type { Payload, PenaOption } from '@privyid/pena'
 
 const PenaReact: FC<Omit<PenaOption, 'container' | 'layout'>> = (props) => {
   const url = useMemo(() => {
-    return createURL(props as UrlParams)
+    return createURL(props)
   }, [props])
 
   function onMessage (event: WebViewMessageEvent) {

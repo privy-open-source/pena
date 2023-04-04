@@ -7,8 +7,13 @@ import getTarget from 'browserslist-to-esbuild'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [dts()],
-  build  : {
+  plugins: [
+    dts({
+      rollupTypes    : true,
+      bundledPackages: ['@privyid/pena-utils'],
+    }),
+  ],
+  build: {
     target: getTarget(),
     lib   : {
       entry   : 'src/index.ts',
