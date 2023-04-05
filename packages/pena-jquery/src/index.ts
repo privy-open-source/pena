@@ -24,6 +24,7 @@ $.fn.openDoc = function (options) {
       signature    : options.signature,
       layout       : options.layout,
       privyId      : options.privyId,
+      ratio        : options.ratio,
       onAfterAction: options.onAfterAction,
     })
   })

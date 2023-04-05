@@ -18,6 +18,7 @@ const PenaReact: FC<Omit<PenaOption, 'container'>> = (props) => {
         signature    : props.signature,
         layout       : props.layout,
         privyId      : props.privyId,
+        ratio        : props.ratio,
         onAfterAction: props.onAfterAction,
       })
 

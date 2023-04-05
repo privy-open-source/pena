@@ -30,6 +30,12 @@ export interface PenaOption extends UrlParams {
   layout?: 'fixed' | 'fit',
 
   /**
+   * Size ratio (Layout `fixed` only)
+   * @default 210/297
+   */
+  ratio?: number,
+
+  /**
    * After action (sign, review, etc) hook
    */
   onAfterAction?: HookFn,

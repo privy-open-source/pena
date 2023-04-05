@@ -44,6 +44,10 @@ export default defineComponent({
       type   : Object as PropType<PenaOption['signature']>,
       default: undefined,
     },
+    ratio: {
+      type   : Number as PropType<PenaOption['ratio']>,
+      default: undefined,
+    },
   },
   emits: ['after-action'],
   setup (props, { emit }) {
@@ -64,6 +68,7 @@ export default defineComponent({
           privyId   : props.privyId,
           visibility: props.visibility,
           signature : props.signature,
+          ratio     : props.ratio,
           onAfterAction,
         })
 

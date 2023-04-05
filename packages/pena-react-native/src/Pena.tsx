@@ -5,7 +5,7 @@ import type { WebViewMessageEvent } from 'react-native-webview'
 import type { FC } from 'react'
 import type { Payload, PenaOption } from '@privyid/pena'
 
-const PenaReact: FC<Omit<PenaOption, 'container' | 'layout'>> = (props) => {
+const PenaReact: FC<Omit<PenaOption, 'container' | 'layout' | 'ratio'>> = (props) => {
   const url = useMemo(() => {
     return createURL(props)
   }, [props])

@@ -8,6 +8,7 @@
   export let signature: PenaOption['signature'] = undefined
   export let layout: PenaOption['layout'] = undefined
   export let privyId: PenaOption['privyId'] = undefined
+  export let ratio: PenaOption['ratio'] = undefined
 
   let target: HTMLDivElement
   let cleanup: ReturnType<typeof Pena.openDoc>
@@ -29,6 +30,7 @@
       signature    : signature,
       layout       : layout,
       privyId      : privyId,
+      ratio        : ratio,
       onAfterAction: onAfterAction,
     })
   }
