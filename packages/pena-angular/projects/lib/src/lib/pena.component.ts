@@ -4,16 +4,15 @@ import {
   Output,
   ViewChild,
   EventEmitter,
-  type ElementRef,
 } from '@angular/core'
-import Pena, { type PenaOption, type Payload } from '@privyid/pena'
+import type { ElementRef } from '@angular/core'
+import Pena from '@privyid/pena'
+import type { PenaOption, Payload } from '@privyid/pena'
 
 @Component({
   selector: 'pena',
-  template: `
-    <div #container class="pena__container"></div>
-  `,
-  styles: [],
+  template: '<div #container class="pena__container"></div>',
+  styles  : [],
 })
 export class PenaComponent {
   cleanUp?: ReturnType<typeof Pena.openDoc>
@@ -38,6 +37,9 @@ export class PenaComponent {
 
   @Input('signature')
     signature: PenaOption['signature']
+
+  @Input('ratio')
+    ratio: PenaOption['ratio']
 
   @ViewChild('container')
     container?: ElementRef<HTMLDivElement>
@@ -68,6 +70,7 @@ export class PenaComponent {
         privyId      : this.privyId,
         visibility   : this.visibility,
         signature    : this.signature,
+        ratio        : this.ratio,
         onAfterAction: this.onAfterAction.bind(this),
       })
     }

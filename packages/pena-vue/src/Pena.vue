@@ -5,9 +5,10 @@
 </template>
 
 <script lang="ts">
-import Pena, { Payload, type PenaOption } from '@privyid/pena'
+import Pena from '@privyid/pena'
+import type { Payload, PenaOption } from '@privyid/pena'
+import type { PropType } from 'vue-demi'
 import {
-  type PropType,
   watchEffect,
   defineComponent,
   ref,
@@ -43,6 +44,10 @@ export default defineComponent({
       type   : Object as PropType<PenaOption['signature']>,
       default: undefined,
     },
+    ratio: {
+      type   : Number as PropType<PenaOption['ratio']>,
+      default: undefined,
+    },
   },
   emits: ['after-action'],
   setup (props, { emit }) {
@@ -63,6 +68,7 @@ export default defineComponent({
           privyId   : props.privyId,
           visibility: props.visibility,
           signature : props.signature,
+          ratio     : props.ratio,
           onAfterAction,
         })
 

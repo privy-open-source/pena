@@ -6,6 +6,7 @@ import type {
   CleanupFn,
   PenaOption,
 } from './types'
+import { useRatio } from './utils/ratio'
 
 /**
  * Create signing page
@@ -21,10 +22,10 @@ export function openDoc (config: PenaOption): CleanupFn {
 
   let url: URL
   let iframe: HTMLIFrameElement
-  let unsticky: ReturnType<typeof useSticky>
+  let cleanUp: CleanupFn
 
   function onMessage (event: MessageEvent) {
-    if (event.origin === url.origin && typeof config.onAfterAction === 'function') {
+    if (event.origin === url.origin && typeof config.onAfterAction === 'function' && typeof event.data === 'string') {
       try {
         const payload: Payload = JSON.parse(event.data)
 
@@ -45,18 +46,16 @@ export function openDoc (config: PenaOption): CleanupFn {
     container.append(iframe)
     window.addEventListener('message', onMessage, { passive: true })
 
-    if (config.layout === 'fit')
-      unsticky = useSticky(iframe)
-    else
-      iframe.style.setProperty('min-height', `${297 / 210 * container.clientWidth}px`)
+    cleanUp = config.layout === 'fit'
+      ? useSticky(iframe)
+      : useRatio(iframe, config.ratio)
   }
 
   function destroy () {
     iframe.remove()
     window.removeEventListener('message', onMessage)
 
-    if (typeof unsticky === 'function')
-      unsticky()
+    cleanUp()
   }
 
   // onMounted

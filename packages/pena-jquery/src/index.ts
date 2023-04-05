@@ -1,8 +1,6 @@
-import Pena, {
-  type CleanupFn,
-  type PenaOption,
-} from '@privyid/pena'
 import $ from 'jquery'
+import Pena from '@privyid/pena'
+import type { CleanupFn, PenaOption } from '@privyid/pena'
 
 declare global {
   interface JQuery {
@@ -26,6 +24,7 @@ $.fn.openDoc = function (options) {
       signature    : options.signature,
       layout       : options.layout,
       privyId      : options.privyId,
+      ratio        : options.ratio,
       onAfterAction: options.onAfterAction,
     })
   })

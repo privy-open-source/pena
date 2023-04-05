@@ -1,4 +1,4 @@
-import { type Plugin } from 'vue-demi'
+import type { Plugin } from 'vue-demi'
 import Pena from './Pena.vue'
 
 export const install: Plugin = (app) => {
