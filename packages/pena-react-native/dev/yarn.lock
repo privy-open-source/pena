@@ -2058,8 +2058,8 @@ __metadata:
   linkType: hard
 
 "@expo/webpack-config@npm:^18.0.0":
-  version: 18.0.3
-  resolution: "@expo/webpack-config@npm:18.0.3"
+  version: 18.0.4
+  resolution: "@expo/webpack-config@npm:18.0.4"
   dependencies:
     "@babel/core": ^7.20.2
     "@expo/config": 6.0.20
@@ -2084,7 +2084,7 @@ __metadata:
     webpack: ^5.64.4
     webpack-dev-server: ^4.11.1
     webpack-manifest-plugin: ^4.1.1
-  checksum: 0ad68d3fc1cc706c1658c81e37f77491d1cab54e5bd2eb034c395dd50d0f7858724e1a23ade402077e78eff75244bb94f05bf78f5043f465d87b9297c851d9ab
+  checksum: 032a07c37d9f73d2206f9c3c90cb149db989d2616ca92aed0fa1791195f5c8ced5f0548b0d8d4dff9b18b09602e90c5a1c1ab14813bb5a25651fb09a0e523ada
   languageName: node
   linkType: hard
 
