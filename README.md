@@ -22,6 +22,10 @@
 - [Install for Android (Kotlin/Java)][android]
 - [Install for Flutter][flutter]
 
+## Example
+
+See [examples](https://github.com/privy-open-source/pena-example)
+
 ## Migrate from [privy-sdk](https://www.npmjs.com/package/privy-sdk)
 
 See [migration guide][migration].
