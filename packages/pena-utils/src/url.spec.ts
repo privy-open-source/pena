@@ -82,6 +82,24 @@ describe('createURL', () => {
     expect(url.href).toBe('http://sign.document.com/123456?debug=true')
   })
 
+  it('should able to set user to scroll to spesific page using `needScrollTo`', () => {
+    const url = createURL({
+      url         : 'http://sign.document.com/123456',
+      needScrollTo: 5,
+    })
+
+    expect(url.href).toBe('http://sign.document.com/123456?need_scrollto=5')
+  })
+
+  it('should able to set user to scroll to last page using `needScrollTo` set to `last`', () => {
+    const url = createURL({
+      url         : 'http://sign.document.com/123456',
+      needScrollTo: 'last',
+    })
+
+    expect(url.href).toBe('http://sign.document.com/123456?need_scrollto=last')
+  })
+
   it('should able to set invisible signature with `visibility` set to false', () => {
     const url = createURL({
       url       : 'http://sign.document.com/123456',
