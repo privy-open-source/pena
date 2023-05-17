@@ -59,6 +59,17 @@ export interface UrlParams {
   visibility?: boolean,
 
   /**
+   * Disabled action button until user scroll to spesific pages
+   * @example
+   * {
+   *    needScrollTo: 'last' // user need to scroll to last page
+   *
+   *    needScrollTo: 5 // user need to scroll to 5
+   * }
+   */
+  needScrollTo?: 'last' | number,
+
+  /**
    * Enable debug mode
    * @default false
    */
@@ -96,6 +107,9 @@ export function createURL (config: UrlParams): URL {
       url.searchParams.set('page', config.signature.page.toString())
       url.searchParams.set('fixed', config.signature.fixed ? 'true' : 'false')
     }
+
+    if (config.needScrollTo)
+      url.searchParams.set('need_scrollto', `${config.needScrollTo}`)
 
     if (config.debug !== undefined)
       url.searchParams.set('debug', JSON.stringify(config.debug))

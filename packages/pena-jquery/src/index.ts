@@ -25,6 +25,7 @@ $.fn.openDoc = function (options) {
       layout       : options.layout,
       privyId      : options.privyId,
       ratio        : options.ratio,
+      needScrollTo : options.needScrollTo,
       onAfterAction: options.onAfterAction,
     })
   })

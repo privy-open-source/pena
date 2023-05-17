@@ -48,6 +48,10 @@ export default defineComponent({
       type   : Number as PropType<PenaOption['ratio']>,
       default: undefined,
     },
+    needScrollTo: {
+      type   : Number as PropType<PenaOption['needScrollTo']>,
+      default: undefined,
+    },
   },
   emits: ['after-action'],
   setup (props, { emit }) {
@@ -60,15 +64,16 @@ export default defineComponent({
     watchEffect((onCleanUp) => {
       if (container.value) {
         const cleanup = Pena.openDoc({
-          container : container.value,
-          url       : props.url,
-          layout    : props.layout,
-          lang      : props.lang,
-          debug     : props.debug,
-          privyId   : props.privyId,
-          visibility: props.visibility,
-          signature : props.signature,
-          ratio     : props.ratio,
+          container   : container.value,
+          url         : props.url,
+          layout      : props.layout,
+          lang        : props.lang,
+          debug       : props.debug,
+          privyId     : props.privyId,
+          visibility  : props.visibility,
+          signature   : props.signature,
+          ratio       : props.ratio,
+          needScrollTo: props.needScrollTo,
           onAfterAction,
         })
 

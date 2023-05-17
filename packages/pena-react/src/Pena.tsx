@@ -19,6 +19,7 @@ const PenaReact: FC<Omit<PenaOption, 'container'>> = (props) => {
         layout       : props.layout,
         privyId      : props.privyId,
         ratio        : props.ratio,
+        needScrollTo : props.needScrollTo,
         onAfterAction: props.onAfterAction,
       })
 

@@ -9,6 +9,7 @@
   export let layout: PenaOption['layout'] = undefined
   export let privyId: PenaOption['privyId'] = undefined
   export let ratio: PenaOption['ratio'] = undefined
+  export let needScrollTo: PenaOption['needScrollTo'] = undefined
 
   let target: HTMLDivElement
   let cleanup: ReturnType<typeof Pena.openDoc>
@@ -32,6 +33,7 @@
       privyId      : privyId,
       ratio        : ratio,
       onAfterAction: onAfterAction,
+      needScrollTo : needScrollTo,
     })
   }
 

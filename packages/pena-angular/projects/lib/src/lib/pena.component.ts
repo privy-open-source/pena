@@ -41,6 +41,9 @@ export class PenaComponent {
   @Input('ratio')
     ratio: PenaOption['ratio']
 
+  @Input('needScrollTo')
+    needScrollTo: PenaOption['needScrollTo']
+
   @ViewChild('container')
     container?: ElementRef<HTMLDivElement>
 
@@ -71,6 +74,7 @@ export class PenaComponent {
         visibility   : this.visibility,
         signature    : this.signature,
         ratio        : this.ratio,
+        needScrollTo : this.needScrollTo,
         onAfterAction: this.onAfterAction.bind(this),
       })
     }
