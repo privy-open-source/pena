@@ -47,19 +47,20 @@ export default function App () {
 
 ### Props
 
-| Name            | Type     | Default | Description                                                                                                  |
-|-----------------|----------|:-------:|--------------------------------------------------------------------------------------------------------------|
-| `url`           | string   |    -    | **(Required)** Document's url                                                                                |
-| `lang`          | string   |  `en`   | Set language, valid value is `en` or `id`                                                                    |
-| `visibility`    | boolean  | `true`  | Set signature visibility                                                                                     |
-| `privyId`       | string   |    -    | Set recipient's privyId                                                                                      |
-| `signature`     | object   |    -    | Set signature placement<br/> <strong>(Deprecated)</strong> use API to set placement when upload the document |
-| ├ `x`           | number   |    -    | X Coordinate                                                                                                 |
-| ├ `y`           | number   |    -    | Y Coordinate                                                                                                 |
-| ├ `page`        | number   |    -    | Target page                                                                                                  |
-| └ `fixed`       | boolean  | `false` | Disabled signature for moving                                                                                |
-| `debug`         | boolean  | `false` | Enable debug mode                                                                                            |
-| `onAfterAction` | function |    -    | After action hook                                                                                            |
+| Name            | Type             | Default | Description                                                                                                                                  |
+|-----------------|------------------|:-------:|----------------------------------------------------------------------------------------------------------------------------------------------|
+| `url`           | string           |    -    | **(Required)** Document's url                                                                                                                |
+| `lang`          | string           |  `en`   | Set language, valid value is `en` or `id`                                                                                                    |
+| `visibility`    | boolean          | `true`  | Set signature visibility                                                                                                                     |
+| `privyId`       | string           |    -    | Set recipient's privyId                                                                                                                      |
+| `signature`     | object           |    -    | Set signature placement<br/> <strong>(Deprecated)</strong> use API to set placement when upload the document                                 |
+| ├ `x`           | number           |    -    | X Coordinate                                                                                                                                 |
+| ├ `y`           | number           |    -    | Y Coordinate                                                                                                                                 |
+| ├ `page`        | number           |    -    | Target page                                                                                                                                  |
+| └ `fixed`       | boolean          | `false` | Disabled signature for moving                                                                                                                |
+| `debug`         | boolean          | `false` | Enable debug mode                                                                                                                            |
+| `needScrollTo`  | number \| string |    -    | Force user to scroll to target page before doing an action (sign,review,etc). Valid value is a number, or set `last` to target the last page |
+| `onAfterAction` | function         |    -    | After action hook                                                                                                                            |
 
 
 ## License
