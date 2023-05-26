@@ -11457,16 +11457,17 @@ __metadata:
   linkType: hard
 
 "happy-dom@npm:^8.2.2":
-  version: 8.2.2
-  resolution: "happy-dom@npm:8.2.2"
+  version: 8.9.0
+  resolution: "happy-dom@npm:8.9.0"
   dependencies:
     css.escape: ^1.5.1
     he: ^1.2.0
+    iconv-lite: ^0.6.3
     node-fetch: ^2.x.x
     webidl-conversions: ^7.0.0
     whatwg-encoding: ^2.0.0
     whatwg-mimetype: ^3.0.0
-  checksum: c020ce005ebe51038ac07220d8f813b97fec2b763d9cf351e6e82d7f79db19830a9cb582f9f1a84929235d9d3b1c4393d3b2ed67392d6bd70d788b63f024abc1
+  checksum: 2a9d853199e924e4445c11844a3d0fdd75b9831edab4c5dda52c4725c4f7889cd919814333162b70b3ae43884ec70ed50fbc22564eb94ba09408218922870a34
   languageName: node
   linkType: hard
 
