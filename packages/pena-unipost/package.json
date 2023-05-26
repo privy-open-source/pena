@@ -1,7 +1,7 @@
 {
   "name": "@privyid/pena-unipost",
   "description": "Universal postMessage for Web Iframe, ReactNative, and Android WebView",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "type": "module",
   "main": "./dist/pena-unipost.umd.cjs",
   "module": "./dist/pena-unipost.js",

@@ -1,7 +1,7 @@
 {
   "name": "@privyid/pena-angular-workspace",
   "description": "Pena plugin for Angular",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "dev": "yarn start",

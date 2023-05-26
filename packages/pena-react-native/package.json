@@ -1,7 +1,7 @@
 {
   "name": "@privyid/pena-react-native",
   "description": "PrivyID's Official Client Integration Library for React Native",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "type": "module",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
