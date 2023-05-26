@@ -1,7 +1,7 @@
 {
   "name": "@privyid/pena-angular-workspace",
   "description": "Pena plugin for Angular",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "dev": "yarn start",
@@ -32,7 +32,7 @@
     "@privyid/browserslist-config": "^0.9.0",
     "@types/jasmine": "~4.3.0",
     "browserslist-to-esbuild": "^1.2.0",
-    "jasmine-core": "~4.5.0",
+    "jasmine-core": "~4.6.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage": "~2.2.0",
