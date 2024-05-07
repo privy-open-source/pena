@@ -4180,21 +4180,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@privyid/browserslist-config@npm:^0.13.0":
+"@privyid/browserslist-config@npm:0.13.0":
   version: 0.13.0
   resolution: "@privyid/browserslist-config@npm:0.13.0"
   checksum: 9459500c1a0963b897c78a1964af35ec90aa2f8ed7c51df39f0e5195aeb2294a2fbc300d8322a5316ff3c5c9e11fbb16ee4cc8a747cbb317759fe46a55a93e60
   languageName: node
   linkType: hard
 
-"@privyid/browserslist-config@npm:^0.9.0":
+"@privyid/browserslist-config@npm:0.9.0":
   version: 0.9.0
   resolution: "@privyid/browserslist-config@npm:0.9.0"
   checksum: b0851bedae585ded2d0b28c546179059000979046f387fff919e404fa9c1d335f49fbc3b8517302e426376e16efdac579327b64bb4cee121869746585ba068f7
   languageName: node
   linkType: hard
 
-"@privyid/eslint-config-persona@npm:^0.13.0":
+"@privyid/eslint-config-persona@npm:0.13.0":
   version: 0.13.0
   resolution: "@privyid/eslint-config-persona@npm:0.13.0"
   peerDependencies:
@@ -4216,7 +4216,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@privyid/eslint-config-persona@npm:^0.9.0":
+"@privyid/eslint-config-persona@npm:0.9.0":
   version: 0.9.0
   resolution: "@privyid/eslint-config-persona@npm:0.9.0"
   peerDependencies:
@@ -4253,7 +4253,7 @@ __metadata:
     "@angular/platform-browser": ^15.1.0
     "@angular/platform-browser-dynamic": ^15.1.0
     "@angular/router": ^15.1.0
-    "@privyid/browserslist-config": ^0.9.0
+    "@privyid/browserslist-config": 0.9.0
     "@privyid/pena": "workspace:^"
     "@types/jasmine": ~4.3.0
     browserslist-to-esbuild: ^1.2.0
@@ -4275,7 +4275,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@privyid/pena-jquery@workspace:packages/pena-jquery"
   dependencies:
-    "@privyid/browserslist-config": ^0.9.0
+    "@privyid/browserslist-config": 0.9.0
     "@privyid/pena": "workspace:^"
     "@testing-library/dom": ^9.0.0
     "@testing-library/jest-dom": ^5.16.5
@@ -4298,8 +4298,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@privyid/pena-monorepo@workspace:."
   dependencies:
-    "@privyid/browserslist-config": ^0.13.0
-    "@privyid/eslint-config-persona": ^0.13.0
+    "@privyid/browserslist-config": 0.13.0
+    "@privyid/eslint-config-persona": 0.13.0
     "@typescript-eslint/eslint-plugin": ^5.50.0
     "@typescript-eslint/parser": ^5.50.0
     "@vue/eslint-config-typescript": ^11.0.2
@@ -4322,8 +4322,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@privyid/pena-react-native@workspace:packages/pena-react-native"
   dependencies:
-    "@privyid/browserslist-config": ^0.9.0
-    "@privyid/eslint-config-persona": ^0.9.0
+    "@privyid/browserslist-config": 0.9.0
+    "@privyid/eslint-config-persona": 0.9.0
     "@privyid/pena": "workspace:^"
     "@privyid/pena-utils": "workspace:^"
     "@react-native-community/eslint-config": ^3.0.2
@@ -4365,7 +4365,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@privyid/pena-react@workspace:packages/pena-react"
   dependencies:
-    "@privyid/browserslist-config": ^0.9.0
+    "@privyid/browserslist-config": 0.9.0
     "@privyid/pena": "workspace:^"
     "@types/react": ^18.0.26
     "@types/react-dom": ^18.0.9
@@ -4387,7 +4387,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@privyid/pena-svelte@workspace:packages/pena-svelte"
   dependencies:
-    "@privyid/browserslist-config": ^0.9.0
+    "@privyid/browserslist-config": 0.9.0
     "@privyid/pena": "workspace:^"
     "@sveltejs/adapter-auto": ^2.0.0
     "@sveltejs/kit": ^1.0.0
@@ -4409,7 +4409,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@privyid/pena-unipost@workspace:packages/pena-unipost"
   dependencies:
-    "@privyid/browserslist-config": ^0.9.0
+    "@privyid/browserslist-config": 0.9.0
     "@vitest/coverage-c8": ^0.29.0
     browserslist-to-esbuild: ^1.2.0
     browserslist-ua-parser: ^1.0.0
@@ -4425,7 +4425,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@privyid/pena-utils@workspace:packages/pena-utils"
   dependencies:
-    "@privyid/browserslist-config": ^0.9.0
+    "@privyid/browserslist-config": 0.9.0
     "@vitest/coverage-c8": ^0.29.0
     browserslist-to-esbuild: ^1.2.0
     happy-dom: ^8.2.2
@@ -4440,7 +4440,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@privyid/pena-vue@workspace:packages/pena-vue"
   dependencies:
-    "@privyid/browserslist-config": ^0.9.0
+    "@privyid/browserslist-config": 0.9.0
     "@privyid/pena": "workspace:^"
     "@vitejs/plugin-vue": ^4.0.0
     browserslist-to-esbuild: ^1.2.0
@@ -4465,7 +4465,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@privyid/pena@workspace:packages/pena"
   dependencies:
-    "@privyid/browserslist-config": ^0.9.0
+    "@privyid/browserslist-config": 0.9.0
     "@privyid/pena-utils": "workspace:^"
     "@testing-library/dom": ^9.0.0
     "@testing-library/jest-dom": ^5.16.5
