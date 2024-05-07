@@ -18,10 +18,10 @@
     "react-native-web": "~0.18.9"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.9",
-    "@expo/webpack-config": "^18.0.0",
-    "babel-loader": "^9.0.0",
-    "babel-plugin-module-resolver": "^5.0.0"
+    "@babel/core": "7.21.8",
+    "@expo/webpack-config": "18.0.4",
+    "babel-loader": "9.1.2",
+    "babel-plugin-module-resolver": "5.0.0"
   },
   "private": true,
   "installConfig": {

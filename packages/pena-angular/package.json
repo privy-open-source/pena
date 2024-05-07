@@ -26,20 +26,20 @@
     "zone.js": "~0.13.0"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^15.1.4",
-    "@angular/cli": "~15.2.0",
-    "@angular/compiler-cli": "^15.1.0",
+    "@angular-devkit/build-angular": "15.2.8",
+    "@angular/cli": "15.2.8",
+    "@angular/compiler-cli": "15.2.9",
     "@privyid/browserslist-config": "0.9.0",
-    "@types/jasmine": "~4.3.0",
-    "browserslist-to-esbuild": "^1.2.0",
-    "jasmine-core": "~4.6.0",
-    "karma": "~6.4.0",
-    "karma-chrome-launcher": "~3.2.0",
-    "karma-coverage": "~2.2.0",
-    "karma-jasmine": "~5.1.0",
-    "karma-jasmine-html-reporter": "~2.0.0",
-    "ng-packagr": "^15.1.0",
-    "typescript": "~4.9.4"
+    "@types/jasmine": "4.3.5",
+    "browserslist-to-esbuild": "1.2.0",
+    "jasmine-core": "4.6.0",
+    "karma": "6.4.2",
+    "karma-chrome-launcher": "3.2.0",
+    "karma-coverage": "2.2.0",
+    "karma-jasmine": "5.1.0",
+    "karma-jasmine-html-reporter": "2.0.0",
+    "ng-packagr": "15.1.1",
+    "typescript": "4.9.5"
   },
   "installConfig": {
     "hoistingLimits": "workspaces"
