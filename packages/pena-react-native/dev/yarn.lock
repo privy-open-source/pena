@@ -5924,7 +5924,7 @@ __metadata:
     babel-loader: 9.1.2
     babel-plugin-module-resolver: 5.0.0
     expo: ~48.0.0
-    expo-status-bar: ~1.4.2
+    expo-status-bar: ~1.12.0
     react: 18.3.1
     react-dom: 18.3.1
     react-native: 0.73.6
@@ -6102,10 +6102,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"expo-status-bar@npm:~1.4.2":
-  version: 1.4.4
-  resolution: "expo-status-bar@npm:1.4.4"
-  checksum: 8d36b821ff2804aed3158f339cc396f0525f365763913881b9b11e6e85e83f21ddbc3a2ede660ae8ce6d6df1a6cda825ad996c3c45f195cbc89091da7605f7e0
+"expo-status-bar@npm:~1.12.0":
+  version: 1.12.1
+  resolution: "expo-status-bar@npm:1.12.1"
+  checksum: 82f2e9096660cdb521b920662908b93e1909c2bbe776802c314dff6e0863300d19ba4b9e093825b2bdc094f333010df0b8ed11fcb330e4c29a16c2d55da0aa96
   languageName: node
   linkType: hard
 
