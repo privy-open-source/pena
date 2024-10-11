@@ -21,7 +21,7 @@ npm install --save @privyid/pena-vue @privyid/pena
 yarn add @privyid/pena-vue @privyid/pena
 ```
 
-### Nuxt 2
+### Nuxt
 
 You need to transpile this package, add this in your `nuxt.config.js`.
 
