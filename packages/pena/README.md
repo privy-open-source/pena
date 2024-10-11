@@ -67,7 +67,7 @@ on your web UI. However, `fixed` more easy to use, and better suit to any web UI
 
 If you have only Pena as a content in your page. We **recommended** to use `fit` layout.
 
-![fixed-vs-fixed](https://privy-open-source.github.io/design-system/assets/fixed-vs-fit.8d785873.svg)
+![fixed-vs-fixed](../../assets/fixed-vs-fit.svg)
 
 ## Using CDN
 
