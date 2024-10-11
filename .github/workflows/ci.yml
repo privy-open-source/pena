@@ -8,20 +8,19 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
+  merge_group:
+    types: [checks_requested]
 
 jobs:
   test:
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
 
     strategy:
       fail-fast: false
       matrix:
-        os:
-          - ubuntu-latest
         node-version:
-          - 16
-          - 18
-          - 19
+          - 20
+          - 22
 
     steps:
       - name: Git Checkout
@@ -59,6 +58,6 @@ jobs:
 
       - name: Upload to Codecov
         uses: codecov/codecov-action@v3
-        if: matrix.node-version == 16 && matrix.os == 'ubuntu-latest'
+        if: matrix.node-version == 20
         with:
           fail_ci_if_error: false
