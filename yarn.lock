@@ -4257,7 +4257,7 @@ __metadata:
     "@privyid/pena": "workspace:^"
     "@types/jasmine": 4.3.5
     browserslist-to-esbuild: 1.2.0
-    jasmine-core: 4.6.0
+    jasmine-core: 4.6.1
     karma: 6.4.2
     karma-chrome-launcher: 3.2.0
     karma-coverage: 2.2.0
@@ -12904,10 +12904,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jasmine-core@npm:4.6.0":
-  version: 4.6.0
-  resolution: "jasmine-core@npm:4.6.0"
-  checksum: c5c5ce16c512cf0bc8b6b4f2d4f0ac7b23cae90624e0cd9d22da3baab3266e9a4da5a9363fb7937b16e0a4cf550bb79183cd74483ce55cfff4b6678434d599b7
+"jasmine-core@npm:4.6.1":
+  version: 4.6.1
+  resolution: "jasmine-core@npm:4.6.1"
+  checksum: 4ee017c0667a7615d816df6b265a554554c23457317172dd137edff5aa4203b1768529038558cd8f368abb2e7436fb4a970876512c4ed6fbf5d8ef3dcb53b9f8
   languageName: node
   linkType: hard
 
