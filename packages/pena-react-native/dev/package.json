@@ -20,7 +20,7 @@
   "devDependencies": {
     "@babel/core": "7.21.8",
     "@expo/webpack-config": "18.0.4",
-    "babel-loader": "9.1.2",
+    "babel-loader": "9.2.1",
     "babel-plugin-module-resolver": "5.0.0"
   },
   "private": true,
