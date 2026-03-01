@@ -4279,7 +4279,7 @@ __metadata:
     "@privyid/pena": "workspace:^"
     "@testing-library/dom": 9.3.0
     "@testing-library/jest-dom": 5.16.5
-    "@types/jquery": 3.5.31
+    "@types/jquery": 3.5.34
     "@vitest/coverage-c8": 0.29.8
     browserslist-to-esbuild: 1.2.0
     happy-dom: 8.9.0
@@ -5654,12 +5654,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jquery@npm:3.5.31":
-  version: 3.5.31
-  resolution: "@types/jquery@npm:3.5.31"
+"@types/jquery@npm:3.5.34":
+  version: 3.5.34
+  resolution: "@types/jquery@npm:3.5.34"
   dependencies:
     "@types/sizzle": "*"
-  checksum: 14a682a6a00e5b0bfe7afbb359ea2ada51b6fdbd962f8ba2b6077989935bd41f395b920581538d218d3ac81e6e3929acb86db9ccb8aa55a67066da9ed55db775
+  checksum: cf405356e62740291459505cb9987090dca3a8ccbfdbbe3d469308fc404468b22e31b275ac9097dad7d6b26391169bf0209a32dfee96106e81ec262d23861999
   languageName: node
   linkType: hard
 
