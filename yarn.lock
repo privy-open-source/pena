@@ -4279,11 +4279,11 @@ __metadata:
     "@privyid/pena": "workspace:^"
     "@testing-library/dom": 9.3.0
     "@testing-library/jest-dom": 5.16.5
-    "@types/jquery": 3.5.31
+    "@types/jquery": 3.5.34
     "@vitest/coverage-c8": 0.29.8
     browserslist-to-esbuild: 1.2.0
     happy-dom: 8.9.0
-    jquery: 3.7.1
+    jquery: 3.8.0
     typescript: 4.9.5
     vite: 4.0.4
     vite-plugin-dts: 2.1.0
@@ -5654,12 +5654,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jquery@npm:3.5.31":
-  version: 3.5.31
-  resolution: "@types/jquery@npm:3.5.31"
+"@types/jquery@npm:3.5.34":
+  version: 3.5.34
+  resolution: "@types/jquery@npm:3.5.34"
   dependencies:
     "@types/sizzle": "*"
-  checksum: 14a682a6a00e5b0bfe7afbb359ea2ada51b6fdbd962f8ba2b6077989935bd41f395b920581538d218d3ac81e6e3929acb86db9ccb8aa55a67066da9ed55db775
+  checksum: cf405356e62740291459505cb9987090dca3a8ccbfdbbe3d469308fc404468b22e31b275ac9097dad7d6b26391169bf0209a32dfee96106e81ec262d23861999
   languageName: node
   linkType: hard
 
@@ -13601,10 +13601,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jquery@npm:3.7.1":
-  version: 3.7.1
-  resolution: "jquery@npm:3.7.1"
-  checksum: 4370b8139d6ae82867eb6f7f21d1edccf1d1bdf41c0840920ea80d366c2cd5dbe1ceebb110ee9772aa839b04400faa1572c5c560b507c688ed7b61cea26c0e27
+"jquery@npm:3.8.0":
+  version: 3.8.0
+  resolution: "jquery@npm:3.8.0"
+  checksum: 4ee9e52b4a512b85d0c32be70b1d256daf69aa998bc50a0e84d4ed015f826511e5f2c8d3c6499f9981e6078bc63e5215857d64b8d5664f43c4caa30b84683b20
   languageName: node
   linkType: hard
 
